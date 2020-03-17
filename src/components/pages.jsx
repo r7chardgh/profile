@@ -8,7 +8,7 @@ import Contact from "./contact.jsx";
 class Pages extends Component {
   render() {
     return (
-      <div>
+      <div className='page'>
         <Info option={this.props.options[0]} />
         <Skill option={this.props.options[1]} />
         <Exp option={this.props.options[2]} />

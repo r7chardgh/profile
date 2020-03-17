@@ -19,14 +19,13 @@ class App extends Component {
       else o.isSelected = false;
       return o;
     });
-    console.log({ options });
     this.setState({ options });
   };
   render() {
     return (
-      <div>
+      <div className='app'>
         <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
-        <img src="https://picsum.photos/seed/picsum/600/700/" alt="Avatar" />
+        <img className='avatar' src="https://picsum.photos/seed/picsum/600/700/" alt="Avatar" />
         <Pages options={this.state.options} />
       </div>
     );
