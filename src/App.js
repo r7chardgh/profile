@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
+import { moveFromRight, moveImgPos, resetImgPos } from "./animations/anim.js";
+import avatar from "./images/avatar.jpg";
 
 class App extends Component {
   state = {
@@ -13,6 +15,13 @@ class App extends Component {
       { id: 5, title: "Contact", link: "#contact", isSelected: false }
     ]
   };
+  componentDidMount() {
+    // moveFromRight("avatar");
+    this.state.options.forEach(o => {
+      if (window.location.href.indexOf(o.link) > -1)
+        this.handleSwitchPage(o.id);
+    });
+  }
   handleSwitchPage = id => {
     const options = this.state.options.map(o => {
       if (o.id === id) o.isSelected = true;
@@ -21,13 +30,31 @@ class App extends Component {
     });
     this.setState({ options });
   };
+
   render() {
     return (
-      <div className='app'>
-        <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
-        <img className='avatar' src="https://picsum.photos/seed/picsum/600/700/" alt="Avatar" />
-        <Pages options={this.state.options} />
-      </div>
+      <React.Fragment>
+        <div className="app">
+          <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
+          <div className="avatar-wrap">
+            <img
+              id="avatar"
+              className="avatar"
+              src={avatar}
+              alt="Avatar"
+              onMouseMove={event => {
+                moveImgPos(event, "avatar");
+              }}
+              onMouseLeave={() => {
+                resetImgPos("avatar");
+              }}
+            />
+          </div>
+
+          <Pages options={this.state.options} />
+        </div>
+        <div className="footer">Designed by Richard Tsang copyright @2020</div>
+      </React.Fragment>
     );
   }
 }

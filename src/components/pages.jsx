@@ -4,11 +4,15 @@ import Info from "./info.jsx";
 import Skill from "./skill.jsx";
 import Work from "./work.jsx";
 import Contact from "./contact.jsx";
+import { moveFromRight } from "../animations/anim.js";
 
 class Pages extends Component {
+  componentDidUpdate() {
+    moveFromRight("page");
+  }
   render() {
     return (
-      <div className='page'>
+      <div id="page" className="page">
         <Info option={this.props.options[0]} />
         <Skill option={this.props.options[1]} />
         <Exp option={this.props.options[2]} />
