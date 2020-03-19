@@ -35,24 +35,31 @@
 .avatar-wrap {
   width: 30%;
   height: 100%;
-  background-color: green;
+  background-color: rgb(17, 17, 17);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
 }
 .avatar {
+  background: url(./images/avatar.jpg);
   position: relative;
-  height: 110%;
-  width: 110%;
-  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  /* opacity: 0.3; */
+  transition: transform 1s;
+}
+.avatar:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
 }
 .page {
   width: 65%;
   height: 100%;
   background-color: none;
 }
-#animation {
-  opacity: 0;
-}
-
 .footer {
   text-align: center;
   color: white;

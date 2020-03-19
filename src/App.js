@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
-import { moveFromRight, moveImgPos, resetImgPos } from "./animations/anim.js";
+import { fadeIn, moveImgPos, resetImgPos } from "./animations/anim.js";
 import avatar from "./images/avatar.jpg";
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
   };
   componentDidMount() {
     // moveFromRight("avatar");
+    fadeIn("avatar");
     this.state.options.forEach(o => {
       if (window.location.href.indexOf(o.link) > -1)
         this.handleSwitchPage(o.id);
@@ -37,10 +38,9 @@ class App extends Component {
         <div className="app">
           <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
           <div className="avatar-wrap">
-            <img
+            <div
               id="avatar"
               className="avatar"
-              src={avatar}
               alt="Avatar"
               onMouseMove={event => {
                 moveImgPos(event, "avatar");
@@ -48,7 +48,7 @@ class App extends Component {
               onMouseLeave={() => {
                 resetImgPos("avatar");
               }}
-            />
+            ></div>
           </div>
 
           <Pages options={this.state.options} />
