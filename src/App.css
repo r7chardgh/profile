@@ -33,6 +33,10 @@
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.locked-btn {
+  pointer-events: none;
+  background-color: coral;
+}
 .avatar-wrap {
   width: 30%;
   height: 100%;
@@ -50,7 +54,7 @@
   width: 100%;
   /* opacity: 0.3; */
   transition: transform 1s, filter 1s;
-  filter: blur(3px) grayscale(90%);
+  filter: blur(3px) grayscale(66%);
 }
 .avatar:hover {
   -ms-transform: scale(1.1); /* IE 9 */
@@ -64,11 +68,23 @@
   height: 100%;
   background-color: coral;
 }
-.page > div {
+.page-content {
   background-color: blue;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+}
+.scroll-Target {
+  height: 100vh;
+  background-color: red;
+  margin: 5em 0 5em 0;
+  opacity: 0;
+  transition: opacity 1s, width 2s;
+  width: 0;
+}
+.scrolled {
+  opacity: 1;
+  width: 100%;
 }
 .footer {
   text-align: center;

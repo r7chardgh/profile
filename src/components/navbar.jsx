@@ -9,6 +9,7 @@ class NavBar extends Component {
               className="nav-link"
               href={o.link}
               key={o.id}
+              id={o.id}
               onClick={() => {
                 this.props.onSP(o.id);
               }}

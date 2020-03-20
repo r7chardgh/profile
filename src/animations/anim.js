@@ -47,6 +47,16 @@ export function resetImgPos(elemId) {
 
 export function scrollIn(elemId) {
   const elem = document.getElementById(elemId);
-  let target = document.getElementsByClassName("scroll-Target");
-  console.log(target);
+  let target = document.querySelectorAll(".scroll-Target");
+
+  [].forEach.call(target, function(t, i) {
+    if (t.classList.contains("scrolled")) {
+      return;
+    } else {
+      t.setAttribute("id", i);
+      if (elem.scrollTop >= t.offsetTop - 300) {
+        t.classList.add("scrolled");
+      }
+    }
+  });
 }

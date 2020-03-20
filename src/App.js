@@ -31,11 +31,15 @@ class App extends Component {
     const options = this.state.options.map(o => {
       if (o.id === id) o.isSelected = true;
       else o.isSelected = false;
+      this.lockButton(o.id, o.isSelected);
       return o;
     });
     this.setState({ options });
   };
-
+  lockButton = (id, bool) => {
+    if (bool) document.getElementById(id).classList.add("locked-btn");
+    else document.getElementById(id).classList.remove("locked-btn");
+  };
   render() {
     return (
       <React.Fragment>
@@ -55,7 +59,7 @@ class App extends Component {
             ></div>
           </div>
 
-          <Pages options={this.state.options} onScroll={scrollIn("aboutme")} />
+          <Pages options={this.state.options} />
         </div>
         <div className="footer">Designed by Richard Tsang copyright @2020</div>
       </React.Fragment>
