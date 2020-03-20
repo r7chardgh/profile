@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
-import { fadeIn, moveImgPos, resetImgPos } from "./animations/anim.js";
-import avatar from "./images/avatar.jpg";
+import {
+  scrollIn,
+  fadeIn,
+  moveImgPos,
+  resetImgPos
+} from "./animations/anim.js";
 
 class App extends Component {
   state = {
@@ -51,7 +55,7 @@ class App extends Component {
             ></div>
           </div>
 
-          <Pages options={this.state.options} />
+          <Pages options={this.state.options} onScroll={scrollIn("aboutme")} />
         </div>
         <div className="footer">Designed by Richard Tsang copyright @2020</div>
       </React.Fragment>

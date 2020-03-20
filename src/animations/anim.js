@@ -12,64 +12,41 @@ export function fadeIn(elemId) {
   }
   increase();
 }
-export function moveFromRight(elemId) {
+export function fadeInFromRight(elemId) {
   const elem = document.getElementById(elemId);
-  elem.style.position = "relative";
-  let pos = 100;
+  let padLeft = 52;
+  let width = 0;
   function increase() {
-    pos -= 0.5;
-    if (pos <= 0) {
-      elem.style.left = "0px";
+    padLeft -= 0.3;
+    width += 0.3;
+    if (padLeft <= 0) {
+      elem.style.paddingLeft = "0vw";
+      elem.style.width = "52vw";
       return true;
     }
-    elem.style.left = pos + "px";
+    elem.style.paddingLeft = padLeft + "vw";
+    elem.style.width = width + "vw";
     requestAnimationFrame(increase);
   }
   increase();
   fadeIn(elemId);
 }
 
-export function shrinkImg(elemId) {
-  const elem = document.getElementById(elemId);
-  let size = 110;
-  function decrease() {
-    size -= 0.03;
-    if (size <= 100) {
-      elem.style.width = "100%";
-      elem.style.height = "100%";
-      return true;
-    }
-    elem.style.width = size + "%";
-    elem.style.height = size + "%";
-    requestAnimationFrame(decrease);
-  }
-  decrease();
-  fadeIn(elemId);
-}
 export function moveImgPos(event, elemId) {
   const elem = document.getElementById(elemId);
   let x = event.nativeEvent.offsetX;
   let y = event.nativeEvent.offsetY;
-  let w = elem.offsetWidth;
-  let h = elem.offsetHeight;
-  elem.style.backgroundPositionX = -x * 0.01 + "px";
-  elem.style.backgroundPositionY = -y * 0.01 + "px";
+  elem.style.left = -x * 0.03 + "px";
+  elem.style.top = -y * 0.03 + "px";
 }
 export function resetImgPos(elemId) {
   const elem = document.getElementById(elemId);
-  elem.style.backgroundPosition = "center";
-  elem.style.width = "100%";
-  elem.style.height = "100%";
+  elem.style.left = "0px";
+  elem.style.top = "0px";
 }
 
-// function getPosition(element) {
-//   var x = 0;
-//   var y = 0;
-//   while (element) {
-//     x += element.offsetLeft - element.scrollLeft + element.clientLeft;
-//     y += element.offsetTop - element.scrollLeft + element.clientTop;
-//     element = element.offsetParent;
-//   }
-
-//   return { x: x, y: y };
-// }
+export function scrollIn(elemId) {
+  const elem = document.getElementById(elemId);
+  let target = document.getElementsByClassName("scroll-Target");
+  console.log(target);
+}

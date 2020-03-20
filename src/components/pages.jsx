@@ -4,11 +4,11 @@ import Info from "./info.jsx";
 import Skill from "./skill.jsx";
 import Work from "./work.jsx";
 import Contact from "./contact.jsx";
-import { moveFromRight } from "../animations/anim.js";
+import { fadeInFromRight } from "../animations/anim.js";
 
 class Pages extends Component {
   componentDidUpdate() {
-    moveFromRight("page");
+    fadeInFromRight("page");
   }
   render() {
     return (

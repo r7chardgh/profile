@@ -6,16 +6,17 @@
   min-height: 620px;
   background-color: grey;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 5% auto 4% auto;
+  overflow: hidden;
 }
-.nav {
+.nav-wrap {
   width: 5%;
   height: 65%;
   margin-top: 10%;
 }
-.nav-wrap {
+.nav {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -40,25 +41,34 @@
   overflow: hidden;
 }
 .avatar {
-  background: url(./images/avatar.jpg);
+  background: url(./images/IMG_0584.JPG);
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: 390%;
   height: 100%;
   width: 100%;
   /* opacity: 0.3; */
-  transition: transform 1s;
+  transition: transform 1s, filter 1s;
+  filter: blur(3px) grayscale(90%);
 }
 .avatar:hover {
   -ms-transform: scale(1.1); /* IE 9 */
   -webkit-transform: scale(1.1); /* Safari 3-8 */
   transform: scale(1.1);
+  filter: blur(0px) grayscale(0%);
 }
 .page {
-  width: 65%;
+  scroll-behavior: smooth;
+  width: 0%;
   height: 100%;
-  background-color: none;
+  background-color: coral;
+}
+.page > div {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 .footer {
   text-align: center;
