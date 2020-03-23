@@ -61,7 +61,10 @@ class App extends Component {
 
           <Pages options={this.state.options} />
         </div>
-        <div className="footer">Designed by Richard Tsang copyright @2020</div>
+        <footer>
+          <div>Designed by Richard Tsang</div>
+          <div>Copyright @year_variable</div>
+          </footer>
       </React.Fragment>
     );
   }

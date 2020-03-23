@@ -76,18 +76,17 @@
   overflow-y: scroll;
 }
 .scroll-Target {
-  height: 100vh;
   background-color: red;
-  margin: 5em 0 5em 0;
   opacity: 0;
-  transition: opacity 1s, width 2s;
-  width: 0;
+  transition: opacity 1s,width 2s;
+  width: 0%;
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 18px;
+  clip-path: circle(0%);
+  transition: clip-path 1s;
 }
 .scrolled {
   opacity: 1;
-  width: 100%;
+  width: 100%;clip-path: circle(75%);
 }
 .page-title {
   font-size: 3em;
@@ -95,6 +94,13 @@
   padding-left: 1em;
   background-color: cornflowerblue;
   font-family: "Oleo Script", cursive;
+}
+.info-content{
+text-align: center;
+font-size: 1.2em;
+line-height: 10vh;
+background-color: aqua;
+width: 20%;
 }
 .footer {
   text-align: center;

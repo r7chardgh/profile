@@ -2,7 +2,7 @@ export function fadeIn(elemId) {
   const elem = document.getElementById(elemId);
   let opacity = 0;
   function increase() {
-    opacity += 0.005;
+    opacity += 0.03;
     if (opacity >= 1) {
       elem.style.opacity = 1;
       return true;
@@ -17,8 +17,8 @@ export function fadeInFromRight(elemId) {
   let padLeft = 52;
   let width = 0;
   function increase() {
-    padLeft -= 0.3;
-    width += 0.3;
+    padLeft -= 2;
+    width += 2;
     if (padLeft <= 0) {
       elem.style.paddingLeft = "0vw";
       elem.style.width = "52vw";
@@ -54,7 +54,8 @@ export function scrollIn(elemId) {
       return;
     } else {
       t.setAttribute("id", i);
-      if (elem.scrollTop >= t.offsetTop - 300) {
+      console.log(elem.scrollTop + elem.offsetHeight +']['+t.offsetTop);
+      if (elem.scrollTop + elem.offsetHeight >= t.offsetTop) {
         t.classList.add("scrolled");
       }
     }
