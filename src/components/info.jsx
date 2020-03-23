@@ -9,8 +9,10 @@ const Info = props => {
       onScroll={() => scrollIn("aboutme")}
       className="page-content"
     >
-      <h1>{props.option.title}</h1>
-      <div className="scroll-Target">1</div>
+      <h1 className="page-title">{props.option.title}</h1>
+      <div className="scroll-Target">
+        ahbsfkjadfkjabdkfjbadzfkjbadsfkb This is my
+      </div>
       <div className="scroll-Target">2</div>
       <div className="scroll-Target">3</div>
       <div className="scroll-Target">4</div>
