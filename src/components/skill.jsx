@@ -3,7 +3,7 @@ import React from "react";
 const Skill = props => {
   if (!props.option.isSelected) return null;
   return (
-    <div id="skills" className="page-content">
+    <div id="skills" className="page">
       <h1 className="page-title">{props.option.title}</h1>
     </div>
   );

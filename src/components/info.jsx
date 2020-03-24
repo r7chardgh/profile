@@ -7,7 +7,7 @@ const Info = props => {
     <div
       id="aboutme"
       onScroll={() => scrollIn("aboutme")}
-      className="page-content"
+      className="page"
     >
       <h1 className="page-title">{props.option.title}</h1>
       <div className="scroll-Target info-content scrolled">Richard Tsang

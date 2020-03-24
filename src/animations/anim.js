@@ -14,18 +14,15 @@ export function fadeIn(elemId) {
 }
 export function fadeInFromRight(elemId) {
   const elem = document.getElementById(elemId);
+  elem.style.position = ' relative';
   let padLeft = 52;
-  let width = 0;
   function increase() {
     padLeft -= 2;
-    width += 2;
     if (padLeft <= 0) {
-      elem.style.paddingLeft = "0vw";
-      elem.style.width = "52vw";
+      elem.style.transform = "translateX(0vw)";
       return true;
     }
-    elem.style.paddingLeft = padLeft + "vw";
-    elem.style.width = width + "vw";
+    elem.style.transform = "translateX(" + padLeft + "vw)";
     requestAnimationFrame(increase);
   }
   increase();
