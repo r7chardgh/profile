@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
-import {
-  scrollIn,
-  fadeIn,
-  moveImgPos,
-  resetImgPos
-} from "./animations/anim.js";
+import { fadeIn, moveImgPos, resetImgPos } from "./animations/anim.js";
 
 class App extends Component {
   state = {
@@ -27,11 +22,17 @@ class App extends Component {
         this.handleSwitchPage(o.id);
     });
   }
+  componentDidUpdate() {
+    fadeIn("avatar");
+    document.getElementById("avatar").classList.add("a-f");
+    document.getElementById("avatar-wrap").classList.add("aw-f");
+  }
   handleSwitchPage = id => {
     const options = this.state.options.map(o => {
       if (o.id === id) o.isSelected = true;
       else o.isSelected = false;
       this.lockButton(o.id, o.isSelected);
+
       return o;
     });
     this.setState({ options });
@@ -45,7 +46,7 @@ class App extends Component {
       <React.Fragment>
         <div className="app">
           <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
-          <div className="avatar-wrap">
+          <div id="avatar-wrap" className="avatar-wrap">
             <div
               id="avatar"
               className="avatar"
@@ -64,7 +65,7 @@ class App extends Component {
         <footer>
           <div>Designed by Richard Tsang</div>
           <div>Copyright @year_variable</div>
-          </footer>
+        </footer>
       </React.Fragment>
     );
   }

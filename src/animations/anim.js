@@ -14,19 +14,18 @@ export function fadeIn(elemId) {
 }
 export function fadeInFromRight(elemId) {
   const elem = document.getElementById(elemId);
-  elem.style.position = ' relative';
-  let padLeft = 52;
+  let padLeft = 100;
   function increase() {
-    padLeft -= 2;
+    padLeft -= 3;
     if (padLeft <= 0) {
-      elem.style.transform = "translateX(0vw)";
+      elem.style.marginLeft = "0%";
       return true;
     }
-    elem.style.transform = "translateX(" + padLeft + "vw)";
+    elem.style.marginLeft = padLeft + "%";
     requestAnimationFrame(increase);
   }
-  increase();
   fadeIn(elemId);
+  increase();
 }
 
 export function moveImgPos(event, elemId) {
@@ -51,7 +50,7 @@ export function scrollIn(elemId) {
       return;
     } else {
       t.setAttribute("id", i);
-      console.log(elem.scrollTop + elem.offsetHeight +']['+t.offsetTop);
+      console.log(elem.scrollTop + elem.offsetHeight + "][" + t.offsetTop);
       if (elem.scrollTop + elem.offsetHeight >= t.offsetTop) {
         t.classList.add("scrolled");
       }

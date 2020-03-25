@@ -6,7 +6,7 @@
   position: relative;
   min-width: 980px;
   min-height: 620px;
-  background-color: grey;
+  background-color: rgb(90, 90, 90);
   display: flex;
   flex-flow: row;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -40,7 +40,9 @@
   background-color: coral;
 }
 .avatar-wrap {
-  width: 30%;
+  position: absolute;
+  left: 5%;
+  width: 95%;
   height: 100%;
   background-color: rgb(17, 17, 17);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -51,43 +53,51 @@
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 390%;
+  background-size: 100%;
   height: 100%;
   width: 100%;
   /* opacity: 0.3; */
   transition: transform 1s, filter 1s;
   filter: blur(3px) grayscale(66%);
 }
+
 .avatar:hover {
   -ms-transform: scale(1.1); /* IE 9 */
   -webkit-transform: scale(1.1); /* Safari 3-8 */
   transform: scale(1.1);
   filter: blur(0px) grayscale(0%);
 }
+.aw-f {
+  position: static;
+  left: 0%;
+  width: 30%;
+}
+.a-f {
+  background-size: 390%;
+}
 .page-wrap {
   scroll-behavior: smooth;
   width: 65%;
   height: 100%;
   background-color: coral;
+  overflow: hidden;
 }
 .page {
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: black;
+  transition-property: margin-left;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
 }
 .scroll-Target {
-  background-color: red;
-  opacity: 0;
-  transition: opacity 1s,width 2s;
-  width: 0%;
   font-family: "Open Sans Condensed", sans-serif;
   clip-path: circle(0%);
-  transition: clip-path 1s;
+  transition: width 2s, clip-path 1s;
 }
 .scrolled {
-  opacity: 1;
-  width: 100%;clip-path: circle(75%);
+  clip-path: circle(75%);
 }
 .page-title {
   font-size: 3em;
@@ -96,12 +106,12 @@
   background-color: cornflowerblue;
   font-family: "Oleo Script", cursive;
 }
-.info-content{
-text-align: center;
-font-size: 1.2em;
-line-height: 10vh;
-background-color: aqua;
-width: 20%;
+.info-content {
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 10vh;
+  width: 20%;
 }
 .footer {
   text-align: center;

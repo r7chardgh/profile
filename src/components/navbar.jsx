@@ -5,9 +5,8 @@ class NavBar extends Component {
       <div className="nav-wrap">
         <ul className="nav">
           {this.props.options.map(o => (
-            <a
+            <span
               className="nav-link"
-              href={o.link}
               key={o.id}
               id={o.id}
               onClick={() => {
@@ -15,7 +14,7 @@ class NavBar extends Component {
               }}
             >
               {o.title}
-            </a>
+            </span>
           ))}
         </ul>
       </div>

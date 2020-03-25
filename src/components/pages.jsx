@@ -8,20 +8,19 @@ import { fadeInFromRight } from "../animations/anim.js";
 
 class Pages extends Component {
   componentDidUpdate() {
-    fadeInFromRight("page");
+    let elemId = this.props.options.find(e => e.isSelected).link;
+    elemId = elemId.replace("#", "");
+    fadeInFromRight(elemId);
   }
   render() {
     return (
       <div id="page" className="page-wrap">
-        
         <Info option={this.props.options[0]} />
         <Skill option={this.props.options[1]} />
         <Exp option={this.props.options[2]} />
         <Work option={this.props.options[3]} />
         <Contact option={this.props.options[4]} />
-      
       </div>
-      
     );
   }
 }
