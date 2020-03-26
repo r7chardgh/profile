@@ -2,12 +2,12 @@ export function fadeIn(elemId) {
   const elem = document.getElementById(elemId);
   let opacity = 0;
   function increase() {
-    opacity += 0.03;
     if (opacity >= 1) {
       elem.style.opacity = 1;
       return true;
     }
     elem.style.opacity = opacity;
+    opacity += 0.03;
     requestAnimationFrame(increase);
   }
   increase();
@@ -16,12 +16,12 @@ export function fadeInFromRight(elemId) {
   const elem = document.getElementById(elemId);
   let padLeft = 100;
   function increase() {
-    padLeft -= 3;
     if (padLeft <= 0) {
       elem.style.marginLeft = "0%";
       return true;
     }
     elem.style.marginLeft = padLeft + "%";
+    padLeft -= 3;
     requestAnimationFrame(increase);
   }
   fadeIn(elemId);
@@ -62,4 +62,12 @@ export function scrollIn(elemId) {
       }
     }
   });
+}
+
+export function cursorLightAnimation(event, elemId) {
+  const targetE = document.getElementById(elemId + "s");
+  let x = event.nativeEvent.offsetX;
+  let y = event.nativeEvent.offsetY;
+  targetE.style.top = y + "px";
+  targetE.style.left = x + "px";
 }

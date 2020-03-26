@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { cursorLightAnimation } from "../animations/anim.js";
 class NavBar extends Component {
   render() {
     return (
@@ -12,8 +13,12 @@ class NavBar extends Component {
               onClick={() => {
                 this.props.onSP(o.id);
               }}
+              onMouseMove={event => {
+                cursorLightAnimation(event, o.id);
+              }}
             >
-              {o.title}
+              <span className="nav-text">{o.title}</span>
+              <span id={o.id + "s"} className="nav-light"></span>
             </span>
           ))}
         </ul>

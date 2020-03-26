@@ -14,8 +14,8 @@ class App extends Component {
       { id: 5, title: "Contact", link: "#contact", isSelected: false }
     ]
   };
+
   componentDidMount() {
-    // moveFromRight("avatar");
     fadeIn("avatar");
     this.state.options.forEach(o => {
       if (window.location.href.indexOf(o.link) > -1)
@@ -50,8 +50,16 @@ class App extends Component {
           <div id="avatar-wrap" className="avatar-wrap">
             <div
               id="avatar"
-              className="avatar"
+              className="avatar avatar-anim"
               alt="Avatar"
+              onMouseOver={() => {
+                document
+                  .getElementById("avatar")
+                  .classList.remove("avatar-anim");
+                document
+                  .getElementById("a-t")
+                  .classList.remove("avatar-text-anim");
+              }}
               onMouseMove={event => {
                 moveImgPos(event, "avatar");
               }}
@@ -59,7 +67,7 @@ class App extends Component {
                 resetImgPos("avatar");
               }}
             ></div>
-            <span id="a-t" className="avatar-text">
+            <span id="a-t" className="avatar-text avatar-text-anim">
               Richard Tsang
             </span>
           </div>
