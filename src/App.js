@@ -26,6 +26,7 @@ class App extends Component {
     fadeIn("avatar");
     document.getElementById("avatar").classList.add("a-f");
     document.getElementById("avatar-wrap").classList.add("aw-f");
+    document.getElementById("a-t").style.display = "none";
   }
   handleSwitchPage = id => {
     const options = this.state.options.map(o => {
@@ -58,6 +59,9 @@ class App extends Component {
                 resetImgPos("avatar");
               }}
             ></div>
+            <span id="a-t" className="avatar-text">
+              Richard Tsang
+            </span>
           </div>
 
           <Pages options={this.state.options} />

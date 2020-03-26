@@ -30,15 +30,21 @@ export function fadeInFromRight(elemId) {
 
 export function moveImgPos(event, elemId) {
   const elem = document.getElementById(elemId);
+  const elemText = document.getElementById("a-t");
   let x = event.nativeEvent.offsetX;
   let y = event.nativeEvent.offsetY;
   elem.style.left = -x * 0.03 + "px";
   elem.style.top = -y * 0.03 + "px";
+  elemText.style.left = x * 0.06 + "px";
+  elemText.style.top = y * 0.06 + "px";
 }
 export function resetImgPos(elemId) {
   const elem = document.getElementById(elemId);
+  const elemText = document.getElementById("a-t");
   elem.style.left = "0px";
   elem.style.top = "0px";
+  elemText.style.left = "0px";
+  elemText.style.top = "0px";
 }
 
 export function scrollIn(elemId) {
