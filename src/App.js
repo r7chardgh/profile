@@ -7,11 +7,41 @@ import { fadeIn, moveImgPos, resetImgPos } from "./animations/anim.js";
 class App extends Component {
   state = {
     options: [
-      { id: 1, title: "About Me", link: "#aboutme", isSelected: false },
-      { id: 2, title: "Skills", link: "#skills", isSelected: false },
-      { id: 3, title: "Exp.", link: "#exp", isSelected: false },
-      { id: 4, title: "Works", link: "#works", isSelected: false },
-      { id: 5, title: "Contact", link: "#contact", isSelected: false }
+      {
+        id: 1,
+        title: "About Me",
+        link: "#aboutme",
+        isSelected: false,
+        faClass: "fas fa-id-card"
+      },
+      {
+        id: 2,
+        title: "Skills",
+        link: "#skills",
+        isSelected: false,
+        faClass: "fas fa-id-card"
+      },
+      {
+        id: 3,
+        title: "Exp.",
+        link: "#exp",
+        isSelected: false,
+        faClass: "fas fa-id-card"
+      },
+      {
+        id: 4,
+        title: "Works",
+        link: "#works",
+        isSelected: false,
+        faClass: "fas fa-id-card"
+      },
+      {
+        id: 5,
+        title: "Contact",
+        link: "#contact",
+        isSelected: false,
+        faClass: "fas fa-id-card"
+      }
     ]
   };
 
@@ -23,7 +53,6 @@ class App extends Component {
     });
   }
   componentDidUpdate() {
-    fadeIn("avatar");
     document.getElementById("avatar").classList.add("a-f");
     document.getElementById("avatar-wrap").classList.add("aw-f");
     document.getElementById("a-t").style.display = "none";
