@@ -43,7 +43,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 30%;
 }
 .nav-text {
   position: relative;
@@ -55,7 +55,7 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background-color: #4c6d05;
+  background-color: #1a9dd1;
   -webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   -webkit-transform: translate(-50%, -50%);
@@ -82,7 +82,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
 }
-
 .avatar {
   background: url(./images/IMG_0584.JPG);
   position: relative;
@@ -167,7 +166,7 @@
   }
 }
 .aw-f {
-  position: static;
+  position: relative;
   left: 0%;
   width: 30%;
 }
@@ -233,8 +232,8 @@
 /*svg icon*/
 .svg-wrap {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   transition: transform 1s;
 }
 
@@ -246,18 +245,109 @@ svg * {
   transform-origin: center;
   transform-box: fill-box;
 }
+.nav-link:hover #head {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: nodHead 0.5s ease-in infinite alternate;
+}
 .nav-link:hover #tie {
-  animation: tieIt 1s ease-in-out infinite alternate;
+  animation: knot 1s ease-in-out infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }
-@keyframes tieIt {
+.nav-link:hover #arrow-left {
+  animation: arrowMoveLeft 1s ease-in-out infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.nav-link:hover #arrow-right {
+  animation: arrowMoveRight 1s ease-in-out infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.nav-link:hover #sun {
+  fill: rgb(121, 119, 119);
+  animation: sunRotate 2s 0.4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.nav-link:hover #moon {
+  fill: rgb(121, 119, 119);
+  animation: sunRotate 2s 1.4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.nav-link:hover .letter {
+  animation: letterOut 1s ease-in-out infinite alternate;
+  transform-origin: center;
+  transform-box: border-box;
+}
+
+@keyframes nodHead {
+  from {
+    transform: rotateX(0deg) translateY(0px);
+    stroke: currentColor;
+  }
+  to {
+    transform: rotateX(30deg) translateY(60px);
+    stroke: rgb(121, 119, 119);
+  }
+}
+@keyframes knot {
   from {
     transform: rotateY(0deg);
     fill: currentColor;
   }
   to {
     transform: rotateY(60deg);
+    fill: rgb(121, 119, 119);
+  }
+}
+@keyframes arrowMoveLeft {
+  from {
+    transform: translateX(0);
+    fill: currentColor;
+  }
+  to {
+    transform: translateX(-30px);
+    fill: rgb(121, 119, 119);
+  }
+}
+@keyframes arrowMoveRight {
+  from {
+    transform: translateX(0);
+    fill: currentColor;
+  }
+  to {
+    transform: translateX(30px);
+    fill: rgb(121, 119, 119);
+  }
+}
+@keyframes sunRotate {
+  0% {
+    transform: rotateZ(0deg);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  70% {
+    transform: rotateZ(350deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateZ(360deg);
+    opacity: 1;
+  }
+}
+@keyframes letterOut {
+  from {
+    transform: translateY(0);
+    fill: currentColor;
+  }
+  to {
+    transform: translateY(-21px);
     fill: rgb(121, 119, 119);
   }
 }
