@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap");
+* {
+  font-family: "Playfair Display", serif;
+}
 .app {
   width: 80vw;
   height: 80vh;
@@ -93,11 +96,20 @@
   /* opacity: 0.3; */
   transition: transform 1s, filter 1s;
   filter: blur(3px) grayscale(69%);
+  animation: loadBright 0.3s ease-in-out 0.3s;
+}
+@keyframes loadBright {
+  from {
+    filter: brightness(10);
+  }
+  to {
+    filter: brightness(0);
+  }
 }
 .avatar:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
   filter: blur(0px) grayscale(0%) saturate(1.3);
 }
 .avatar-load {
@@ -116,11 +128,27 @@
   top: 0px;
   margin-top: 20%;
   font-size: 9em;
+  line-height: 1.3em;
   z-index: 1;
   filter: blur(0px);
-
   transition: transform 1.2s, filter 1s, opacity 1s;
   transition-timing-function: ease-in-out;
+}
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  animation: animated-text 1.5s steps(13, end) 1s 1 normal both;
+}
+@keyframes animated-text {
+  from {
+    opacity: 0;
+    width: 0%;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
 }
 .avatar:hover + .avatar-text {
   -ms-transform: scale(9); /* IE 9 */
@@ -130,10 +158,10 @@
   opacity: 0.3;
 }
 .avatar-anim {
-  animation: loadAvatar 2s;
+  /* animation: loadAvatar 2s; */
 }
 .avatar-text-anim {
-  animation: loadAvatarText 2s;
+  /* animation: loadAvatarText 2s; */
 }
 @keyframes loadAvatar {
   from {
@@ -210,19 +238,19 @@
   width: 100%;
   height: 80%;
   padding: 5%;
-  display: flex;
-  flex-flow: row wrap;
   justify-content: space-around;
   overflow: auto;
 }
-.info-content {
+.info-wrap {
+  display: inline-block;
+  border-radius: 9px;
   color: white;
-  background-color: aquamarine;
+  background-color: cyan;
   text-align: center;
   font-size: 1.2em;
-  line-height: 10vh;
+  line-height: 8vh;
   width: 100%;
-  height: 10vh;
+  height: 8vh;
 }
 .footer {
   text-align: center;
@@ -389,4 +417,8 @@ svg * {
 }
 .card-text:hover {
   color: black;
+}
+/*bar*/
+.bar-wrap {
+  background-color: cadetblue;
 }

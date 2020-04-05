@@ -14,14 +14,14 @@ export function fadeIn(elemId) {
 }
 export function fadeInFromRight(elemId) {
   const elem = document.getElementById(elemId);
-  let padLeft = 100;
+  let padLeft = -100;
   function increase() {
-    if (padLeft <= 0) {
+    if (padLeft >= 0) {
       elem.style.marginLeft = "0%";
       return true;
     }
     elem.style.marginLeft = padLeft + "%";
-    padLeft -= 3;
+    padLeft += 3;
     requestAnimationFrame(increase);
   }
   fadeIn(elemId);
@@ -70,4 +70,11 @@ export function cursorLightAnimation(event, elemId) {
   let y = event.nativeEvent.offsetY;
   targetE.style.top = y + "px";
   targetE.style.left = x + "px";
+}
+
+export function nameAnimation(elemId) {
+  const elem = document.getElementById(elemId);
+}
+function getRandom() {
+  return Math.random();
 }

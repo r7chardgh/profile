@@ -44,7 +44,6 @@ class App extends Component {
       }
     ]
   };
-
   componentDidMount() {
     fadeIn("avatar");
     this.state.options.forEach(o => {
@@ -71,6 +70,7 @@ class App extends Component {
     if (bool) document.getElementById(id).classList.add("locked-btn");
     else document.getElementById(id).classList.remove("locked-btn");
   };
+
   render() {
     return (
       <React.Fragment>
@@ -97,7 +97,7 @@ class App extends Component {
               }}
             ></div>
             <span id="a-t" className="avatar-text avatar-text-anim">
-              Richard Tsang
+              <p className="typing">Richard Tsang</p>
             </span>
           </div>
 
