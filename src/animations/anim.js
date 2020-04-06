@@ -51,7 +51,7 @@ export function scrollIn(elemId) {
   const elem = document.getElementById(elemId);
   let target = document.querySelectorAll(".scroll-Target");
 
-  [].forEach.call(target, function(t, i) {
+  [].forEach.call(target, function (t, i) {
     if (t.classList.contains("scrolled")) {
       return;
     } else {
@@ -77,4 +77,19 @@ export function nameAnimation(elemId) {
 }
 function getRandom() {
   return Math.random();
+}
+
+export function insertPhoto(elemId) {
+  const elem = document.getElementById(elemId);
+  let x = -100;
+  function increase() {
+    if (x >= 0) {
+      elem.style.top = "0%";
+      return true;
+    }
+    elem.style.top = x + "%";
+    x += 3;
+    requestAnimationFrame(increase);
+  }
+  increase();
 }

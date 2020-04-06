@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
-import { fadeIn, moveImgPos, resetImgPos } from "./animations/anim.js";
+import {
+  insertPhoto,
+  fadeIn,
+  moveImgPos,
+  resetImgPos,
+} from "./animations/anim.js";
 
 class App extends Component {
   state = {
@@ -12,52 +17,54 @@ class App extends Component {
         title: "About Me",
         link: "#aboutme",
         isSelected: false,
-        faClass: "fas fa-id-card"
+        faClass: "fas fa-id-card",
       },
       {
         id: 2,
         title: "Skills",
         link: "#skills",
         isSelected: false,
-        faClass: "fas fa-id-card"
+        faClass: "fas fa-id-card",
       },
       {
         id: 3,
         title: "Exp.",
         link: "#exp",
         isSelected: false,
-        faClass: "fas fa-id-card"
+        faClass: "fas fa-id-card",
       },
       {
         id: 4,
         title: "Works",
         link: "#works",
         isSelected: false,
-        faClass: "fas fa-id-card"
+        faClass: "fas fa-id-card",
       },
       {
         id: 5,
         title: "Contact",
         link: "#contact",
         isSelected: false,
-        faClass: "fas fa-id-card"
-      }
-    ]
+        faClass: "fas fa-id-card",
+      },
+    ],
   };
   componentDidMount() {
     fadeIn("avatar");
-    this.state.options.forEach(o => {
+    this.state.options.forEach((o) => {
       if (window.location.href.indexOf(o.link) > -1)
         this.handleSwitchPage(o.id);
     });
   }
   componentDidUpdate() {
+    document.getElementById("avatar").style.animation = "none";
     document.getElementById("avatar").classList.add("a-f");
     document.getElementById("avatar-wrap").classList.add("aw-f");
     document.getElementById("a-t").style.display = "none";
+    insertPhoto("avatar");
   }
-  handleSwitchPage = id => {
-    const options = this.state.options.map(o => {
+  handleSwitchPage = (id) => {
+    const options = this.state.options.map((o) => {
       if (o.id === id) o.isSelected = true;
       else o.isSelected = false;
       this.lockButton(o.id, o.isSelected);
@@ -75,6 +82,11 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="app">
+          <span className="transitAni-wrap">
+            <span id="trans1" className="transN"></span>
+            <span id="trans2" className="transN"></span>
+            <span id="trans3" className="transN"></span>
+          </span>
           <NavBar onSP={this.handleSwitchPage} options={this.state.options} />
           <div id="avatar-wrap" className="avatar-wrap">
             <div
@@ -89,7 +101,7 @@ class App extends Component {
                   .getElementById("a-t")
                   .classList.remove("avatar-text-anim");
               }}
-              onMouseMove={event => {
+              onMouseMove={(event) => {
                 moveImgPos(event, "avatar");
               }}
               onMouseLeave={() => {
