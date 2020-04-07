@@ -81,15 +81,59 @@ function getRandom() {
 
 export function insertPhoto(elemId) {
   const elem = document.getElementById(elemId);
-  let x = -100;
-  function increase() {
-    if (x >= 0) {
-      elem.style.top = "0%";
-      return true;
-    }
-    elem.style.top = x + "%";
-    x += 3;
-    requestAnimationFrame(increase);
-  }
-  increase();
+  let ran = Math.random() + 1;
+  elem.style.transform = "scale(" + ran + ")";
+  // let x = -100;
+  // function increase() {
+  //   if (x >= 0) {
+  //     elem.style.top = "0%";
+  //     return true;
+  //   }
+  //   elem.style.top = x + "%";
+  //   x += 3;
+  //   requestAnimationFrame(increase);
+  // }
+  // increase();
 }
+
+// export function transitPage(elemId) {
+//   const elemChlidList = document.getElementById(elemId).childNodes;
+//   const elemChlidArray = Array.apply(null, elemChlidList);
+//   let ltr = 0,
+//     rtl = 100;
+
+//   async function asyncIncrease() {
+//     for (const e of elemChlidArray) {
+//       console.log(e);
+//       let timer = Date.now();
+//       let now = Date.now();
+
+//       function increase() {
+//         if (ltr >= 100) {
+//           e.style.left = "100%";
+//           e.style.opacity = "100%";
+//           return true;
+//         }
+//         e.style.left = ltr;
+//         e.style.opacity = ltr;
+//         ltr += 1;
+//         requestAnimationFrame(increase);
+//       }
+//       function loop() {
+//         new Promise(() => {
+//           setTimeout(() => {
+//             if (now - timer >= 1000) {
+//               return true;
+//             } else {
+//               now = Date.now();
+//               requestAnimationFrame(loop);
+//             }
+//           }, 2000);
+//         });
+//       }
+//       await loop();
+//       increase();
+//     }
+//   }
+//   asyncIncrease();
+// }

@@ -57,6 +57,7 @@ class App extends Component {
     });
   }
   componentDidUpdate() {
+    // transitPage("trans-wrap");
     document.getElementById("avatar").style.animation = "none";
     document.getElementById("avatar").classList.add("a-f");
     document.getElementById("avatar-wrap").classList.add("aw-f");
@@ -82,7 +83,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="app">
-          <span className="transitAni-wrap">
+          <span id="trans-wrap" className="transitAni-wrap">
             <span id="trans1" className="transN"></span>
             <span id="trans2" className="transN"></span>
             <span id="trans3" className="transN"></span>

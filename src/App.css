@@ -13,7 +13,7 @@
   min-height: 620px;
   background-color: rgb(90, 90, 90);
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 4% auto 3% auto;
   overflow: hidden;
@@ -29,7 +29,6 @@
   overflow: hidden;
   display: flex;
   flex-flow: row wrap;
-  opacity: 0;
 }
 .transN {
   position: relative;
@@ -38,6 +37,8 @@
   background-color: cyan;
   left: 0;
   top: 0;
+  opacity: 0;
+  transition: left 1s;
 }
 .nav-wrap {
   width: 5%;
@@ -217,7 +218,7 @@
   animation: loadAvatar 2s;
 }
 .avatar-text-anim {
-  animation: loadAvatarText 0.6s ease-in-out;
+  animation: loadAvatarText 3s ease-in-out;
 }
 @keyframes loadAvatar {
   from {
@@ -235,12 +236,12 @@
 }
 @keyframes loadAvatarText {
   from {
-    transform: scale(0.1);
+    transform: scaleY(1.1) scaleX(1.1);
     opacity: 0;
     filter: blur(18px);
   }
   to {
-    transform: scale(1);
+    transform: scaleY(1) scaleX(1);
     opacity: 1;
     filter: blur(0);
   }
