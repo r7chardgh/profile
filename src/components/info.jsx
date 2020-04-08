@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import { scrollIn } from "../animations/anim.js";
 import photo1 from "../images/avatar.jpg";
 class Info extends Component {
-  state = {};
+  state = {
+    person:{
+      name:"Richard Tsang",
+      langs:[{type:"English",level:"Advanced"}, {type:"Cantonese",level:"Native"}, {type:"Mandarin",level:"Advanced"}],
+      living:"Hong Kong",
+      blog:[{type:"IT Blog", link:"https://blog.3bro.info/"},{type:"Personal Blog", link:"https://richard.3bro.info/"}],
+      email:"richardtcfung@gmail.com",
+      intro:"Fresh graduated computer-science student looking for fun and challenging career in web developing field. Passionate about solving puzzles and creating things."
+    }
+  };
   render() {
     if (!this.props.option.isSelected) return null;
 
