@@ -5,11 +5,12 @@ class Info extends Component {
   state = {
     person:{
       name:"Richard Tsang",
-      langs:[{type:"English",level:"Advanced"}, {type:"Cantonese",level:"Native"}, {type:"Mandarin",level:"Advanced"}],
+      langs:[{id:1,type:"Cantonese",level:"Native"},{id:2,type:"English",level:"Advanced"}, {id:3,type:"Mandarin",level:"Advanced"}],
       living:"Hong Kong",
-      blog:[{type:"IT Blog", link:"https://blog.3bro.info/"},{type:"Personal Blog", link:"https://richard.3bro.info/"}],
+      blog:[{id:1,type:"IT Blog", link:"https://blog.3bro.info/"},{id:2,type:"Personal Blog", link:"https://richard.3bro.info/"}],
       email:"richardtcfung@gmail.com",
-      intro:"Fresh graduated computer-science student looking for fun and challenging career in web developing field. Passionate about solving puzzles and creating things."
+      intro:"Fresh graduated computer-science student looking for fun and challenging career in web developing field. Passionate about solving puzzles and creating things.",
+      interest:[{id:1,item:"Workout"},{id:2,item:"Music"},{id:3,item:"Basketball"},{id:4,item:"Food"}, {id:5,item:"Hiking"}, {id:6,item:"Gaming"}]
     }
   };
   render() {
@@ -19,25 +20,13 @@ class Info extends Component {
       <div id="aboutme" onScroll={() => scrollIn("aboutme")} className="page">
         <h1 className="page-title">{this.props.option.title}</h1>
         <main className="page-content">
-    <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span><span id="info-data">{this.state.person.name}</span></div>
-          <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span><span id="info-data">{this.state.person.living}</span></div>
-          <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span><span id="info-data">{this.state.person.intro}</span></div>
-          <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span><span id="info-data">{this.state.person.email}</span></div>
-          <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span>{this.state.person.langs.map(b=><span key={b.type}>{b.type}:{b.level}</span>)}</div>
-    <div className="scroll-Target info-wrap scrolled"><span id="info-tag">#tag: </span>{this.state.person.blog.map(b=><span key={b.type}>{b.type}:{b.link}</span>)}</div>
-
-          <div className="card-wrap">
-            <img className="card-image" src="../images/avatar.jpg" alt="card" />
-            <div className="card-text">This is random text.</div>
-          </div>
-          <div className="card-wrap">
-            <img className="card-image" src="../images/avatar.jpg" alt="card" />
-            <div className="card-text">This is random text.</div>
-          </div>
-          <div className="card-wrap">
-            <img className="card-image" src={photo1} alt="card" />
-            <div className="card-text">This is random text.</div>
-          </div>
+    <div className="info-wrap"><span id="info-tag">Name: </span><span id="info-data">{this.state.person.name}</span></div>
+          <div className="info-wrap"><span id="info-tag">Living Place:</span><span id="info-data">{this.state.person.living}</span></div>
+          <div className="info-wrap"><span id="info-tag">Introduction: </span><span id="info-data">{this.state.person.intro}</span></div>
+          <div className="info-wrap"><span id="info-tag">Email: </span><span id="info-data">{this.state.person.email}</span></div>
+          <div className="info-wrap"><span id="info-tag">Languages: </span><span id="info-data">{this.state.person.langs.map(b=><span key={b.id}>{b.type}:{b.level}</span>)}</span></div>
+    <div className="info-wrap"><span id="info-tag">Blog: </span><span id="info-data">{this.state.person.blog.map(b=><span key={b.id}>{b.type}:{b.link}</span>)}</span></div> 
+    <div className="info-wrap"><span id="info-tag">Interest: </span><span id="info-data">{this.state.person.interest.map(b=><span key={b.id}>{b.item}</span>)}</span></div> 
         </main>
       </div>
     );
