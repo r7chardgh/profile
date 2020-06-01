@@ -4,6 +4,7 @@ export function fadeIn(elemId) {
   function increase() {
     if (opacity >= 1) {
       elem.style.opacity = 1;
+      elem.style.pointerEvents = "auto";
       return true;
     }
     elem.style.opacity = opacity;

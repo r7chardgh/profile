@@ -52,8 +52,10 @@ class App extends Component {
   componentDidMount() {
     fadeIn("avatar");
     this.state.options.forEach((o) => {
+      console.log(window.location.href);
       if (window.location.href.indexOf(o.link) > -1)
         this.handleSwitchPage(o.id);
+      else console.log("...");
     });
   }
   componentDidUpdate() {
