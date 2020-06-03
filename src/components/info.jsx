@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { scrollIn } from "../animations/anim.js";
 import InterestIcon from "./interest.jsx";
 
+const midBox = { width: "48%" };
+const interestCard = { width: "28%" };
 class Info extends Component {
   state = {
     person: {
@@ -37,10 +39,12 @@ class Info extends Component {
         <h1 className="page-title">{this.props.option.title}</h1>
         <main className="page-content">
           <div className="info-wrap">
-            <span id="info-tag">Name: </span>
-            <span id="info-data">{this.state.person.name}</span>
+            {/* <span id="info-tag">Name: </span> */}
+            <span id="info-data" style={{ "font-size": "2.4em" }}>
+              {this.state.person.name}
+            </span>
           </div>
-          <div className="info-wrap">
+          <div className="info-wrap" style={midBox}>
             <span id="info-tag">Living Place:</span>
             <span id="info-data">{this.state.person.living}</span>
           </div>
@@ -48,11 +52,11 @@ class Info extends Component {
             <span id="info-tag">Introduction: </span>
             <span id="info-data">{this.state.person.intro}</span>
           </div>
-          <div className="info-wrap">
+          <div className="info-wrap" style={midBox}>
             <span id="info-tag">Email: </span>
             <span id="info-data">{this.state.person.email}</span>
           </div>
-          <div className="info-wrap">
+          <div className="info-wrap" style={midBox}>
             <span id="info-tag">Languages: </span>
             <span id="info-data">
               {this.state.person.langs.map((b) => (
@@ -84,7 +88,7 @@ class Info extends Component {
           </div>
           <div className="info-wrap">
             <span id="info-tag">Interest: </span>
-            <span id="info-data">
+            <span id="info-data" style={interestCard}>
               {this.state.person.interest.map((b) => (
                 <span key={b.id}>
                   {b.item}

@@ -79,7 +79,6 @@ export function nameAnimation(elemId) {
 function getRandom() {
   return Math.random();
 }
-
 export function insertPhoto(elemId) {
   const elem = document.getElementById(elemId);
   let ran = Math.random() + 1;
