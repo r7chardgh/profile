@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import { cursorLightAnimation } from "../animations/anim.js";
+import { scrollIntoElem, cursorLightAnimation } from "../animations/anim.js";
 import BtnIcon from "./btnicon.jsx";
 class NavBar extends Component {
   render() {
     return (
       <div className="nav-wrap">
         <ul className="nav">
-          {this.props.options.map(o => (
-            <span
+          {this.props.options.map((o) => (
+            <a
               className="nav-link"
               key={o.id}
               id={o.id}
+              href={o.link}
               onClick={() => {
                 this.props.onSP(o.id);
               }}
-              onMouseMove={event => {
+              onMouseMove={(event) => {
                 cursorLightAnimation(event, o.id);
               }}
             >
@@ -22,7 +23,7 @@ class NavBar extends Component {
               <div className="svg-wrap">
                 <BtnIcon key={o.id} option={o} />
               </div>
-            </span>
+            </a>
           ))}
         </ul>
       </div>

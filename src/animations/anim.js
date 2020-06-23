@@ -28,24 +28,47 @@ export function fadeInFromRight(elemId) {
   fadeIn(elemId);
   increase();
 }
-
+export function scrollIntoElem(elemId) {
+  const elem = document.getElementById(elemId);
+  elem.scrollIntoView();
+}
+export function pageLoad(elemId) {
+  const elem = document.getElementById(elemId);
+  elem.childNodes[0].classList.remove("load");
+  elem.childNodes[1].classList.remove("load");
+}
 export function moveImgPos(event, elemId) {
   const elem = document.getElementById(elemId);
-  const elemText = document.getElementById("a-t");
   let x = event.nativeEvent.offsetX;
   let y = event.nativeEvent.offsetY;
-  elem.style.left = -x * 0.03 + "px";
-  elem.style.top = -y * 0.03 + "px";
-  elemText.style.left = x * 0.06 + "px";
-  elemText.style.top = y * 0.06 + "px";
+  const avatarHeight = elem.offsetHeight;
+  const avatarWidth = elem.offsetWidth;
+  if (x > avatarWidth / 2) {
+    if (y > avatarHeight / 2) {
+      elem.classList = "avatar moveBottomRight";
+    } else {
+      elem.classList = "avatar moveTopRight";
+    }
+  } else {
+    if (y > avatarHeight / 2) {
+      elem.classList = "avatar moveBottomLeft";
+    } else {
+      elem.classList = "avatar moveTopLeft";
+    }
+  }
+  // elem.style.left = -x * 0.03 + "px";
+  // elem.style.top = -y * 0.03 + "px";
+  // elemText.style.left = x * 0.06 + "px";
+  // elemText.style.top = y * 0.06 + "px";
 }
 export function resetImgPos(elemId) {
   const elem = document.getElementById(elemId);
-  const elemText = document.getElementById("a-t");
-  elem.style.left = "0px";
-  elem.style.top = "0px";
-  elemText.style.left = "0px";
-  elemText.style.top = "0px";
+  // const elemText = document.getElementById("a-t");
+  elem.classList = "avatar";
+  // elem.style.left = "0px";
+  // elem.style.top = "0px";
+  // elemText.style.left = "0px";
+  // elemText.style.top = "0px";
 }
 
 export function scrollIn(elemId) {
@@ -75,9 +98,6 @@ export function cursorLightAnimation(event, elemId) {
 
 export function nameAnimation(elemId) {
   const elem = document.getElementById(elemId);
-}
-function getRandom() {
-  return Math.random();
 }
 export function insertPhoto(elemId) {
   const elem = document.getElementById(elemId);

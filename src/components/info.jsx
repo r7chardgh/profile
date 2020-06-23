@@ -35,12 +35,12 @@ class Info extends Component {
     if (!this.props.option.isSelected) return null;
 
     return (
-      <div id="aboutme" onScroll={() => scrollIn("aboutme")} className="page">
-        <h1 className="page-title">{this.props.option.title}</h1>
-        <main className="page-content">
+      <div id="aboutme" className="page">
+        <h1 className="page-title load">{this.props.option.title}</h1>
+        <main className="page-content load">
           <div className="info-wrap">
             {/* <span id="info-tag">Name: </span> */}
-            <span id="info-data" style={{ "font-size": "2.4em" }}>
+            <span id="info-data" style={{ fontSize: "2.4em" }}>
               {this.state.person.name}
             </span>
           </div>
@@ -99,6 +99,7 @@ class Info extends Component {
               ))}
             </span>
           </div>
+          <div id="1" className="endbar"></div>
         </main>
       </div>
     );

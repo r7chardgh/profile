@@ -41,8 +41,8 @@ class Skill extends Component {
     if (!this.props.option.isSelected) return null;
     return (
       <div id="skills" className="page">
-        <h1 className="page-title">{this.props.option.title}</h1>
-        <main className="page-content">
+        <h1 className="page-title load">{this.props.option.title}</h1>
+        <main className="page-content load">
           <div className="skill-wrap">
             {this.state.skill.map((s) => (
               <div className="skill-card" key={s.type}>
@@ -54,18 +54,18 @@ class Skill extends Component {
                       style={{
                         display: "flex",
                         width: "4.2em",
-                        "background-color": "grey",
-                        "border-radius": "9px",
+                        backgroundColor: "grey",
+                        borderRadius: "9px",
                       }}
                     >
                       <span
                         style={{
-                          "background-color":
+                          backgroundColor:
                             i.level === "familiar"
                               ? "var(--level-high)"
                               : "var(--level-mid)",
                           width: (i.scale / 6) * 100 + "%",
-                          "border-radius": "9px",
+                          borderRadius: "9px",
                         }}
                       ></span>
                     </span>
@@ -74,6 +74,7 @@ class Skill extends Component {
               </div>
             ))}
           </div>
+          <div id="2" className="endbar"></div>
         </main>
       </div>
     );
