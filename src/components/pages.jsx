@@ -12,7 +12,7 @@ import {
 
 class Pages extends Component {
   componentDidUpdate() {
-    console.log("updated");
+    console.log("page-updated");
     const elemId = this.props.options
       .find((e) => e.isSelected)
       .link.replace("#", "");

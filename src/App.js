@@ -63,11 +63,7 @@ class App extends Component {
   }
   componentDidUpdate() {
     // transitPage("trans-wrap");resetImgPos("avatar");
-    document.getElementById("avatarLight").style.animation = "none";
-    document.getElementById("avatar").classList = "avatar a-f";
-    document.getElementById("avatar-shield").style.pointerEvents = "auto";
-    document.getElementById("avatar-wrap").classList.add("aw-f");
-    document.getElementById("a-t").style.display = "none";
+
     insertPhoto("avatar");
     console.log("app-updated");
   }
@@ -119,6 +115,11 @@ class App extends Component {
   };
 
   handleSwitchPage = (id) => {
+    document.getElementById("avatarLight").style.animation = "none";
+    document.getElementById("avatar").classList = "avatar a-f";
+    document.getElementById("avatar-shield").style.pointerEvents = "auto";
+    document.getElementById("avatar-wrap").classList.add("aw-f");
+    document.getElementById("a-t").style.display = "none";
     const options = this.state.options.map((o) => {
       // if (o.id <= id) {
       //   o.isSelected = true;
