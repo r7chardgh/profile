@@ -724,41 +724,49 @@ svg * {
   height: 50px;
   background-color: green;
 }
+/*element for contact page*/
 .contactMsg {
+  width: 100%;
   text-align: left;
   font-size: 36px;
   line-height: 42px;
   color: var(--second-color);
 }
-#myEmail {
-  /* position: absolute;
-  z-index: 3; */
+.copyButton {
   color: var(--main-color-light);
   position: relative;
   text-align: center;
+  border-radius: 15px;
+  border: none;
   margin: 36px auto;
-  /*  */
+  width: 100%;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 64px;
   transition: background-color 0.3s;
-  border: 3px solid white;
 }
-#myEmail:hover {
+.copyButton:hover {
   color: var(--second-color);
   background-color: var(--main-color-light);
 }
-#myEmail:hover .copyTooltip {
-  width: 30%;
+.copyButton::after {
+  content: "Tips: Hover your mouse over my email address to get the message.";
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  top: 48px;
+  height: 0;
+  width: 100%;
+  padding: 0;
+  left: 0;
+  font-size: 0.3em;
+  color: var(--second-color);
 }
 .copyText {
   margin: 18px;
 }
-.copyTooltip {
-  width: 30%;
-  height: 100%;
-  background-color: var(--second-color);
-  color: var(--main-color-light);
-  text-align: center;
-  border-radius: 6px;
-  padding: 6px 0;
+
+/*line-breaker*/
+p.min-break {
+  height: 36px;
+  width: 100%;
 }
