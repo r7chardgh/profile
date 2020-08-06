@@ -6,7 +6,8 @@ class Contact extends Component {
     CopyTextMsg: ["Click me to copy :)", "Copied to your clipboard!"],
   };
   handleDisplayMsg = () => {
-    document.getElementById("myEmail").innerHTML = this.state.CopyTextMsg[0];
+    const target = document.getElementById("myEmail");
+    target.innerHTML = this.state.CopyTextMsg[0];
   };
   handleRemoveMsg = () => {
     document.getElementById("myEmail").innerHTML = this.state.TextToCopy;

@@ -20,7 +20,7 @@ class Info extends Component {
       ],
       email: "richardtcfung@gmail.com",
       intro:
-        "Fresh graduated computer-science student looking for fun and challenging career in web developing field. Passionate about solving puzzles and creating things.",
+        "I'm a code-lover and art-lover. I love coding since I was a high school student. Like many other teens, I love to play website/video games (pokimon or ninja-themed game) at that time. Maybe that's the reason I start to learn coding. After I've got my bachelor degree, I'm currently learning web developing and some design skills via the internet. Hopefully I will be a part of the hacking industry. Art is my second biggest interest, I have done some designs (for homeworks/ for th e promotion my school dragon boat team). The reason I love art is because of its aesthetic feeling, it's just as simple as that.",
       interest: [
         { id: 1, item: "Workout" },
         { id: 2, item: "Music" },
@@ -31,6 +31,13 @@ class Info extends Component {
       ],
     },
   };
+  componentDidUpdate() {
+    this.handleFirstLoad();
+  }
+  handleFirstLoad() {
+    const introData = document.getElementsByClassName("intro-data");
+    console.log(introData);
+  }
   render() {
     if (!this.props.option.isSelected) return null;
 
@@ -38,6 +45,9 @@ class Info extends Component {
       <div id="aboutme" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
+          <div className="intro-wrap">
+            <span className="intro-data load">{this.state.person.intro}</span>
+          </div>
           <div className="info-wrap">
             {/* <span id="info-tag">Name: </span> */}
             <span id="info-data" style={{ fontSize: "2.4em" }}>
@@ -47,10 +57,6 @@ class Info extends Component {
           <div className="info-wrap" style={midBox}>
             <span id="info-tag">Living Place:</span>
             <span id="info-data">{this.state.person.living}</span>
-          </div>
-          <div className="info-wrap">
-            <span id="info-tag">Introduction: </span>
-            <span id="info-data">{this.state.person.intro}</span>
           </div>
           <div className="info-wrap" style={midBox}>
             <span id="info-tag">Email: </span>

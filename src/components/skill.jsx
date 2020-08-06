@@ -37,6 +37,9 @@ class Skill extends Component {
       },
     ],
   };
+  handleCardLoad = () => {
+    console.log("123");
+  };
   render() {
     if (!this.props.option.isSelected) return null;
     return (
