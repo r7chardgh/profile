@@ -45,66 +45,73 @@ class Info extends Component {
       <div id="aboutme" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
-          <div className="intro-wrap">
-            <span className="intro-data load">{this.state.person.intro}</span>
-          </div>
-          <div className="info-wrap">
-            {/* <span id="info-tag">Name: </span> */}
-            <span id="info-data" style={{ fontSize: "2.4em" }}>
-              {this.state.person.name}
-            </span>
-          </div>
-          <div className="info-wrap" style={midBox}>
-            <span id="info-tag">Living Place:</span>
-            <span id="info-data">{this.state.person.living}</span>
-          </div>
-          <div className="info-wrap" style={midBox}>
-            <span id="info-tag">Email: </span>
-            <span id="info-data">{this.state.person.email}</span>
-          </div>
-          <div className="info-wrap" style={midBox}>
-            <span id="info-tag">Languages: </span>
-            <span id="info-data">
-              {this.state.person.langs.map((b) => (
-                <span key={b.id}>
-                  {b.type}:{" "}
-                  <span
-                    style={{
-                      color:
-                        b.level === "Native"
-                          ? "var(--level-high)"
-                          : "var(--level-mid)",
-                    }}
-                  >
-                    {b.level}
+          {/*INFO SECTION*/}
+          <div className="info-section">
+            <div
+              className="info-wrap"
+              stlye={{ "justify-content": "flex-start" }}
+            >
+              {/* <span id="info-tag">Name: </span> */}
+              <span id="info-data" style={{ fontSize: "3.8em" }}>
+                {this.state.person.name}
+              </span>
+            </div>
+            <div className="intro-wrap">
+              <span className="intro-data load">{this.state.person.intro}</span>
+            </div>
+            <div className="info-wrap">
+              <span id="info-tag">Living Place:</span>
+              <span id="info-data">{this.state.person.living}</span>
+            </div>
+            <div className="info-wrap">
+              <span id="info-tag">Email: </span>
+              <span id="info-data">{this.state.person.email}</span>
+            </div>
+            <div className="info-wrap">
+              <span id="info-tag">Languages: </span>
+              <span id="info-data">
+                {this.state.person.langs.map((b) => (
+                  <span key={b.id}>
+                    {b.type}:{" "}
+                    <span
+                      style={{
+                        color:
+                          b.level === "Native"
+                            ? "var(--level-high)"
+                            : "var(--level-mid)",
+                      }}
+                    >
+                      {b.level}
+                    </span>
                   </span>
-                </span>
-              ))}
-            </span>
-          </div>
-          <div className="info-wrap">
-            <span id="info-tag">Blog: </span>
-            <span id="info-data">
-              {this.state.person.blog.map((b) => (
-                <span key={b.id}>
-                  {b.type}:{b.link}
-                </span>
-              ))}
-            </span>
-          </div>
-          <div className="info-wrap">
-            <span id="info-tag">Interest: </span>
-            <span id="info-data" style={interestCard}>
-              {this.state.person.interest.map((b) => (
-                <span key={b.id}>
-                  {b.item}
-                  <span className="interest-icon">
-                    <InterestIcon id={b.id} />
+                ))}
+              </span>
+            </div>
+            <div className="info-wrap">
+              <span id="info-tag">Blog: </span>
+              <span id="info-data">
+                {this.state.person.blog.map((b) => (
+                  <span key={b.id}>
+                    {b.type}:{b.link}
                   </span>
-                </span>
-              ))}
-            </span>
+                ))}
+              </span>
+            </div>
+            <div className="info-wrap">
+              <span id="info-tag">Interest: </span>
+              <span id="info-data">
+                {this.state.person.interest.map((b) => (
+                  <span key={b.id}>
+                    {b.item}
+                    <span className="interest-icon">
+                      <InterestIcon id={b.id} />
+                    </span>
+                  </span>
+                ))}
+              </span>
+            </div>
           </div>
+
           <div id="1" className="endbar"></div>
         </main>
       </div>
