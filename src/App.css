@@ -15,6 +15,10 @@
 * {
   font-family: "Playfair Display", serif;
 }
+::selection{
+  background:var(--main-color-light);
+  color:var(--second-color);
+}
 #root {
   height: 100vh;
   width: 100vw;
@@ -753,43 +757,58 @@ svg * {
   line-height: 42px;
   color: var(--second-color);
 }
-.copyButton {
-  color: var(--main-color-light);
-  position: relative;
+.copyBar {
   text-align: center;
   border-radius: 15px;
-  border: none;
+  background-color: var(--second-color);
+  padding:9px;
   margin: 36px auto;
   width: 100%;
-  font-size: 36px;
   line-height: 64px;
-  transition: background-color 0.3s;
-  transition: ease-in-out 0.6s;
+  display: flex;
+  position: relative;
 }
-.copyButton:hover {
-  color: var(--second-color);
-  background-color: var(--main-color-light);
-}
-.copyButton::after {
-  content: "Tips: Hover your mouse over my email address to get the message.";
-  pointer-events: none;
+.copyLabel{
+  height: 16px;
+  padding: 0px 6px;
+  background: var(--second-color);
+  color: var(--third-color);
+  line-height: 16px;
   position: absolute;
-  z-index: 1;
-  top: 48px;
-  height: 0;
-  width: 100%;
-  padding: 0;
-  left: 0;
-  font-size: 0.3em;
-  color: var(--second-color);
+  left: 36px;
+  top: 3px;
 }
 .copyText {
-  margin: 18px;
+  outline:none;
+  padding: 12px 0px;
+  border: 1px solid var(--third-color);
+  border-right: none;
+  border-radius: 12px 0px 0px 12px;
+  font-size: 36px;
+  text-align: center;
+  width: 90%;
+  transition: 0.3s;
 }
-.focusOnCopyBtn {
-  opacity: 1;
+.copyText:focus{
+  border: 3px solid var(--main-color);
+  border-right: none;
+  padding:10px;
 }
-
+.copyText:hover+.copyLabel{
+  color:red;
+}
+.copyButton{
+  background-color: var(--third-color);
+  color:var(--second-color);
+  border:0;
+  border-radius: 0px 12px 12px 0px;
+  width: 10%;
+  transition: ease-in-out 0.3s;
+}
+.copyButton:hover{
+  font-size: 16px;
+  background-color: var(--main-color);
+}
 /*line-breaker*/
 p.min-break {
   height: 36px;

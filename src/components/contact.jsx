@@ -13,16 +13,16 @@ class Contact extends Component {
     document.getElementById("myEmail").innerHTML = this.state.TextToCopy;
   };
   handleCopy = () => {
-    const copyInput = document.createElement("input");
-    const copyText = document.getElementById("myEmail");
-    copyInput.value = copyText.value;
-    copyInput.id = "myInput";
-    document.body.appendChild(copyInput);
-    copyInput.select();
-    copyInput.setSelectionRange(0, 99999);
+    // const copyInput = document.createElement("input");
+    const copyText = document.getElementById("copyText");
+    // copyInput.value = copyText.value;
+    // copyInput.id = "myInput";
+    // document.body.appendChild(copyInput);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    document.body.removeChild(copyInput);
-    document.getElementById("myEmail").innerHTML = this.state.CopyTextMsg[1];
+    // document.body.removeChild(copyInput);
+    // document.getElementById("copyText").innerHTML = this.state.CopyTextMsg[1];
   };
   render() {
     if (!this.props.option.isSelected) return null;
@@ -32,22 +32,27 @@ class Contact extends Component {
         <main className="page-content load">
           <p className="contactMsg">
             Whether you have any questions for me or comments about my website,
-            feel free to send me an email to let me know:
+            feel free to send me an email to let me know.
+            <br></br>I am all ears.
           </p>
           <p className="min-break" />
-          <button
-            className="copyButton"
-            type="text"
-            value="richardtcfung@gmail.com"
-            id="myEmail"
-            onMouseOver={this.handleDisplayMsg}
-            onMouseLeave={this.handleRemoveMsg}
-            onMouseDown={this.handleCopy}
-          >
-            {this.state.TextToCopy}
-          </button>
+          <div className="copyBar">
+            <label for="copyText" className="copyLabel">Email</label>
+            <input
+              className="copyText"
+              id="copyText"
+              value={this.state.TextToCopy}
+              // onMouseOver={this.handleDisplayMsg}
+              // onMouseLeave={this.handleRemoveMsg}
+              // onMouseDown={this.handleCopy}
+              onClick={this.handleCopy}
+              spellcheck="false"
+              readonly
+            />
+            <button onClick={this.handleCopy} className="copyButton">press</button>
+          </div>
+
           <p className="min-break" />
-          <p className="contactMsg">I am all ears.</p>
         </main>
       </div>
     );
