@@ -149,6 +149,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        
         <div className="app">
           {/* <span id="trans-wrap" className="transitAni-wrap">
             <span id="trans1" className="transN"></span>
@@ -193,6 +194,10 @@ class App extends Component {
             <span id="a-t" className="avatar-text">
               <p className="typing">Richard Tsang</p>
             </span>
+            {/* <video  className="avatarLight" width="320" height="240" autoplay="autoplay" loop>
+  <source src="/movie.mp4" type="video/mp4"/>    
+  Your browser does not support the video tag.
+</video> */}
             <div id="avatarLight" className="avatarLight"></div>
           </div>
         </div>

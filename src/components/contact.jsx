@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-
+import {ReactComponent as Clipboard} from "../icon/button/clipboard.svg"
 class Contact extends Component {
   state = {
     TextToCopy: "richardtcfung@gmail.com",
     CopyTextMsg: ["Click me to copy :)", "Copied to your clipboard!"],
   };
-  handleDisplayMsg = () => {
-    const target = document.getElementById("myEmail");
-    target.innerHTML = this.state.CopyTextMsg[0];
-  };
-  handleRemoveMsg = () => {
-    document.getElementById("myEmail").innerHTML = this.state.TextToCopy;
-  };
+  handleBtnIconChange(){
+    const target = document.getElementsByClassName("clipboard");
+    target[0].classList.add("checked");
+  }
   handleCopy = () => {
     // const copyInput = document.createElement("input");
     const copyText = document.getElementById("copyText");
@@ -23,6 +20,7 @@ class Contact extends Component {
     document.execCommand("copy");
     // document.body.removeChild(copyInput);
     // document.getElementById("copyText").innerHTML = this.state.CopyTextMsg[1];
+    this.handleBtnIconChange();
   };
   render() {
     if (!this.props.option.isSelected) return null;
@@ -37,7 +35,7 @@ class Contact extends Component {
           </p>
           <p className="min-break" />
           <div className="copyBar">
-            <label for="copyText" className="copyLabel">Email</label>
+            
             <input
               className="copyText"
               id="copyText"
@@ -48,8 +46,8 @@ class Contact extends Component {
               onClick={this.handleCopy}
               spellcheck="false"
               readonly
-            />
-            <button onClick={this.handleCopy} className="copyButton">press</button>
+            /><label for="copyText" className="copyLabel">Email</label>
+            <button onClick={this.handleCopy} className="copyButton"><Clipboard /></button>
           </div>
 
           <p className="min-break" />

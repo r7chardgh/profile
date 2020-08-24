@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { scrollIn } from "../animations/anim.js";
 import InterestIcon from "./interest.jsx";
 
-const midBox = { width: "48%" };
+const noWidth = { width: "auto" };
 const interestCard = { width: "28%" };
 class Info extends Component {
   state = {
@@ -44,36 +44,38 @@ class Info extends Component {
     return (
       <div id="aboutme" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
-        <main className="page-content load">
-          {/*INFO SECTION*/}
-          <div className="info-section">
-            <div
-              className="info-wrap"
-              stlye={{ "justify-content": "flex-start" }}
+        <main className="page-content load"><div
+              className="name-wrap"
+              style={{ "justify-content": "flex-start" }}
             >
               {/* <span id="info-tag">Name: </span> */}
-              <span id="info-data" style={{ fontSize: "3.8em" }}>
+              <span id="name-data" className="name-data">
                 {this.state.person.name}
               </span>
             </div>
             <div className="intro-wrap">
               <span className="intro-data load">{this.state.person.intro}</span>
             </div>
-            <div className="info-wrap">
+          {/*INFO SECTION*/}
+          <div className="info-section">
+            
+            
+            <div className="info-wrap" style={noWidth}>
               <span id="info-tag">Living Place:</span>
-              <span id="info-data">{this.state.person.living}</span>
+              <span id="info-data"style={noWidth}>{this.state.person.living}</span>
             </div>
-            <div className="info-wrap">
+            <div className="info-wrap"style={noWidth}>
               <span id="info-tag">Email: </span>
-              <span id="info-data">{this.state.person.email}</span>
+              <span id="info-data"style={noWidth}>{this.state.person.email}</span>
             </div>
             <div className="info-wrap">
               <span id="info-tag">Languages: </span>
               <span id="info-data">
                 {this.state.person.langs.map((b) => (
-                  <span key={b.id}>
-                    {b.type}:{" "}
+                  <span key={b.id} className="language">
+                    <span className="langType">{b.type}</span>
                     <span
+                    className="langLevel"
                       style={{
                         color:
                           b.level === "Native"
@@ -91,8 +93,9 @@ class Info extends Component {
               <span id="info-tag">Blog: </span>
               <span id="info-data">
                 {this.state.person.blog.map((b) => (
-                  <span key={b.id}>
-                    {b.type}:{b.link}
+                  <span className="blog" key={b.id}>
+                    <span className="blogType">{b.type}</span>
+                    <a className="blogLink" href={b.link}>{b.link}</a>
                   </span>
                 ))}
               </span>
@@ -101,8 +104,8 @@ class Info extends Component {
               <span id="info-tag">Interest: </span>
               <span id="info-data">
                 {this.state.person.interest.map((b) => (
-                  <span key={b.id}>
-                    {b.item}
+                  <span key={b.id} className="interest">
+                    <span>{b.item}</span>
                     <span className="interest-icon">
                       <InterestIcon id={b.id} />
                     </span>
