@@ -27,10 +27,12 @@
 /*Scrollbar*/
 ::-webkit-scrollbar {
   width: 12px;
+  background-color: var(--third-color-light);
 }
 /* ::-webkit-scrollbar-track {
 } */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb { 
+  border: 1px solid var(--third-color-light);
   border-radius: 6px;
   background: var(--main-color);
 }
@@ -335,7 +337,7 @@
   background-color: var(--third-color);
   
   overflow: auto;
-  box-shadow: inset 0 0 10px rgb(0, 0, 0);
+  box-shadow: inset 0 0 6px rgb(0, 0, 0);
 }
 .page {
   position: relative;
@@ -451,10 +453,6 @@ content: "";
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: ease-in-out 0.3s;
   animation: fadeInText 1s ease-in 1.5s forwards;
-}
-.intro-data:hover {
-  box-shadow: 0 6px 10px 0 rgba(255, 255, 255, 0.5),
-    0 8px 22px 0 rgba(255, 255, 255, 0.5);
 }
 @keyframes fadeInText {
   from {
@@ -923,6 +921,26 @@ p.min-break {
 }
 
 div#aboutme {
-  box-shadow: inset 0 0 10px rgb(0, 0, 0);
+  box-shadow: inset 0 0 6px rgb(0, 0, 0);
   background: var(--main-color);
+}
+
+
+
+/*test*/
+.newtag {
+  font-family: sans-serif;
+  font-weight: bold;
+  position: absolute;
+  background: var(--third-color-light);
+  color: var(--second-color);
+  text-align: center;
+  line-height: 40px;
+  left: -120px;
+  top: 100px;
+  width: 120px;
+  height: 40px;
+  box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* text-shadow: 1px 1px 1px black; */
+  /* border: 3px solid var(--main-color); */
 }

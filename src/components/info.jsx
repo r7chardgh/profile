@@ -40,7 +40,6 @@ class Info extends Component {
   }
   render() {
     if (!this.props.option.isSelected) return null;
-
     return (
       <div id="aboutme" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
@@ -95,7 +94,7 @@ class Info extends Component {
                 {this.state.person.blog.map((b) => (
                   <span className="blog" key={b.id}>
                     <span className="blogType">{b.type}</span>
-                    <a className="blogLink" href={b.link}>{b.link}</a>
+                    <a className="blogLink" href={b.link} target="_blank">{b.link}</a>
                   </span>
                 ))}
               </span>
