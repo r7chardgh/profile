@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/profile/static/css/main.c0817b79.chunk.css",
+    "main.js": "/profile/static/js/main.948778cd.chunk.js",
+    "main.js.map": "/profile/static/js/main.948778cd.chunk.js.map",
+    "runtime-main.js": "/profile/static/js/runtime-main.205febef.js",
+    "runtime-main.js.map": "/profile/static/js/runtime-main.205febef.js.map",
+    "static/js/2.69a631ea.chunk.js": "/profile/static/js/2.69a631ea.chunk.js",
+    "static/js/2.69a631ea.chunk.js.map": "/profile/static/js/2.69a631ea.chunk.js.map",
+    "index.html": "/profile/index.html",
+    "precache-manifest.beb0f078fa488ab16e9297619bd6e9be.js": "/profile/precache-manifest.beb0f078fa488ab16e9297619bd6e9be.js",
+    "service-worker.js": "/profile/service-worker.js",
+    "static/css/main.c0817b79.chunk.css.map": "/profile/static/css/main.c0817b79.chunk.css.map",
+    "static/js/2.69a631ea.chunk.js.LICENSE.txt": "/profile/static/js/2.69a631ea.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/profile/static/media/IMG_05841.644d3e2e.JPG",
+    "static/media/basketball.66234396.svg": "/profile/static/media/basketball.66234396.svg",
+    "static/media/clipboard.5eef75de.svg": "/profile/static/media/clipboard.5eef75de.svg",
+    "static/media/console.a9dbb5fb.svg": "/profile/static/media/console.a9dbb5fb.svg",
+    "static/media/contact-icon.491cb87f.svg": "/profile/static/media/contact-icon.491cb87f.svg",
+    "static/media/exp-icon.70b314bf.svg": "/profile/static/media/exp-icon.70b314bf.svg",
+    "static/media/food.63e82c2c.svg": "/profile/static/media/food.63e82c2c.svg",
+    "static/media/hiking.542b6456.svg": "/profile/static/media/hiking.542b6456.svg",
+    "static/media/music.f03b788f.svg": "/profile/static/media/music.f03b788f.svg",
+    "static/media/profile-icon.d9b5d2e9.svg": "/profile/static/media/profile-icon.d9b5d2e9.svg",
+    "static/media/skill-icon.7d99e7f9.svg": "/profile/static/media/skill-icon.7d99e7f9.svg",
+    "static/media/work-icon.128db03b.svg": "/profile/static/media/work-icon.128db03b.svg",
+    "static/media/workout.9980a08f.svg": "/profile/static/media/workout.9980a08f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.205febef.js",
+    "static/js/2.69a631ea.chunk.js",
+    "static/css/main.c0817b79.chunk.css",
+    "static/js/main.948778cd.chunk.js"
+  ]
+}
