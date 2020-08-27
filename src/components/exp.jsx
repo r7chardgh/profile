@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {scrollProgress} from "../animations/anim.js"
 class Exp extends Component {
   state = {
     exp: {
@@ -45,13 +46,20 @@ class Exp extends Component {
       },
     },
   };
+  handlescrollProgress(){
+    const elem = document.getElementById("timeline-wrap");
+    let winScroll = elem.scrollTop;
+    let height = elem.scrollHeight - elem.clientHeight;
+    let scrolled = (winScroll/height)*100;
+    document.getElementById("timeline-progress-bar").style.width=scrolled+"%";
+    } 
   render() {
     if (!this.props.option.isSelected) return null;
     return (
       <div id="exp" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
-          <div className="timeline-wrap">
+          <div onScroll ={this.handlescrollProgress} className="timeline-wrap" id="timeline-wrap">
             <div className="timeline-inner-wrap">
               <div className="timeline-unit-box" id="b1">
                 <div className="timeline-bar" style={{ order: 1 }}>
@@ -62,6 +70,9 @@ class Exp extends Component {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="timeline-progress-bar-wrap">
+            <div className="timeline-progress-bar"id="timeline-progress-bar"></div>
           </div>
           <div id="3" className="endbar"></div>
         </main>

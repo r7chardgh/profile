@@ -336,7 +336,7 @@
   height: 100%;
   background-color: var(--third-color);
   
-  overflow: auto;
+  overflow: hidden;
   box-shadow: inset 0 0 6px rgb(0, 0, 0);
 }
 .page {
@@ -830,6 +830,18 @@ svg * {
   margin: 30% 0%;
   background-color: red;
 }
+/*timeline progress bar*/
+.timeline-progress-bar-wrap{
+  display: flex;
+  padding: 9px;
+  width: 500px;
+  height: 50px;
+  background-color: grey;
+}
+.timeline-progress-bar{
+  background-color: red;
+}
+/*EndBar*/
 .endbar {
   margin-top: 50%;
   width: 100%;

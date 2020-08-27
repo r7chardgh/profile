@@ -13,11 +13,20 @@ import {
 class Pages extends Component {
   componentDidUpdate() {
     console.log("page-updated");
+    this.setScroll();
+    setTimeout(()=>this.resetScroll(),1000);
     const elemId = this.props.options
       .find((e) => e.isSelected)
       .link.replace("#", "");
     scrollIntoElem(elemId);
     pageLoad(elemId);
+    
+  }
+  setScroll(){
+    document.getElementById("page").style.overflow = "hidden";
+  }
+  resetScroll(){
+    document.getElementById("page").style.overflow = "auto";
   }
   render() {
     return (
@@ -29,6 +38,7 @@ class Pages extends Component {
         <Contact option={this.props.options[4]} />
       </div>
     );
+    
   }
 }
 

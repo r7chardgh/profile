@@ -64,7 +64,10 @@ export function moveImgPos(event, elemId) {
 export function resetImgPos(elemId) {
   const elem = document.getElementById(elemId);
   // const elemText = document.getElementById("a-t");
-  elem.classList = "avatar";
+  elem.classList.remove("moveBottomRight");
+  elem.classList.remove("moveTopRight");
+  elem.classList.remove("moveBottomLeft");
+  elem.classList.remove("moveTopLeft");
   // elem.style.left = "0px";
   // elem.style.top = "0px";
   // elemText.style.left = "0px";
