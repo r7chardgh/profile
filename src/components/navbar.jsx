@@ -5,13 +5,15 @@ class NavBar extends Component {
   render() {
     return (
       <div className="nav-wrap">
-        <ul className="nav">
+        <div className="nav">
           {this.props.options.map((o) => (
+            <React.Fragment>
             <a
               className="nav-link"
               key={o.id}
               id={o.id}
               href={o.link}
+              onMouse
               onClick={() => {
                 this.props.onSP(o.id);
               }}
@@ -24,8 +26,11 @@ class NavBar extends Component {
                 <BtnIcon key={o.id} option={o} />
               </div>
             </a>
+            <div className="tooltip"><p className="tooltip-text">{o.title}</p></div>
+            </React.Fragment>
+            
           ))}
-        </ul>
+        </div>
       </div>
     );
   }

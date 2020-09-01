@@ -19,6 +19,7 @@ class App extends Component {
         link: "#aboutme",
         isSelected: false,
         isFocus: false,
+        isHover:false
       },
       {
         id: 2,
@@ -26,6 +27,7 @@ class App extends Component {
         link: "#skills",
         isSelected: false,
         isFocus: false,
+        isHover:false
       },
       {
         id: 3,
@@ -33,6 +35,7 @@ class App extends Component {
         link: "#exp",
         isSelected: false,
         isFocus: false,
+        isHover:false
       },
       {
         id: 4,
@@ -40,6 +43,7 @@ class App extends Component {
         link: "#works",
         isSelected: false,
         isFocus: false,
+        isHover:false
       },
       {
         id: 5,
@@ -47,10 +51,12 @@ class App extends Component {
         link: "#contact",
         isSelected: false,
         isFocus: false,
-      },
+        isHover:false
+      }
     ],
     lastTop: 0,
     clickBtn: false,
+    avatarIsCover:true
   };
   componentDidMount() {
     fadeIn("avatar");
@@ -63,7 +69,6 @@ class App extends Component {
   }
   componentDidUpdate() {
     // transitPage("trans-wrap");resetImgPos("avatar");
-
     insertPhoto("avatar");
     console.log("app-updated");
   }
@@ -71,7 +76,7 @@ class App extends Component {
     const elemId = document.getElementById("page");
     const target = document.getElementsByClassName("endbar");
     const Uptarget = document.getElementsByClassName("endbar-done");
-    const { options } = this.state;
+    
     let focusPoint = null;
     let newTop = elemId.scrollTop;
     // if (options.find((o) => o.isClicked === true)) {
@@ -115,11 +120,14 @@ class App extends Component {
   };
 
   handleSwitchPage = (id) => {
-    document.getElementById("avatarLight").style.animation = "none";
+    if(this.state.avatarIsCover){
+      document.getElementById("avatarLight").style.animation = "none";
     document.getElementById("avatar").classList = "avatar a-f";
     document.getElementById("avatar-shield").style.pointerEvents = "auto";
     document.getElementById("avatar-wrap").classList.add("aw-f");
     document.getElementById("a-t").style.display = "none";
+    }
+    const avatarIsCover = false;
     const options = this.state.options.map((o) => {
       // if (o.id <= id) {
       //   o.isSelected = true;
@@ -135,7 +143,7 @@ class App extends Component {
       return o;
     });
 
-    this.setState({ options });
+    this.setState({ options,avatarIsCover });
   };
   lockButton = (id, bool) => {
     if (bool) document.getElementById(id).classList.add("locked-btn");
@@ -146,6 +154,10 @@ class App extends Component {
     const { clickBtn } = this.state;
     this.setState({ clickBtn: false });
   };
+  setAvatarState=()=>{
+    const avatarIsCover = true;
+    this.setState({avatarIsCover});
+  }
   render() {
     return (
       <React.Fragment>
@@ -190,6 +202,7 @@ class App extends Component {
               )}
               id="avatar-shield"
               className="avatar-shield"
+              onClick={this.setAvatarState}
             ></a>
             <span id="a-t" className="avatar-text">
               <p className="typing">Richard Tsang</p>
