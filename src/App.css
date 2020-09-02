@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Viga&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Viga&display=swap");
 :root {
   --main-color: #086586;
   --second-color: #fff;
@@ -13,8 +13,8 @@
   --level-mid: #cbce04;
   --level-low: #ce2204;
 }
-body{
-  font-family: "Roboto", "Viga","Playfair Display", sans-serif;
+body {
+  font-family: "Roboto", "Viga", "Playfair Display", sans-serif;
   font-weight: 100;
 }
 ::selection {
@@ -138,22 +138,22 @@ body{
   pointer-events: none;
   background-color: var(--main-color);
 }
-.tooltip{
+.tooltip {
   text-align: center;
-    /* left: -12px; */
-    transform: rotateZ(-90deg);
-    width: 200%;
-    height: 57.6px;
-    line-height: 57.6px;
-    position: absolute;
-    /* top: 36px; */
-    top: 0;
-    transform-origin: bottom;
-    background: var(--main-color-light);
-    font-weight: bold;
-    display: none;
+  /* left: -12px; */
+  transform: rotateZ(-90deg);
+  width: 200%;
+  height: 57.6px;
+  line-height: 57.6px;
+  position: absolute;
+  /* top: 36px; */
+  top: 0;
+  transform-origin: bottom;
+  background: var(--main-color-light);
+  font-weight: bold;
+  display: none;
 }
-.nav-link:hover+.tooltip{
+.nav-link:hover + .tooltip {
   display: block;
 }
 /*avatar*/
@@ -427,7 +427,7 @@ body{
   text-align: center;
 }
 .name-data {
-  font-family:"lobster";
+  font-family: "lobster";
   border: 3px solid var(--main-color);
   padding: 9px;
   display: block;
@@ -470,7 +470,7 @@ body{
   text-align: justify;
   /* background-color:var(--third-color); */
   color: var(--main-color-dark);
-  background-color:var(--main-color-light);
+  background-color: var(--main-color-light);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: ease-in-out 0.3s;
   animation: fadeInText 1s ease-in 1.5s forwards;
@@ -493,7 +493,7 @@ body{
 .info-wrap {
   margin: 9px;
   color: var(--second-color);
-  background-color:var(--main-color-light);
+  background-color: var(--main-color-light);
   width: 100%;
   line-height: 3em;
   border-radius: 15px;
@@ -689,7 +689,6 @@ svg * {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-content: space-between;
 }
 .skill-card {
   position: relative;
@@ -704,7 +703,7 @@ svg * {
   width: 48%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: linear 0.3s;
-  overflow:hidden;
+  overflow: hidden;
 }
 .skill-card:hover {
   /* transform: scale(1.06); */
@@ -974,7 +973,67 @@ div#aboutme {
   box-shadow: inset 0 0 6px rgb(0, 0, 0);
   background: var(--main-color);
 }
-
+/*work*/
+.work-card-wrap {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.work-card {
+  width: 48%;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: var(--third-color-light);
+  color: var(--second-color);
+  padding: 3%;
+  margin-bottom: 24px;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.work-image {
+  background-color: var(--third-color);
+  background-size: contain;
+  width: 100%;
+  border-radius: 9px;
+}
+.work-info{
+  display: flex;
+  flex-flow: column wrap;
+}
+.work-title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2em;
+  font-size: 1.5em;
+}
+.work-type {
+  line-height: 3em;
+  display: flex;
+  font-size: 0.6em;
+  align-self: flex-start;
+}
+.work-description {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  font-size: 1.2em;
+  padding: 18px;
+  border-radius: 9px;
+  background-color: var(--third-color);
+}
+.work-expend {
+  line-height: 2em;
+  border: 0;
+  border-radius: 9px;
+  background-color: var(--main-color);
+  transition: 0.3s;
+  font-family: inherit;
+}
+.work-expend:hover {
+  background-color:var(--main-color-light);
+  color: var(--second-color);
+}
 /*test*/
 .newtag {
   font-weight: bold;
