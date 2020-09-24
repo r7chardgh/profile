@@ -28,7 +28,7 @@ body {
 /*Scrollbar*/
 ::-webkit-scrollbar {
   width: 12px;
-  background-color: var(--third-color-light);
+  /* background-color: var(--third-color-light); */
 }
 /* ::-webkit-scrollbar-track {
 } */
@@ -828,10 +828,13 @@ svg * {
 
 /*timeline*/
 .timeline-wrap {
+  /* border: 30px solid rgb(32, 32, 32); */
+  border-radius: 0px 15px 15px 0px ;
   position: relative;
   background-color: rgb(32, 32, 32);
-  height: 633.6px;
+  height: 663.125px;
   width: 356.4px;
+  margin-bottom: -306.725px;
   transform: rotate(-90deg) translateX(-356.4px);
   transform-origin: left top;
   overflow-y: scroll;
@@ -843,39 +846,72 @@ svg * {
   width: 100%;
   height: 18vh; */
 }
-
+.timeline-wrap::-webkit-scrollbar{
+  display: none;
+}
 .timeline-inner-wrap {
   display: flex;
   flex-direction: row;
+  height: 100px;
   width: 600vw;
-  transform: rotate(90deg) translateY(-356.4px);
+  transform: rotate(90deg) translateY(-100px);
   transform-origin: left top;
   text-align: center;
+}.timeline-year{
+  font-size:128px;
+  color:white;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  transform: rotate(90deg) translateY(-356.4px);
+  transform-origin: left top;
 }
 .timeline-unit-box {
   background-color: grey;
-  height: 356.4px;
-  width: 633.6px;
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   grid-gap: 10px;
 }
 .timeline-bar {
-  grid-row-start: 1;
-  margin: 30% 0%;
+  display: flex;
   background-color: red;
+  flex-flow: row wrap;
+}
+.timeline-bar-items{
+  background-color: blue;
+  margin-right: 5px;
+  position: relative;
+  height: 30px;
+  width: 100px;
+}
+.timeline-bar-items:hover>.timeline-bar-tooltip{
+visibility: visible;
+}
+.timeline-bar-tooltip{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  padding: 6px;
+  height: 30px;
+  width: 100px;
+  background-color: pink;
+  bottom: 30px;
 }
 /*timeline progress bar*/
 .timeline-progress-bar-wrap {
   display: flex;
-  padding: 9px;
-  width: 500px;
-  height: 50px;
+  /* padding: 9px; */
+  height: 12px;
+  width: 663.125px;
   background-color: grey;
+  border-radius: 0px 0px 15px 15px;
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 .timeline-progress-bar {
-  background-color: red;
+  background-color: blue;
 }
 /*EndBar*/
 .endbar {
@@ -979,23 +1015,49 @@ div#aboutme {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  position: relative;
 }
 .work-card {
   width: 48%;
   display: flex;
   flex-flow: column wrap;
-  background-color: var(--third-color-light);
+  background-color: var(--main-color-dark);
   color: var(--second-color);
   padding: 3%;
   margin-bottom: 24px;
   border-radius: 9px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: width 0.6s ease 0.3s, border 0.3s;
+}
+.work-card:nth-child(5n+1){
+background-color:#32a852;
+}
+.work-card:nth-child(5n+2){
+  background-color:#329ca8;
+}
+.work-card:nth-child(5n+3){
+  background-color:#4a32a8;
+}
+.work-card:nth-child(5n+4){
+  background-color:#85a832;
+}
+.work-card:nth-child(5n+5){
+  background-color:#a85532;
+}
+.expanded{
+  border: 9px solid var(--main-color-light);
+  order:-1;
+  width: 100%;
+}
+.work-card-id{
+  margin-bottom: 9px;
 }
 .work-image {
   background-color: var(--third-color);
   background-size: contain;
   width: 100%;
   border-radius: 9px;
+  border: 9px solid white;
 }
 .work-info{
   display: flex;
@@ -1003,12 +1065,12 @@ div#aboutme {
 }
 .work-title {
   display: flex;
-  justify-content: space-between;
-  line-height: 2em;
+  flex-flow:column wrap;
+  line-height: 1.5em;
   font-size: 1.5em;
 }
 .work-type {
-  line-height: 3em;
+ line-height: 1.2em;
   display: flex;
   font-size: 0.6em;
   align-self: flex-start;
@@ -1022,15 +1084,15 @@ div#aboutme {
   border-radius: 9px;
   background-color: var(--third-color);
 }
-.work-expend {
+.work-expand-btn {
   line-height: 2em;
   border: 0;
   border-radius: 9px;
-  background-color: var(--main-color);
+  background-color: var(--second-color);
   transition: 0.3s;
   font-family: inherit;
 }
-.work-expend:hover {
+.work-expand-btn:hover {
   background-color:var(--main-color-light);
   color: var(--second-color);
 }

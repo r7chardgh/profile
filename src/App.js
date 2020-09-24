@@ -9,7 +9,6 @@ import {
   moveImgPos,
   resetImgPos,
 } from "./animations/anim.js";
-
 class App extends Component {
   state = {
     options: [
@@ -56,7 +55,8 @@ class App extends Component {
     ],
     lastTop: 0,
     clickBtn: false,
-    avatarIsCover:true
+    avatarIsCover:true,
+    workKey:false
   };
   componentDidMount() {
     fadeIn("avatar");
@@ -142,8 +142,10 @@ class App extends Component {
       this.lockButton(o.id, o.isSelected);
       return o;
     });
+    let {workKey} = this.state;
+    if(id==4) workKey = !workKey;
 
-    this.setState({ options,avatarIsCover });
+    this.setState({ options,avatarIsCover,workKey });
   };
   lockButton = (id, bool) => {
     if (bool) document.getElementById(id).classList.add("locked-btn");
@@ -157,6 +159,14 @@ class App extends Component {
   setAvatarState=()=>{
     const avatarIsCover = true;
     this.setState({avatarIsCover});
+  }
+  reSetWorkState=()=>{
+    const workIsChanged = false;
+    this.setState({workIsChanged});
+  }
+  updateWorkState=()=>{
+    const workIsChanged = true;
+    this.setState({workIsChanged});
   }
   render() {
     return (
@@ -173,7 +183,7 @@ class App extends Component {
             onSP={this.handleSwitchPage}
             options={this.state.options}
           />
-          <Pages onScr={this.handleScroll} options={this.state.options} />
+          <Pages onScr={this.handleScroll} options={this.state.options} workKey={this.state.workKey}/>
           <div id="avatar-wrap" className="avatar-wrap">
             <div
               id="avatar"

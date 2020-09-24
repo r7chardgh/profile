@@ -7,7 +7,7 @@ class NavBar extends Component {
       <div className="nav-wrap">
         <div className="nav">
           {this.props.options.map((o) => (
-            <React.Fragment>
+            <React.Fragment key={o.id}>
             <a
               className="nav-link"
               key={o.id}

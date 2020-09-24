@@ -45,7 +45,7 @@ class Info extends Component {
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load"><div
               className="name-wrap"
-              style={{ "justify-content": "flex-start" }}
+              style={{ "justifyContent": "flex-start" }}
             >
               {/* <span id="info-tag">Name: </span> */}
               <span id="name-data" className="name-data">

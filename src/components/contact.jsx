@@ -22,6 +22,9 @@ class Contact extends Component {
     // document.getElementById("copyText").innerHTML = this.state.CopyTextMsg[1];
     this.handleBtnIconChange();
   };
+  componentDidMount(){
+    
+  }
   render() {
     if (!this.props.option.isSelected) return null;
     return (
@@ -44,9 +47,9 @@ class Contact extends Component {
               // onMouseLeave={this.handleRemoveMsg}
               // onMouseDown={this.handleCopy}
               onClick={this.handleCopy}
-              spellcheck="false"
-              readonly
-            /><label for="copyText" className="copyLabel">Email</label>
+              spellCheck="false"
+              readOnly
+            /><label htmlFor="copyText" className="copyLabel">Email</label>
             <button onClick={this.handleCopy} className="copyButton"><Clipboard /></button>
           </div>
 
