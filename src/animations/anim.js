@@ -160,3 +160,9 @@ export function insertPhoto(elemId) {
 //   }
 //   asyncIncrease();
 // }
+// export function updateCurrentYear(){
+//     document.getElementsByClassName("current")[0].innerHTML = new Date().getFullYear();
+// }
+// document.addEventListener('DOMContentLoaded', function() {
+//     updateCurrentYear();
+//  }, false);
