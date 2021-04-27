@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { scrollIn } from "../animations/anim.js";
 import InterestIcon from "./interest.jsx";
 
 const noWidth = { width: "auto" };
-const interestCard = { width: "28%" };
 class Info extends Component {
   state = {
     person: {
@@ -31,13 +29,7 @@ class Info extends Component {
       ],
     },
   };
-  componentDidUpdate() {
-    this.handleFirstLoad();
-  }
-  handleFirstLoad() {
-    const introData = document.getElementsByClassName("intro-data");
-    console.log(introData);
-  }
+  
   render() {
     if (!this.props.option.isSelected) return null;
     return (
@@ -94,7 +86,7 @@ class Info extends Component {
                 {this.state.person.blog.map((b) => (
                   <span className="blog" key={b.id}>
                     <span className="blogType">{b.type}</span>
-                    <a className="blogLink" href={b.link} target="_blank">{b.link}</a>
+                    <a className="blogLink" href={b.link} target="_blank" rel="noopener noreferrer">{b.link}</a>
                   </span>
                 ))}
               </span>

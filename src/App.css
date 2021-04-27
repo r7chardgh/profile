@@ -24,6 +24,11 @@ body {
   font-family: "Roboto", "Viga", "Playfair Display", sans-serif;
   font-weight: 100;
 }
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 ::selection {
   background: var(--main-color-light);
   color: var(--second-color);
@@ -167,7 +172,7 @@ body {
 .avatar-wrap {
   position: absolute;
   z-index: 9;
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  /* border-image-source: linear-gradient(to left, #743ad5, #d53a9d); */
   /* border: 9px solid var(--main-color); */
   left: 5%;
   width: 95%;
@@ -178,12 +183,12 @@ body {
 }
 .avatar {
   pointer-events: none;
-  background: url(./images/IMG_05841.JPG);
+  /* background: url(./images/IMG_05841.JPG); */
   position: absolute;
   z-index: 1;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 100%; */
   height: 100%;
   width: 100%;
   /* opacity: 0.3; */
@@ -920,13 +925,13 @@ visibility: visible;
   margin-top: 50%;
   width: 100%;
   height: 50px;
-  background-color: red;
+  /* background-color: red; */
 }
 .endbar-done {
   margin-top: 10%;
   width: 100%;
   height: 50px;
-  background-color: green;
+  /* background-color: green; */
 }
 /*element for contact page*/
 .contactMsg {
@@ -1012,7 +1017,7 @@ div#aboutme {
   background: var(--main-color);
 }
 /*work*/
-.work-card-wrap {
+/* .work-card-wrap {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -1097,7 +1102,9 @@ background-color:#32a852;
 .work-expand-btn:hover {
   background-color:var(--main-color-light);
   color: var(--second-color);
-}
+} */
+
+
 /*test*/
 .newtag {
   font-weight: bold;
@@ -1187,10 +1194,9 @@ justify-content: center;
 padding: 9px;
 font-weight: 600;
 }
-.item-duration{
-  /* background-color: red; */  
-  
-}
+/* .item-duration{
+  background-color: red;  
+} */
 .item-seperation{
   width: 1.5px;
   margin: 0px 9px;

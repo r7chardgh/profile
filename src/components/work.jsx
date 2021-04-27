@@ -51,25 +51,25 @@ class Work extends Component {
     ],
     isChanged:false
   };
-  resetState = (id) => {
-    const work = this.state.work.map((w) => {
-      if (w.id == id) w.isExpanded = false;
-      return w;
-    });
-    this.setState({ work });
-  };
-  handleReadMore = (id) => {
-    const target = document.getElementsByClassName("work-card")[id-1];
-    setTimeout(() => {
-      document.getElementById("page").scrollTo({top: target.offsetTop+120,
-        behavior: 'smooth'});
-    }, 300);
-    const work = this.state.work.map((w) => {
-      w.id == id ? (w.isExpanded = true) : (w.isExpanded = false);
-      return w;
-    });
-    this.setState({ work });
-  };
+  // resetState = (id) => {
+  //   const work = this.state.work.map((w) => {
+  //     if (w.id == id) w.isExpanded = false;
+  //     return w;
+  //   });
+  //   this.setState({ work });
+  // };
+  // handleReadMore = (id) => {
+  //   const target = document.getElementsByClassName("work-card")[id-1];
+  //   setTimeout(() => {
+  //     document.getElementById("page").scrollTo({top: target.offsetTop+120,
+  //       behavior: 'smooth'});
+  //   }, 300);
+  //   const work = this.state.work.map((w) => {
+  //     w.id == id ? (w.isExpanded = true) : (w.isExpanded = false);
+  //     return w;
+  //   });
+  //   this.setState({ work });
+  // };
   render() {
     if (!this.props.option.isSelected) return null;
     return (
@@ -77,7 +77,9 @@ class Work extends Component {
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
           <div className="work-card-wrap">
-            {this.state.work.map((w) => (
+            {/** content */}
+
+            {/* {this.state.work.map((w) => (
               <div
                 key={w.id}
                   id={w.id}
@@ -111,7 +113,9 @@ class Work extends Component {
                   )}
                 </div>
               </div>
-            ))}
+            ))} */}
+
+            {/** content */}
           </div>
           <div className="work-view-panel">
             

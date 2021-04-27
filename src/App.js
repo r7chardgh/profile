@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar.jsx";
 import Pages from "./components/pages.jsx";
+import backdropJpeg from "./images/IMG_05841.JPG";
+import backdropWebp from "./images/IMG_05841.webp";
+
 import {
-  scrollIntoElem,
   insertPhoto,
   fadeIn,
   moveImgPos,
@@ -53,7 +55,7 @@ class App extends Component {
         isHover:false
       }
     ],
-    lastTop: 0,
+    // lastTop: 0,
     clickBtn: false,
     avatarIsCover:true,
     workKey:false
@@ -61,28 +63,25 @@ class App extends Component {
   componentDidMount() {
     fadeIn("avatar");
     this.state.options.forEach((o) => {
-      console.log(window.location.href);
       if (window.location.href.indexOf(o.link) > -1)
         this.handleSwitchPage(o.id);
-      else console.log("...");
     });
   }
   componentDidUpdate() {
     // transitPage("trans-wrap");resetImgPos("avatar");
     insertPhoto("avatar");
-    console.log("app-updated");
   }
   handleScroll = () => {
     const elemId = document.getElementById("page");
     const target = document.getElementsByClassName("endbar");
-    const Uptarget = document.getElementsByClassName("endbar-done");
+    // const Uptarget = document.getElementsByClassName("endbar-done");
     
     let focusPoint = null;
-    let newTop = elemId.scrollTop;
+    // let newTop = elemId.scrollTop;
     // if (options.find((o) => o.isClicked === true)) {
     //   console.log("Don't disturb the process.");
     // } else {
-    if (newTop > this.state.lastTop) {
+    // if (newTop > this.state.lastTop) {
       Array.prototype.forEach.call(target, function (e) {
         if (elemId.offsetHeight >= e.getBoundingClientRect().top) {
           focusPoint = parseInt(e.id) + 1;
@@ -90,16 +89,16 @@ class App extends Component {
           console.log("down" + focusPoint);
         }
       });
-    } else {
-      Array.prototype.forEach.call(Uptarget, function (e) {
-        if (e.getBoundingClientRect().top >= elemId.offsetHeight) {
-          focusPoint = parseInt(e.id);
-          e.className = "endbar";
-          console.log("up" + focusPoint);
-        }
-      });
-    }
-    this.state.lastTop = newTop <= 0 ? 0 : newTop;
+    // } else {
+    //   Array.prototype.forEach.call(Uptarget, function (e) {
+    //     if (e.getBoundingClientRect().top >= elemId.offsetHeight) {
+    //       focusPoint = parseInt(e.id);
+    //       e.className = "endbar";
+    //       console.log("up" + focusPoint);
+    //     }
+    //   });
+    // }
+    // this.state.lastop = newTop <= 0 ? 0 : newTop;
 
     if (focusPoint >= 1) {
       const options = this.state.options.map((o) => {
@@ -143,7 +142,7 @@ class App extends Component {
       return o;
     });
     let {workKey} = this.state;
-    if(id==4) workKey = !workKey;
+    if(id===4) workKey = !workKey;
 
     this.setState({ options,avatarIsCover,workKey });
   };
@@ -153,7 +152,6 @@ class App extends Component {
   };
   resetClickBtn = () => {
     console.log("success!");
-    const { clickBtn } = this.state;
     this.setState({ clickBtn: false });
   };
   setAvatarState=()=>{
@@ -185,6 +183,7 @@ class App extends Component {
           />
           <Pages onScr={this.handleScroll} options={this.state.options} workKey={this.state.workKey}/>
           <div id="avatar-wrap" className="avatar-wrap">
+          
             <div
               id="avatar"
               className="avatar"
@@ -204,7 +203,11 @@ class App extends Component {
               onMouseLeave={() => {
                 resetImgPos("avatar");
               }}
-            ></div>
+            ><picture>
+            <source srcSet={backdropWebp} type="image/webp"/>
+            <source srcSet={backdropJpeg} type="image/jpeg"/>
+            <img src={backdropJpeg} alt="Me wearing a white dragon boat team hoodies, christmas lights backdrop"/>
+          </picture></div>
             <a
               href={window.location.href.substr(
                 0,
@@ -213,6 +216,7 @@ class App extends Component {
               id="avatar-shield"
               className="avatar-shield"
               onClick={this.setAvatarState}
+              aria-label="link to homepage"
             ></a>
             <span id="a-t" className="avatar-text">
               <p className="typing">Richard Tsang</p>

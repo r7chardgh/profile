@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { scrollProgress } from "../animations/anim.js";
 class Exp extends Component {
   state = {
     timeline: [
@@ -152,7 +151,7 @@ class Exp extends Component {
                   <div className="item-container">
                     {x.data.map((d) =>
                     <React.Fragment key={d.id}>
-                      {d.type == "career" ? (
+                      {d.type === "career" ? (
                         <React.Fragment>
                           <div className="item-column left">
                             <div className="item">

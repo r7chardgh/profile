@@ -99,9 +99,9 @@ export function cursorLightAnimation(event, elemId) {
   targetE.style.left = x + "px";
 }
 
-export function nameAnimation(elemId) {
-  const elem = document.getElementById(elemId);
-}
+// export function nameAnimation(elemId) {
+//   const elem = document.getElementById(elemId);
+// }
 export function insertPhoto(elemId) {
   const elem = document.getElementById(elemId);
   let ran = Math.random() + 1;

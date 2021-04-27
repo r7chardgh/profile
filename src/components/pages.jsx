@@ -7,12 +7,10 @@ import Contact from "./contact.jsx";
 import {
   pageLoad,
   scrollIntoElem,
-  fadeInFromRight,
 } from "../animations/anim.js";
 
 class Pages extends Component {
   componentDidUpdate() {
-    console.log("page-updated");
     this.setScroll();
     setTimeout(()=>this.resetScroll(),1000);
     const elemId = this.props.options

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { scrollIntoElem, cursorLightAnimation } from "../animations/anim.js";
+import { cursorLightAnimation } from "../animations/anim.js";
 import BtnIcon from "./btnicon.jsx";
 class NavBar extends Component {
   render() {
@@ -13,13 +13,13 @@ class NavBar extends Component {
               key={o.id}
               id={o.id}
               href={o.link}
-              alt={o.title}
               onClick={() => {
                 this.props.onSP(o.id);
               }}
               onMouseMove={(event) => {
                 cursorLightAnimation(event, o.id);
               }}
+              aria-label={`link to ${o.title}`}
             >
               <span id={o.id + "s"} className="nav-light"></span>
               <div className="svg-wrap">

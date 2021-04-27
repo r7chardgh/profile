@@ -50,7 +50,7 @@ class Contact extends Component {
               spellCheck="false"
               readOnly
             /><label htmlFor="copyText" className="copyLabel">Email</label>
-            <button onClick={this.handleCopy} className="copyButton"><Clipboard /></button>
+            <button onClick={this.handleCopy} className="copyButton" aria-label="copy button"><Clipboard /></button>
           </div>
 
           <p className="min-break" />
