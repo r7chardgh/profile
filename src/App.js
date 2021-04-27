@@ -217,7 +217,7 @@ class App extends Component {
               className="avatar-shield"
               onClick={this.setAvatarState}
               aria-label="link to homepage"
-            ></a>
+            ><span></span></a>
             <span id="a-t" className="avatar-text">
               <p className="typing">Richard Tsang</p>
             </span>
