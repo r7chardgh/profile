@@ -4,7 +4,7 @@ class Skill extends Component {
     skill: [
       {
         type: "Frontend",
-        name: "Frontend Web Devlopment",
+        name: "Frontend Web Coding",
         item: [
           { type: "HTML", level: "familiar", scale: "5" },
           { type: "JavaScript", level: "familiar", scale: "4" },
@@ -16,15 +16,15 @@ class Skill extends Component {
         name: "Programming",
         item: [
           { type: "C++", level: "capable", scale: "3" },
-          { type: "Python", level: "capable", scale: "2" },
+          { type: "NodeJS", level: "capable", scale: "2" },
         ],
       },
       {
         type: "WebFramework",
         name: "Web Framework / Library",
         item: [
-          { type: "ReactJS", level: "capable", scale: "3" },
-          { type: "Bootstrap", level: "capable", scale: "2" },
+          { type: "ReactJS", level: "familiar", scale: "4" },
+          { type: "NextJS", level: "familiar", scale: "4" },
         ],
       },
       {
