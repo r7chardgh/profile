@@ -32,8 +32,7 @@ class Contact extends Component {
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
           <p className="contactMsg">
-            Whether you have any questions for me or comments about my website,
-            feel free to send me an email to let me know.
+            Oh! It seems you have visited my profile, feel free to contact me if you have any thoughts to me!
             <br></br>I am all ears.
           </p>
           <p className="min-break" />
