@@ -18,7 +18,7 @@ class Info extends Component {
       ],
       email: "richardtcfung@gmail.com",
       intro:
-        "I'm a code-lover and art-lover. I love coding since I was a high school student. Like many other teens, I love to play website/video games (pokimon or ninja-themed game) at that time. Maybe that's the reason I start to learn coding. After I've got my bachelor degree, I'm currently learning web developing and some design skills via the internet. Hopefully I will be a part of the hacking industry. Art is my second biggest interest, I have done some designs (for homeworks/ for th e promotion my school dragon boat team). The reason I love art is because of its aesthetic feeling, it's just as simple as that.",
+        "I'm a code-lover and art-lover. I love coding since I was a high school student. Like many other teens, I love to play website/video games (pokimon or ninja-themed game) at that period of time. Maybe that's the reason I start to learn coding. I'm currently learning web developing and some design skills via the internet. Art is my second biggest interest, sometimes but not always, I do designs (have done before: classworks/ leaflet for my school dragon boat team). The reason why I love art is it gives me aesthetic feeling (hard to explain) and the joy to share my feeling on the canvas, it's just as simple as that.",
       interest: [
         { id: 1, item: "Workout" },
         { id: 2, item: "Music" },
