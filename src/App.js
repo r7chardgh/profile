@@ -234,11 +234,10 @@ class App extends Component {
           </div>
         </div>
         <footer className="footer">
-          {" "}
           <small>
-            Copyright &copy; {new Date().getFullYear()}, Designed & Coded by
-            Richard Tsang
-          </small>{" "}
+            Copyright &copy; {new Date().getFullYear()}, Designed &amp; Coded by&nbsp;
+            <a href="https://r7chardgh.github.io/" alt="link to front page" target="_blank" rel="noopener noreferrer">Richard Tsang</a>
+          </small>
         </footer>
       </React.Fragment>
     );
