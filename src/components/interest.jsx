@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { ReactComponent as Workout } from "../icon/interest/workout.svg";
-import { ReactComponent as Music } from "../icon/interest/music.svg";
+import { ReactComponent as Music } from "../icon/interest/headphone.svg";
 import { ReactComponent as Basketball } from "../icon/interest/basketball.svg";
-import { ReactComponent as Food } from "../icon/interest/food.svg";
+import { ReactComponent as Food } from "../icon/interest/dining.svg";
 import { ReactComponent as Hiking } from "../icon/interest/hiking.svg";
-import { ReactComponent as Gaming } from "../icon/interest/console.svg";
+import { ReactComponent as Gaming } from "../icon/interest/gaming.svg";
 
 class IntesestIcon extends Component {
   render() {

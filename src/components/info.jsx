@@ -39,7 +39,6 @@ class Info extends Component {
               className="name-wrap"
               style={{ "justifyContent": "flex-start" }}
             >
-              {/* <span id="info-tag">Name: </span> */}
               <span id="name-data" className="name-data">
                 {this.state.person.name}
               </span>

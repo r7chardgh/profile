@@ -107,24 +107,6 @@ class Exp extends Component {
       <div id="exp" className="page">
         <h1 className="page-title load">{this.props.option.title}</h1>
         <main className="page-content load">
-          {/* <div onScroll ={this.handlescrollProgress} className="timeline-wrap" id="timeline-wrap">
-            <div className="timeline-year">2014</div>
-            <div className="timeline-inner-wrap">
-              <div className="timeline-unit-box" id="b1">
-                <div className="timeline-bar">
-                <div className="timeline-bar-items">bar 1</div>
-                </div>
-                <div className="timeline-bar" >
-                  <div className="timeline-bar-items"> <span className="timeline-bar-tooltip">test</span> bar 2</div>
-                  <div className="timeline-bar-items"> bar 3</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="timeline-progress-bar-wrap">
-            <div className="timeline-progress-bar"id="timeline-progress-bar"></div>
-          </div> */}
-
           <div className="timeline">
             <div className="item-indicators">
               <div className="item-indicator"><div className="round-sqr left"></div>Career</div>

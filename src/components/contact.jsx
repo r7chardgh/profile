@@ -10,16 +10,10 @@ class Contact extends Component {
     target[0].classList.add("checked");
   }
   handleCopy = () => {
-    // const copyInput = document.createElement("input");
     const copyText = document.getElementById("copyText");
-    // copyInput.value = copyText.value;
-    // copyInput.id = "myInput";
-    // document.body.appendChild(copyInput);
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    // document.body.removeChild(copyInput);
-    // document.getElementById("copyText").innerHTML = this.state.CopyTextMsg[1];
     this.handleBtnIconChange();
   };
   componentDidMount(){
@@ -42,9 +36,6 @@ class Contact extends Component {
               className="copyText"
               id="copyText"
               value={this.state.TextToCopy}
-              // onMouseOver={this.handleDisplayMsg}
-              // onMouseLeave={this.handleRemoveMsg}
-              // onMouseDown={this.handleCopy}
               onClick={this.handleCopy}
               spellCheck="false"
               readOnly

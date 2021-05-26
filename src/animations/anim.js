@@ -56,22 +56,14 @@ export function moveImgPos(event, elemId) {
       elem.classList = "avatar moveTopLeft";
     }
   }
-  // elem.style.left = -x * 0.03 + "px";
-  // elem.style.top = -y * 0.03 + "px";
-  // elemText.style.left = x * 0.06 + "px";
-  // elemText.style.top = y * 0.06 + "px";
 }
 export function resetImgPos(elemId) {
   const elem = document.getElementById(elemId);
-  // const elemText = document.getElementById("a-t");
   elem.classList.remove("moveBottomRight");
   elem.classList.remove("moveTopRight");
   elem.classList.remove("moveBottomLeft");
   elem.classList.remove("moveTopLeft");
-  // elem.style.left = "0px";
-  // elem.style.top = "0px";
-  // elemText.style.left = "0px";
-  // elemText.style.top = "0px";
+  
 }
 
 export function scrollIn(elemId) {
@@ -99,70 +91,8 @@ export function cursorLightAnimation(event, elemId) {
   targetE.style.left = x + "px";
 }
 
-// export function nameAnimation(elemId) {
-//   const elem = document.getElementById(elemId);
-// }
 export function insertPhoto(elemId) {
   const elem = document.getElementById(elemId);
   let ran = Math.random() + 1;
   elem.style.transform = "scale(" + ran + ")";
-  // let x = -100;
-  // function increase() {
-  //   if (x >= 0) {
-  //     elem.style.top = "0%";
-  //     return true;
-  //   }
-  //   elem.style.top = x + "%";
-  //   x += 3;
-  //   requestAnimationFrame(increase);
-  // }
-  // increase();
 }
-
-// export function transitPage(elemId) {
-//   const elemChlidList = document.getElementById(elemId).childNodes;
-//   const elemChlidArray = Array.apply(null, elemChlidList);
-//   let ltr = 0,
-//     rtl = 100;
-
-//   async function asyncIncrease() {
-//     for (const e of elemChlidArray) {
-//       console.log(e);
-//       let timer = Date.now();
-//       let now = Date.now();
-
-//       function increase() {
-//         if (ltr >= 100) {
-//           e.style.left = "100%";
-//           e.style.opacity = "100%";
-//           return true;
-//         }
-//         e.style.left = ltr;
-//         e.style.opacity = ltr;
-//         ltr += 1;
-//         requestAnimationFrame(increase);
-//       }
-//       function loop() {
-//         new Promise(() => {
-//           setTimeout(() => {
-//             if (now - timer >= 1000) {
-//               return true;
-//             } else {
-//               now = Date.now();
-//               requestAnimationFrame(loop);
-//             }
-//           }, 2000);
-//         });
-//       }
-//       await loop();
-//       increase();
-//     }
-//   }
-//   asyncIncrease();
-// }
-// export function updateCurrentYear(){
-//     document.getElementsByClassName("current")[0].innerHTML = new Date().getFullYear();
-// }
-// document.addEventListener('DOMContentLoaded', function() {
-//     updateCurrentYear();
-//  }, false);
