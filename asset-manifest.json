@@ -1,34 +1,34 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.3701a786.chunk.css",
-    "main.js": "/profile/static/js/main.a72fa4d0.chunk.js",
-    "main.js.map": "/profile/static/js/main.a72fa4d0.chunk.js.map",
+    "main.css": "/profile/static/css/main.94f248ba.chunk.css",
+    "main.js": "/profile/static/js/main.02be3ce4.chunk.js",
+    "main.js.map": "/profile/static/js/main.02be3ce4.chunk.js.map",
     "runtime-main.js": "/profile/static/js/runtime-main.3bedc3fb.js",
     "runtime-main.js.map": "/profile/static/js/runtime-main.3bedc3fb.js.map",
     "static/js/2.c54589cb.chunk.js": "/profile/static/js/2.c54589cb.chunk.js",
     "static/js/2.c54589cb.chunk.js.map": "/profile/static/js/2.c54589cb.chunk.js.map",
     "index.html": "/profile/index.html",
-    "static/css/main.3701a786.chunk.css.map": "/profile/static/css/main.3701a786.chunk.css.map",
+    "static/css/main.94f248ba.chunk.css.map": "/profile/static/css/main.94f248ba.chunk.css.map",
     "static/js/2.c54589cb.chunk.js.LICENSE.txt": "/profile/static/js/2.c54589cb.chunk.js.LICENSE.txt",
     "static/media/IMG_05841.461fa9d2.webp": "/profile/static/media/IMG_05841.461fa9d2.webp",
     "static/media/IMG_05841.7e62d1a7.JPG": "/profile/static/media/IMG_05841.7e62d1a7.JPG",
-    "static/media/basketball.e27dde02.svg": "/profile/static/media/basketball.e27dde02.svg",
+    "static/media/basketball.be417781.svg": "/profile/static/media/basketball.be417781.svg",
     "static/media/clipboard.d9f0891c.svg": "/profile/static/media/clipboard.d9f0891c.svg",
-    "static/media/console.4d1e63bf.svg": "/profile/static/media/console.4d1e63bf.svg",
     "static/media/contact-icon.93ee18a0.svg": "/profile/static/media/contact-icon.93ee18a0.svg",
+    "static/media/dining.ba851997.svg": "/profile/static/media/dining.ba851997.svg",
     "static/media/exp-icon.33c0c829.svg": "/profile/static/media/exp-icon.33c0c829.svg",
-    "static/media/food.5278550b.svg": "/profile/static/media/food.5278550b.svg",
-    "static/media/hiking.12a99679.svg": "/profile/static/media/hiking.12a99679.svg",
-    "static/media/music.2f08ce08.svg": "/profile/static/media/music.2f08ce08.svg",
+    "static/media/gaming.b261bf8f.svg": "/profile/static/media/gaming.b261bf8f.svg",
+    "static/media/headphone.920d1ccc.svg": "/profile/static/media/headphone.920d1ccc.svg",
+    "static/media/hiking.ba4c7139.svg": "/profile/static/media/hiking.ba4c7139.svg",
     "static/media/profile-icon.b55fedce.svg": "/profile/static/media/profile-icon.b55fedce.svg",
     "static/media/skill-icon.38da5dae.svg": "/profile/static/media/skill-icon.38da5dae.svg",
     "static/media/work-icon.e2d934e9.svg": "/profile/static/media/work-icon.e2d934e9.svg",
-    "static/media/workout.a1612cbd.svg": "/profile/static/media/workout.a1612cbd.svg"
+    "static/media/workout.e0b24788.svg": "/profile/static/media/workout.e0b24788.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3bedc3fb.js",
     "static/js/2.c54589cb.chunk.js",
-    "static/css/main.3701a786.chunk.css",
-    "static/js/main.a72fa4d0.chunk.js"
+    "static/css/main.94f248ba.chunk.css",
+    "static/js/main.02be3ce4.chunk.js"
   ]
 }
