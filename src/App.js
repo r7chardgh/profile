@@ -68,38 +68,19 @@ class App extends Component {
     });
   }
   componentDidUpdate() {
-    // transitPage("trans-wrap");resetImgPos("avatar");
     insertPhoto("avatar");
   }
   handleScroll = () => {
     const elemId = document.getElementById("page");
     const target = document.getElementsByClassName("endbar");
-    // const Uptarget = document.getElementsByClassName("endbar-done");
 
     let focusPoint = null;
-    // let newTop = elemId.scrollTop;
-    // if (options.find((o) => o.isClicked === true)) {
-    //   console.log("Don't disturb the process.");
-    // } else {
-    // if (newTop > this.state.lastTop) {
     Array.prototype.forEach.call(target, function (e) {
       if (elemId.offsetHeight >= e.getBoundingClientRect().top) {
         focusPoint = parseInt(e.id) + 1;
         e.className += "-done";
-        console.log("down" + focusPoint);
       }
     });
-    // } else {
-    //   Array.prototype.forEach.call(Uptarget, function (e) {
-    //     if (e.getBoundingClientRect().top >= elemId.offsetHeight) {
-    //       focusPoint = parseInt(e.id);
-    //       e.className = "endbar";
-    //       console.log("up" + focusPoint);
-    //     }
-    //   });
-    // }
-    // this.state.lastop = newTop <= 0 ? 0 : newTop;
-
     if (focusPoint >= 1) {
       const options = this.state.options.map((o) => {
         if (o.id === focusPoint) {
