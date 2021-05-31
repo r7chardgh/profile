@@ -18,6 +18,14 @@ class Work extends Component {
           "React State Hook Generator, aka the react state code converter. A simple text converter for making state hook easier",
         category: "js, react, converter",
       },
+      {
+        id: 3,
+        title: "HK Weather",
+        link: "https://r7chardgh.github.io/hkweather/",
+        description:
+          "A simple design website integrated with HKO API and Unsplash API",
+        category: "weather, api",
+      },
       
     ],
     isChanged: false,
