@@ -1,0 +1,22 @@
+import React from "react";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import PageNotFound from "./pages/PageNotFound";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import PageLayout from "./components/pageLayout";
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="404" element={<PageNotFound />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/404" />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;

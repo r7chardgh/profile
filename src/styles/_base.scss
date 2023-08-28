@@ -1,0 +1,89 @@
+@use "./theme" as *;
+@use "./settings" as *;
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $sofia-sans;
+    font-weight: 200;
+}
+#root {
+    @include themed() {
+        color: t($text);
+        background: t($bg);
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1920px;
+    margin: auto;
+}
+
+a {
+    @include themed() {
+        color: t($link);
+    }
+}
+
+.container {
+    flex: 1;
+    padding: 0 9rem;
+}
+
+header {
+    padding: 2rem 0;
+    border-bottom: 1px solid red;
+    .menu {
+        border: none;
+        padding: 0;
+        background: transparent;
+        height: 1.5rem;
+        .menu-icon {
+            height: 100%;
+            & path {
+                @include themed() {
+                    stroke: t($stroke);
+                }
+            }
+        }
+        &:hover,
+        &:focus {
+            .menu-icon {
+                & path {
+                    stroke: red;
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .navbar {
+        display: none;
+        &.reveal {
+            display: flex;
+        }
+        &__link {
+            text-decoration: none;
+        }
+    }
+}
+
+footer {
+    padding: 1rem 0;
+    width: 100%;
+    .end-line {
+        margin: auto;
+        text-align: center;
+    }
+}
+
+button {
+    cursor: pointer;
+}
