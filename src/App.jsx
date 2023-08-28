@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import PageNotFound from "./pages/PageNotFound";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import PageLayout from "./components/pageLayout";
+import PageLayout from "./components/PageLayout";
 function App() {
   return (
     <BrowserRouter>
