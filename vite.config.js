@@ -11,7 +11,4 @@ export default defineConfig({
   },
   plugins: [react()],
   base: "/profile/",
-  legacy: {
-    buildRollupPluginCommonjs: true,
-  },
 });
