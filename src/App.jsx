@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageLayout from "./components/PageLayout";
 function App() {
   return (
-    <BrowserRouter basename="/profile/">
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<PageLayout />}>
           <Route index element={<Home />} />
