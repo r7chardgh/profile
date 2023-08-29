@@ -1,5 +1,5 @@
 import React from "react";
-
+import propic from "../assets/images/propic.png";
 function PageNotFound() {
   return (
     <section className="container page-not-found">
@@ -8,7 +8,7 @@ function PageNotFound() {
         <div className="blob">
           <img
             className="profile-picture"
-            src="./src/assets/images/propic.png"
+            src={propic}
             alt="richard tsang profile picture"
           />
           <svg
