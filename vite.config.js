@@ -10,5 +10,4 @@ export default defineConfig({
     port: 3001,
   },
   plugins: [react()],
-  base: "/profile/",
 });
