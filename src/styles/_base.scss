@@ -76,7 +76,7 @@ a {
     &#skills {
         &.reveal {
             & .skills-grid {
-                & .skill:nth-of-type(1n+4){
+                & .skill:nth-of-type(1n + 4) {
                     display: initial;
                 }
             }
@@ -137,7 +137,9 @@ footer {
     cursor: pointer;
     border: 0;
     background: none;
-
+    @include themed() {
+        color: t($text);
+    }
     &--skill-reveal {
         display: flex;
         align-items: center;
@@ -145,8 +147,6 @@ footer {
         width: 100%;
         // border: 1px solid red;
         font-size: 1.5rem;
-        @include themed(){
-            color:t($text)
-        }
+        border: 1px solid;
     }
 }

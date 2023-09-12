@@ -3,7 +3,7 @@ import Icon from "../components/Icon";
 import ExpandBtn from "../components/ExpandBtn";
 import useReveal from "../hooks/useReveal";
 function Skills({ skills }) {
-  const { isRevealed, setIsRevealed, isBtnShown } = useReveal();
+  const { isRevealed, setIsRevealed, isBtnShown } = useReveal(false);
   return (
     <div id="skills" className={`container ${isRevealed ? "reveal" : ""}`}>
       <h1 className="title">My skills...</h1>
