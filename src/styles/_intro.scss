@@ -1,0 +1,35 @@
+@use "./theme" as *;
+@use "./settings" as *;
+.intro-text {
+  font-size: 2rem;
+  padding: 2rem 0;
+  .greeting {
+  }
+  .name {
+    font-size: 3rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+  .message {
+  }
+}
+.cover {
+  .propic-svg {
+    max-width: 40rem;
+    min-height: 31rem;
+    width: 100%;
+    @include breakpoint(sm, max) {
+      min-height: auto;
+    }
+    &__path {
+      @include themed() {
+        stroke: t($stroke);
+      }
+    }
+    &__circle {
+      @include themed() {
+        stroke: t($stroke);
+      }
+    }
+  }
+}
