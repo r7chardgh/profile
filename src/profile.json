@@ -1,0 +1,61 @@
+{
+  "user": {
+    "firstname": "richard",
+    "lastname": "tsang",
+    "role": "frontend developer",
+    "skills": [
+      {
+        "id": 1,
+        "type": "Web Coding Lang./ extension",
+        "items": [
+          { "id": 1, "name": "HTML" },
+          { "id": 2, "name": "CSS" },
+          { "id": 3, "name": "JavaScript" },
+          { "id": 4, "name": "SCSS" }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "Web Frameworks/ Libraries",
+        "items": [
+          { "id": 1, "name": "ReactJS" },
+          { "id": 2, "name": "NextJS" },
+          { "id": 3, "name": "Bootstrap" }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "Design Tool",
+        "items": [
+          { "id": 1, "name": "Figma" },
+          { "id": 2, "name": "Gimp" }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "App Frameworks",
+        "items": [
+          { "id": 1, "name": "React Native" },
+          { "id": 2, "name": "Expo" }
+        ]
+      },
+      {
+        "id": 5,
+        "type": "Version Control",
+        "items": [
+          { "id": 1, "name": "GitLab" },
+          { "id": 2, "name": "GitHub" }
+        ]
+      },
+      {
+        "id": 6,
+        "type": "Dev/Build Tool ",
+        "items": [
+          { "id": 1, "name": "Vite(Rollup)" },
+          { "id": 2, "name": "Gulp" }
+        ]
+      }
+    ]
+  },
+  "skills": [{ "id": 1, "name": "web-framework-or-library" }]
+}

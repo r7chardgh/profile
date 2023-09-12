@@ -6,7 +6,6 @@ function Works() {
       <div id="works" className="container">
         Works
       </div>
-      <p>my secret</p>
     </>
   );
 }

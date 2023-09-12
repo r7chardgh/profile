@@ -1,0 +1,18 @@
+<svg class="svg-skill" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.46655 0V64" stroke="#DADADA"/>
+<path d="M56.5334 0V64" stroke="#DADADA"/>
+<path d="M64 7.46666L-3.33786e-06 7.46666" stroke="#DADADA"/>
+<path d="M64 56.5333L-1.60933e-06 56.5333" stroke="#DADADA"/>
+<path class="svg-path-stroke" d="M34.618 27.7333L38.4968 32.1855L34.618 36.2667" stroke="black"/>
+<path class="svg-path-stroke" d="M28.4122 27.7333L24.5334 32.1855L28.4122 36.2667" stroke="black"/>
+<path class="svg-path-stroke" d="M32.2909 27.7333L29.9636 35.8788" stroke="black"/>
+<rect class="svg-path-stroke" x="20.7666" y="20.7667" width="22.4667" height="22.4667" rx="2.5" stroke="black"/>
+<line class="svg-path-stroke" x1="31.5" y1="20.2667" x2="31.5" y2="14.9333" stroke="black"/>
+<line class="svg-path-stroke" x1="31.5" y1="48" x2="31.5" y2="42.6667" stroke="black"/>
+<rect class="svg-path-stroke" x="29.3" y="10.1" width="5.4" height="5.4" stroke="black"/>
+<line class="svg-path-stroke" x1="43.7334" y1="31.5" x2="49.0667" y2="31.5" stroke="black"/>
+<rect class="svg-path-stroke" x="53.8999" y="29.3" width="5.4" height="5.4" transform="rotate(90 53.8999 29.3)" stroke="black"/>
+<rect class="svg-path-stroke" x="29.3" y="47.4333" width="5.4" height="5.4" stroke="black"/>
+<line class="svg-path-stroke" x1="14.9333" y1="31.5" x2="20.2667" y2="31.5" stroke="black"/>
+<rect class="svg-path-stroke" x="15.5" y="29.3" width="5.4" height="5.4" transform="rotate(90 15.5 29.3)" stroke="black"/>
+</svg>

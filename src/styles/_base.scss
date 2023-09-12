@@ -33,14 +33,63 @@ a {
     }
 }
 
-.container {
-    flex: 1;
-    padding: 0 9rem;
+.pages {
 }
-
+.container {
+    position: relative;
+    margin: 0 10rem;
+    padding: 1.5rem 0;
+    border: 1px dashed black;
+    @include breakpoint(lg, max) {
+        margin: 0 2rem;
+    }
+    @include breakpoint(sm, max) {
+        margin: 0 1rem;
+    }
+    &--flex {
+        display: flex;
+        @include breakpoint(lg, max) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &-sb {
+            @extend .container--flex;
+            justify-content: space-between;
+        }
+        &-c {
+            @extend .container--flex;
+            justify-content: center;
+        }
+        &-header {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &--section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+        @include breakpoint(sm, max) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    &#skills {
+        &.reveal {
+            & .skills-grid {
+                & .skill:nth-of-type(1n+4){
+                    display: initial;
+                }
+            }
+        }
+    }
+}
+.title {
+    font-size: 2rem;
+}
+.paragraph {
+    font-size: 1.5rem;
+}
 header {
-    padding: 2rem 0;
-    border-bottom: 1px solid red;
     .menu {
         border: none;
         padding: 0;
@@ -84,6 +133,20 @@ footer {
     }
 }
 
-button {
+.btn {
     cursor: pointer;
+    border: 0;
+    background: none;
+
+    &--skill-reveal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        // border: 1px solid red;
+        font-size: 1.5rem;
+        @include themed(){
+            color:t($text)
+        }
+    }
 }

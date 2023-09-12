@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import theme from "../helpers/theme";
-import menu from "../helpers/menu";
+import btn from "../helpers/btn";
 function Header() {
   return (
-    <header>
-      <button onClick={() => theme.handleThemeToggle()}>toggle</button>
-      <button className="menu" onClick={() => menu.handleOpenMenu()}>
+    <header className="container container--flex-header">
+      <button className="btn"onClick={() => theme.handleThemeToggle()}>toggle</button>
+      <button className="btn menu" onClick={() => btn.toggleHiddenContainer(".navbar")}>
         <svg
           className="menu-icon"
           width="40"
@@ -33,19 +33,19 @@ function Header() {
         </svg>
       </button>
       <nav className="navbar">
-        <a href="#" className="navbar__link">
+        <a href="/" className="navbar__link">
           Home
         </a>
-        <NavLink to="about" className="navbar__link">
+        <NavLink to="/about" className="navbar__link">
           About
         </NavLink>
-        <a href="#skills" className="navbar__link">
+        <a href="/#skills" className="navbar__link">
           Skills
         </a>
-        <a href="#works" className="navbar__link">
+        <a href="/#works" className="navbar__link">
           Works
         </a>
-        <a href="#contact" className="navbar__link">
+        <a href="/#contact" className="navbar__link">
           Contact
         </a>
       </nav>

@@ -9,7 +9,7 @@ function PageNotFound() {
           <img
             className="profile-picture"
             src={propic}
-            alt="richard tsang profile picture"
+            alt="richard's profile picture"
           />
           <svg
             viewBox="0 0 500 500"

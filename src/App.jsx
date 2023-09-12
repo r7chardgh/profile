@@ -1,16 +1,14 @@
 import React from "react";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import PageNotFound from "./pages/PageNotFound";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageLayout from "./components/PageLayout";
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<PageLayout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
           <Route path="404" element={<PageNotFound />} />
         </Route>
         <Route path="*" element={<Navigate to="/404" />} />
