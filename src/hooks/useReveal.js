@@ -1,6 +1,6 @@
 import React from "react";
-const useReveal = () => {
-  const [isRevealed, setIsRevealed] = React.useState(false);
+const useReveal = (revealState) => {
+  const [isRevealed, setIsRevealed] = React.useState(revealState);
   const [isBtnShown, setIsBtnShown] = React.useState(false);
 
   React.useLayoutEffect(() => {
