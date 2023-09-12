@@ -1,17 +1,22 @@
 import React from "react";
 const useReveal = (revealState) => {
-  const [isRevealed, setIsRevealed] = React.useState(revealState);
+  const [isRevealed, setIsRevealed] = React.useState(null);
   const [isBtnShown, setIsBtnShown] = React.useState(false);
 
   React.useLayoutEffect(() => {
     const target = document.getElementById("skills");
+    let isInit = true;
     const hiddenContainer = () => {
       if (window.innerWidth < 992) {
-        setIsRevealed(false);
         setIsBtnShown(true);
+        if (isInit) {
+          setIsRevealed(false);
+          isInit = false;
+        }
       } else {
         setIsRevealed(true);
         setIsBtnShown(false);
+        isInit = true;
       }
     };
     hiddenContainer(target);
