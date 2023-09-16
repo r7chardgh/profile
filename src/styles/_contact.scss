@@ -1,0 +1,71 @@
+@use "theme" as *;
+@use "settings" as *;
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    .contact-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            path {
+                @include themed() {
+                    fill: t($fill);
+                }
+            }
+        }
+        &__title {
+            font-weight: 200;
+        }
+        .copy-text {
+            border: 1px dashed ;
+            padding: 0 1rem;
+            cursor: pointer;
+            &:hover{
+                @include themed(){
+                    background-color: t($text);
+                    color: t($bg);
+                }
+            }
+        }
+        .copy-tag {
+        }
+        &__link {
+            &:hover,&:focus{
+                outline-style: dashed;
+                .link-tag { 
+                    display: flex;
+                    @include breakpoint(sm, max) {
+                        color: red;
+                        display: none;
+                    }
+                }
+            }
+        }
+        .link-tag {
+            position: absolute;
+            display: none;
+            pointer-events: none;
+           border: 1px solid;
+            border-radius: .1rem;
+            top: -.5rem;
+            padding: .2rem .5rem;
+            font-size: .5rem;
+            font-weight: 700    ;
+        }
+        // &:hover {
+        //     .link-tag {
+        //         display: flex;
+        //         @include breakpoint(sm, max) {
+        //             color: red;
+        //             display: none;
+        //         }
+        //     }
+        // }
+    }
+}
