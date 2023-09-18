@@ -5,7 +5,7 @@ function Contact({ contact }) {
   return (
     <div id="contact" className="container">
       <h1 className="title">Hello mate!</h1>
-      <p className="message">You can find my footprints at the link below</p>
+      <p className="contact-message">You can find my footprints at the link below</p>
       <ul className="contact-list">
         {contact.length > 0 ? (
           contact.map((item) => (
@@ -14,12 +14,6 @@ function Contact({ contact }) {
 
               {item.isCopy ? (
                 <>
-                  {/* <h2
-                    className="copy-text"
-                    aria-label={`${item.name} link, click to copy`}
-                  >
-                    {item.value}
-                  </h2> */}
                   <input
                     type="text"
                     value={item.value}

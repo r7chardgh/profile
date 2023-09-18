@@ -36,7 +36,7 @@
             resize: none;
             transition: all 0.3s;
             cursor: pointer;
-            &:hover {
+            &:hover,&:focus {
                 @include themed() {
                     background-color: t($text);
                     color: t($bg);
@@ -58,8 +58,10 @@
             }
         }
         &__link {
+            text-decoration: none;
             &:hover,
             &:focus {
+                text-decoration: underline;
                 outline-style: none;
                 .link-tag {
                     display: flex;
@@ -78,4 +80,7 @@
             font-weight: 700;
         }
     }
+}
+.contact-message {
+    font-size: 1.5rem;
 }
