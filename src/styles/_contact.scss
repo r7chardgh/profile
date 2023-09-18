@@ -9,6 +9,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        margin: 2rem 0;
         svg {
             width: 1.5rem;
             height: 1.5rem;
@@ -21,29 +22,47 @@
         }
         &__title {
             font-weight: 200;
+            margin: 0;
+            @include breakpoint(sm, max) {
+                font-size: 1rem;
+            }
         }
         .copy-text {
-            border: 1px dashed ;
+            border: 1px dashed;
             padding: 0 1rem;
+            font-size: 1.5rem;
+            background-color: transparent;
+            overflow: scroll;
+            resize: none;
+            transition: all 0.3s;
             cursor: pointer;
-            &:hover{
-                @include themed(){
+            &:hover {
+                @include themed() {
                     background-color: t($text);
                     color: t($bg);
                 }
             }
+            @include themed() {
+                color: t($text);
+            }
+            @include breakpoint(sm, max) {
+                font-size: 1rem;
+            }
         }
         .copy-tag {
+            position: absolute;
+            display: none;
+            &.confirm {
+                display: block;
+                background-color: red;
+            }
         }
         &__link {
-            &:hover,&:focus{
-                outline-style: dashed;
-                .link-tag { 
+            &:hover,
+            &:focus {
+                outline-style: none;
+                .link-tag {
                     display: flex;
-                    @include breakpoint(sm, max) {
-                        color: red;
-                        display: none;
-                    }
                 }
             }
         }
@@ -51,21 +70,12 @@
             position: absolute;
             display: none;
             pointer-events: none;
-           border: 1px solid;
-            border-radius: .1rem;
-            top: -.5rem;
-            padding: .2rem .5rem;
-            font-size: .5rem;
-            font-weight: 700    ;
+            border: 1px solid;
+            border-radius: 0.1rem;
+            top: -1.5rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.5rem;
+            font-weight: 700;
         }
-        // &:hover {
-        //     .link-tag {
-        //         display: flex;
-        //         @include breakpoint(sm, max) {
-        //             color: red;
-        //             display: none;
-        //         }
-        //     }
-        // }
     }
 }

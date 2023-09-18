@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "../components/Icon";
+import copy from "../helpers/copy";
 function Contact({ contact }) {
   return (
     <div id="contact" className="container">
@@ -13,13 +14,27 @@ function Contact({ contact }) {
 
               {item.isCopy ? (
                 <>
-                  <h2
+                  {/* <h2
                     className="copy-text"
                     aria-label={`${item.name} link, click to copy`}
                   >
                     {item.value}
-                  </h2>
-                  <span className="copy-tag confirm">copied</span>
+                  </h2> */}
+                  <input
+                    type="text"
+                    value={item.value}
+                    id="email"
+                    className="copy-text"
+                    aria-label={`${item.name} link, click to copy`}
+                    onBlur={(e) => {
+                      e.target.nextSibling.classList.remove("confirm");
+                    }}
+                    onClick={(e) => {
+                      copy(`#${e.target.id}`);
+                    }}
+                    readOnly
+                  />
+                  <span className="copy-tag">copied</span>
                 </>
               ) : (
                 <>
