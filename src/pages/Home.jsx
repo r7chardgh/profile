@@ -4,6 +4,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Works from "./Works";
 import { user } from "../profile.json";
+import Contact from "./Contact";
 function Home() {
   return !!user ? (
     <div className="pages">
@@ -15,6 +16,7 @@ function Home() {
       <About />
       <Skills skills={user.skills} />
       <Works />
+      <Contact contact={user.contact} />
     </div>
   ) : (
     <h1>loading...</h1>

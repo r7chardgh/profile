@@ -55,7 +55,36 @@
           { "id": 2, "name": "Gulp" }
         ]
       }
+    ],
+    "contact": [
+      {
+        "id": 1,
+        "name": "Email",
+        "icon": "email",
+        "value": "richardtcfung@gmail.com",
+        "isCopy": true
+      },
+      {
+        "id": 2,
+        "name": "GitHub",
+        "icon": "github",
+        "value": "https://github.com/r7chardgh",
+        "isCopy": false
+      },
+      {
+        "id": 3,
+        "name": "Linkedin",
+        "icon": "linkedin",
+        "value": "https://www.linkedin.com/in/richardtsang-dev/",
+        "isCopy": false
+      },
+      {
+        "id": 4,
+        "name": "My blog (Chinese)",
+        "icon": "myblog",
+        "value": "https://richard.3bro.info/",
+        "isCopy": false
+      }
     ]
-  },
-  "skills": [{ "id": 1, "name": "web-framework-or-library" }]
+  }
 }

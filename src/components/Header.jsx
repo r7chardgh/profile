@@ -36,9 +36,9 @@ function Header() {
         <a href="/" className="navbar__link">
           Home
         </a>
-        <NavLink to="/about" className="navbar__link">
+        <a to="/about" className="navbar__link">
           About
-        </NavLink>
+        </a>
         <a href="/#skills" className="navbar__link">
           Skills
         </a>
