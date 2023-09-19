@@ -34,8 +34,8 @@ function Contact({ contact }) {
                       }}
                       readOnly
                     />
-                    <Icon id="clipboard" className="svg-clipboard" />
                     <span className="copy-tag">copied!</span>
+                    <Icon id="clipboard" className="svg-clipboard" />
                   </div>
                 </>
               ) : (
