@@ -3,6 +3,12 @@
 * {
     box-sizing: border-box;
 }
+::selection {
+    @include themed() {
+        color: t($bg);
+        background-color: t($text);
+    }
+}
 html {
     scroll-behavior: smooth;
 }
@@ -39,7 +45,7 @@ a {
     position: relative;
     margin: 0 10rem;
     padding: 1.5rem 0;
-    border: 1px dashed black;
+    // border: 1px dashed black;
     @include breakpoint(lg, max) {
         margin: 0 2rem;
     }
@@ -131,11 +137,10 @@ footer {
         margin: auto;
         text-align: center;
     }
-    .back-to-top{
+    .back-to-top {
         position: fixed;
         right: 1rem;
         bottom: 1rem;
-
     }
 }
 

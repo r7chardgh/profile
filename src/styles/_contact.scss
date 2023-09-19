@@ -4,15 +4,19 @@
 .contact-list {
     list-style: none;
     padding: 0;
+    margin: 3rem 0;
     .contact-item {
         position: relative;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         margin: 2rem 0;
-        svg {
-            width: 1.5rem;
-            height: 1.5rem;
+        @include breakpoint(sm, max) {
+            gap: 1rem;
+        }
+        &__icon {
+            width: 2rem;
+            height: 2rem;
 
             path {
                 @include themed() {
@@ -20,50 +24,26 @@
                 }
             }
         }
-        &__title {
-            font-weight: 200;
-            margin: 0;
-            @include breakpoint(sm, max) {
-                font-size: 1rem;
-            }
-        }
-        .copy-text {
-            border: 1px dashed;
-            padding: 0 1rem;
-            font-size: 1.5rem;
-            background-color: transparent;
-            overflow: scroll;
-            resize: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            &:hover {
-                @include themed() {
-                    background-color: t($text);
-                    color: t($bg);
-                }
-            }
-            @include themed() {
-                color: t($text);
-            }
-            @include breakpoint(sm, max) {
-                font-size: 1rem;
-            }
-        }
-        .copy-tag {
-            position: absolute;
-            display: none;
-            &.confirm {
-                display: block;
-                background-color: red;
-            }
-        }
+
         &__link {
+            text-decoration: none;
             &:hover,
             &:focus {
+                text-decoration: underline;
                 outline-style: none;
                 .link-tag {
                     display: flex;
                 }
+            }
+        }
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            margin: 0;
+            @include breakpoint(sm, max) {
+                font-size: 1rem;
             }
         }
         .link-tag {
@@ -77,5 +57,95 @@
             font-size: 0.5rem;
             font-weight: 700;
         }
+        .input-wrap {
+            position: relative;
+            .copy-text {
+                border: 0.1rem dashed;
+                padding: 0.5rem 1rem;
+                font-size: 1.5rem;
+                background-color: transparent;
+                overflow: scroll;
+                resize: none;
+                transition: all 0.3s;
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    outline-style: none;
+                    @include themed() {
+                        background-color: t($text);
+                        color: t($bg);
+                    }
+                    ~ .svg-clipboard {
+                        @include themed() {
+                            fill: t($bg);
+                        }
+                    }
+                }
+                @include themed() {
+                    color: t($text);
+                }
+                @include breakpoint(sm, max) {
+                    font-size: 1rem;
+                }
+            }
+            .copy-tag {
+                position: absolute;
+                display: none;
+                top: -2.5rem;
+                left: 0rem;
+                font-weight: 700;
+                padding: 0.2rem 0.5rem;
+                @include themed() {
+                    background-color: t($text);
+                    color: t($bg);
+                }
+                &.confirm {
+                    display: block;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.5rem;
+                    left: 0.5rem;
+                    width: 0;
+                    height: 0;
+                    border-left: 0.5rem solid transparent;
+                    border-right: 0.5rem solid transparent;
+                    @include themed() {
+                        border-top: 0.5rem solid t($text);
+                    }
+                }
+            }
+        }
     }
+}
+.contact-message {
+    font-size: 1.5rem;
+}
+@mixin svg-link {
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    @include themed() {
+        fill: t($text);
+    }
+    @include breakpoint(sm,max){
+        width: 1rem;
+        height: 1rem
+    }
+}
+.svg-clipboard {
+    @include svg-link;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.8rem;
+    pointer-events: none;
+
+    @include breakpoint(sm, max) {
+        right: 0.5rem;
+        top: 0.7rem;
+    }
+}
+.svg-hyperlink {
+    @include svg-link;
 }
