@@ -9,6 +9,8 @@ import { ReactComponent as IconEmail } from "../assets/images/social-media/email
 import { ReactComponent as IconGitHub } from "../assets/images/social-media/github-icon.svg";
 import { ReactComponent as IconLinkedIn } from "../assets/images/social-media/linkedin-icon.svg";
 import { ReactComponent as IconMyBlog } from "../assets/images/social-media/myblog-icon.svg";
+import { ReactComponent as IconHyperlink } from "../assets/images/social-media/hyperlink-icon.svg";
+import { ReactComponent as IconClipboard } from "../assets/images/social-media/clipboard-icon.svg";
 function Icon({ id, ...props }) {
   switch (id) {
     case 1:
@@ -29,6 +31,10 @@ function Icon({ id, ...props }) {
       return <IconLinkedIn {...props} />;
     case "myblog":
       return <IconMyBlog {...props} />;
+    case "hyperlink":
+      return <IconHyperlink {...props} />;
+    case "clipboard":
+      return <IconClipboard {...props} />;
 
     default:
       return <IconDefault {...props} />;
