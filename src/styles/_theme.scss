@@ -1,6 +1,7 @@
 @use "./settings" as *;
 
 $bg: "bg";
+$bg-header:"bgHeader";
 $card-bg: "card-bg";
 $text: "text";
 $text-secondary: "text-secondary";
@@ -20,6 +21,7 @@ $themes: (
     link: $light-theme-text-color,
     stroke: $light-theme-text-color,
     fill:$light-theme-text-color,
+    bgHeader:$light-theme-bg-color--header
   ),
   dark: (
     bg: $dark-theme-bg-color,
@@ -27,6 +29,7 @@ $themes: (
     link: $dark-theme-text-color,
     stroke: $dark-theme-text-color,
     fill:$dark-theme-text-color,
+    bgHeader:$dark-theme-bg-color--header
   )
 );
 
