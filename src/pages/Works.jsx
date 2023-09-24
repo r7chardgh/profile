@@ -1,6 +1,10 @@
 import React from "react";
-
+import draggable from '../helpers/draggable'
 function Works() {
+  React.useEffect(() => {
+   draggable.init(".carousel")
+  }, [])
+  
   return (
     <>
       <div id="works" className="container">

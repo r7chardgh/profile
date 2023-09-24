@@ -1,8 +1,51 @@
-.work-item{
-    border: .3rem solid white;
-    width: 26rem;
-    height: 26rem;
+@use "theme" as *;
+@use "settings" as *;
+
+.work-item {
+    display: inline-block;
+    padding: 1rem;
+    border: 0.3rem solid white;
+    flex: 0 0 calc(100% / 3);
+    margin-left: 0 1rem;
+    &:first-child {
+        margin-left: 0;
+    }
+    @include themed() {
+        border: 0.3rem solid t($text);
+    }
+    @include breakpoint(xl,max){
+        flex: 0 0 calc(100%/2);
+    }
+    @include breakpoint(sm,max){
+        flex: 0 0 calc(100%);
+    }
+    &:hover,
+    &:focus {
+        .work-item__title {
+            font-size: 2rem;
+        }
+    }
+    &__title {
+        font-size: 3rem;
+        transition: all 300ms;
+    }
+    &__description {
+        font-size: 1.5rem;
+        overflow-y: scroll;
+    }
+}
+
+.carousel {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: flex;
-    justify-content: center;
-    background-color: #d9d9d9;
+    gap: 2rem;
+    transition: all 0.2s;
+    user-select: none;
+    cursor: pointer;
+    &.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+    }
 }
