@@ -1,7 +1,7 @@
 @use "./settings" as *;
 
 $bg: "bg";
-$bg-header:"bgHeader";
+$bg-header: "bgHeader";
 $card-bg: "card-bg";
 $text: "text";
 $text-secondary: "text-secondary";
@@ -13,6 +13,7 @@ $brand-red: "brand-red";
 $border: "border";
 $stroke: "stroke";
 $fill: "fill";
+$scroll-thumb: "scrollThumb";
 
 $themes: (
   default: (
@@ -20,16 +21,18 @@ $themes: (
     text: $light-theme-text-color,
     link: $light-theme-text-color,
     stroke: $light-theme-text-color,
-    fill:$light-theme-text-color,
-    bgHeader:$light-theme-bg-color--header
+    fill: $light-theme-text-color,
+    bgHeader: $light-theme-bg-color--header,
+    scrollThumb: $light-theme-scroll-thumb
   ),
   dark: (
     bg: $dark-theme-bg-color,
     text: $dark-theme-text-color,
     link: $dark-theme-text-color,
     stroke: $dark-theme-text-color,
-    fill:$dark-theme-text-color,
-    bgHeader:$dark-theme-bg-color--header
+    fill: $dark-theme-text-color,
+    bgHeader: $dark-theme-bg-color--header,
+    scrollThumb: $dark-theme-scroll-thumb
   )
 );
 
