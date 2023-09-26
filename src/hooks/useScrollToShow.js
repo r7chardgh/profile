@@ -1,36 +1,30 @@
 import React from "react";
 
-const useScrollToShow = ({targetId}) => {
-    const [isRevealed, setIsRevealed] = React.useState(false);
-    let lastScrollTop = 0;
+const useScrollToShow = ({ targetId }) => {
+  const [isRevealed, setIsRevealed] = React.useState(false);
   React.useEffect(() => {
-    const handleShowItem = () => {
-        const target = document.querySelector(targetId);
-        let sp = window.scrollY;
-        if(!target){
-            return null;
-        }else{
-        //      if(sp<lastScrollTop){
-            
-        //     sp=lastScrollTop
-        // }
-        console.log("ok target is here");
+    const reveal = (e) => {
+      console.log(e);
+      if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+      ) {
+        if (!isRevealed) {
+          setIsRevealed(true);
         }
-       
-        
-
+      } else {
+        setIsRevealed(false);
+      }
     };
-    window.addEventListener("scroll", () => {
-      handleShowItem();
-    });
+    document.addEventListener("scroll", reveal);
 
     return () => {
-      window.removeEventListener("scroll", () => {
-        handleShowItem();
-      });
+      document.removeEventListener("scroll", reveal);
     };
-  }, []);
-  return{isRevealed}
+  }, [isRevealed]);
+  return {
+    isRevealed,
+  };
 };
 
 export default useScrollToShow;

@@ -26,11 +26,14 @@ body {
 }
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     max-width: 1920px;
     margin: auto;
+    padding-top: 4.5rem;
+    transition: all 0.3s;
 }
 
 a {
@@ -45,7 +48,7 @@ a {
     position: relative;
     margin: 0 10rem;
     padding: 1.5rem 0;
-    // border: 1px dashed black;
+    //border: 1px dashed black;
     @include breakpoint(lg, max) {
         margin: 0 2rem;
     }
@@ -96,6 +99,37 @@ a {
     font-size: 1.5rem;
 }
 header {
+    position: fixed;
+    width: 100%;
+    max-width: 1920px;
+    top: 0;
+    margin: auto;
+    padding: 1.5rem 10rem;
+    z-index: 1;
+    transition: all 300ms;
+    @include themed(){
+        background-color: t($bg-header);
+
+    }
+    @include breakpoint(lg, max) {
+        padding: 1.5rem 2rem;
+    }
+    @include breakpoint(sm, max) {
+        padding: 1.5rem 1rem;
+    }
+    &.fixed-bar {
+        position: fixed;
+        background-color: grey;
+
+        z-index: 1;
+    }
+    &.show {
+        top: 0;
+        opacity: 1;
+    }
+    &.no-show{
+        opacity: 0;
+    }
     .menu {
         border: none;
         padding: 0;
@@ -141,6 +175,22 @@ footer {
         position: fixed;
         right: 1rem;
         bottom: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        @include themed() {
+            color: t($text);
+            background-color: t($bg);
+            border: 0.1rem dashed t($text);
+        }
+        &:hover,
+        &:focus {
+            @include themed() {
+                color: t($bg);
+                background-color: t($text);
+                border: 0.1rem dashed t($bg);
+            }
+        }
+        transition: all 0.3s;
     }
 }
 
@@ -156,8 +206,7 @@ footer {
         align-items: center;
         justify-content: center;
         width: 100%;
-        // border: 1px solid red;
         font-size: 1.5rem;
-        border: 1px solid;
+        border: .1rem solid;
     }
 }

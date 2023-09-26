@@ -2,11 +2,26 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import theme from "../helpers/theme";
 import btn from "../helpers/btn";
+import useScrollToFix from "../hooks/useScrollToFix";
 function Header() {
+  const { isFixed, isShown } = useScrollToFix();
+
   return (
-    <header className="container container--flex-header">
-      <button className="btn"onClick={() => theme.handleThemeToggle()}>toggle</button>
-      <button className="btn menu" onClick={() => btn.toggleHiddenContainer(".navbar")}>
+    <header
+      className={
+        "container--flex-header" +
+        (isFixed ? " fixed-bar" : "") +
+        (isShown ? " show" : " no-show")
+      }
+    >
+      <div className="sticky-bar"></div>
+      <button className="btn" onClick={() => theme.handleThemeToggle()}>
+        toggle
+      </button>
+      <button
+        className="btn menu"
+        onClick={() => btn.toggleHiddenContainer(".navbar")}
+      >
         <svg
           className="menu-icon"
           width="40"
