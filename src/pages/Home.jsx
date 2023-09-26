@@ -15,7 +15,7 @@ function Home() {
       />
       <About />
       <Skills skills={user.skills} />
-      <Works />
+      <Works works={user.works}/>
       <Contact contact={user.contact} />
     </div>
   ) : (
