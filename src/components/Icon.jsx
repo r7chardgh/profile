@@ -11,6 +11,8 @@ import { ReactComponent as IconLinkedIn } from "../assets/images/social-media/li
 import { ReactComponent as IconMyBlog } from "../assets/images/social-media/myblog-icon.svg";
 import { ReactComponent as IconHyperlink } from "../assets/images/social-media/hyperlink-icon.svg";
 import { ReactComponent as IconClipboard } from "../assets/images/social-media/clipboard-icon.svg";
+import { ReactComponent as IconNext } from "../assets/images/slide/next.svg";
+import { ReactComponent as IconPrevious } from "../assets/images/slide/previous.svg";
 function Icon({ id, ...props }) {
   switch (id) {
     case 1:
@@ -35,6 +37,11 @@ function Icon({ id, ...props }) {
       return <IconHyperlink {...props} />;
     case "clipboard":
       return <IconClipboard {...props} />;
+    case "next":
+      return <IconNext {...props} />;
+    case "previous":
+      return <IconPrevious {...props} />;
+
 
     default:
       return <IconDefault {...props} />;
