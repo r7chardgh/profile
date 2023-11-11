@@ -11,10 +11,6 @@ function Works({ works }) {
   let touchMoveX;
 
   React.useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      document.body.style.background = "red";
-    }
-
     if (ref.current?.children.length > 0) {
       document
         .querySelector(".slide__controller-wrap")
@@ -22,13 +18,13 @@ function Works({ works }) {
     }
   }, []);
   //when pos change,
-  React.useEffect(() => {
-    console.log("what is pos ", pos);
+  // React.useEffect(() => {
+  //   console.log("what is pos ", pos);
 
-    ref.current.style.scrollBehavior = "smooth";
-    ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
-    ref.current.style.scrollBehavior = "auto";
-  }, [pos]);
+  //   ref.current.style.scrollBehavior = "smooth";
+  //   ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
+  //   ref.current.style.scrollBehavior = "auto";
+  // }, [pos]);
   //function
   const mouseDown = (e) => {
     isDown = true;
@@ -44,6 +40,16 @@ function Works({ works }) {
     isDown = false;
     ref.current.classList.remove("active");
 
+    if (!window.matchMedia("(pointer: coarse)").matches) {
+      ref.current.style.scrollBehavior = "smooth";
+      ref.current.scrollLeft =
+        ref.current?.children[
+          Math.round(
+            ref.current.scrollLeft / ref.current.children[1].offsetLeft
+          )
+        ].offsetLeft;
+      ref.current.style.scrollBehavior = "auto";
+    }
     setPos(
       Math.round(ref.current.scrollLeft / ref.current.children[1].offsetLeft)
     );
@@ -59,6 +65,12 @@ function Works({ works }) {
   };
   const moveToItem = (pos) => {
     if (!!ref.current && (pos >= 0 || pos < ref.current?.children.length)) {
+     
+      ref.current.style.scrollBehavior = "smooth";
+
+      ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
+
+      ref.current.style.scrollBehavior = "auto";
       setPos(pos);
     }
   };
@@ -67,15 +79,13 @@ function Works({ works }) {
 
   const touchStart = (evt) => {
     touchStartX = evt.nativeEvent.touches[0].pageX;
-    console.log("what is touch start x: ", touchStartX);
     ref.current.style.background = "green";
   };
   const touchEnd = () => {
     ref.current.style.background = "red";
   };
   const touchMove = (evt) => {
-    touchMoveX= evt.nativeEvent.touches[0].pageX;
-    console.log();
+    touchMoveX = evt.nativeEvent.touches[0].pageX;
     ref.current.style.background = "yellow";
   };
   const touchCancel = (evt) => {
@@ -102,6 +112,7 @@ function Works({ works }) {
               onTouchEnd={mouseUp}
               onTouchMove={(e) => mouseMove(e)}
               onTouchCancel={mouseLeave}
+              
               className="carousel"
             >
               {works.map((work) => (

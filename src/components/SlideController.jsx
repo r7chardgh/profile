@@ -1,15 +1,11 @@
 import React, { useRef } from "react";
 import Icon from "./Icon";
-function SlideController({ target, moveToItem, pos ,slideLength}) {
-  console.log('whats pos inside slidecontroller', pos);
-  console.log('whatis slideLength inside slidecontroller',slideLength);
+function SlideController({ moveToItem, pos, slideLength }) {
   return (
     <div className="slide__controller-wrap hidden">
       <button
-        onClick={(e) => {
+        onClick={() => {
           moveToItem(pos - 1);
-
-          console.log(e);
         }}
         className={
           `slide__controller slide__controller--left ` +
