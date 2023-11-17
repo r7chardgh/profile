@@ -3,7 +3,7 @@ import Icon from "../components/Icon";
 import copy from "../helpers/copy";
 function Contact({ contact }) {
   return (
-    <div id="contact" className="container">
+    <section id="contact" className="container">
       <h1 className="title">Get in touch</h1>
       <p className="contact-message">You can find my footprints at...</p>
       <ul className="contact-list">
@@ -60,7 +60,7 @@ function Contact({ contact }) {
           <h1>No Contact</h1>
         )}
       </ul>
-    </div>
+    </section>
   );
 }
 

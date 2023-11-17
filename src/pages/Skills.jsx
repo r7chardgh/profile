@@ -5,7 +5,7 @@ import useReveal from "../hooks/useReveal";
 function Skills({ skills }) {
   const { isRevealed, setIsRevealed, isBtnShown } = useReveal(false);
   return (
-    <div id="skills" className={`container ${isRevealed ? "reveal" : ""}`}>
+    <section id="skills" className={`container ${isRevealed ? "reveal" : ""}`}>
       <h1 className="title">My skills...</h1>
       {skills?.length > 0 ? (
         <div className="skills-grid">
@@ -33,7 +33,7 @@ function Skills({ skills }) {
           isRevealed={isRevealed}
         />
       )}
-    </div>
+    </section>
   );
 }
 
