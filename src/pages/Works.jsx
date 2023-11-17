@@ -65,7 +65,6 @@ function Works({ works }) {
   };
   const moveToItem = (pos) => {
     if (!!ref.current && (pos >= 0 || pos < ref.current?.children.length)) {
-     
       ref.current.style.scrollBehavior = "smooth";
 
       ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
@@ -92,51 +91,44 @@ function Works({ works }) {
     ref.current.style.background = "blue";
   };
   return (
-    <>
-      <div id="works" className="container">
-        <h1 className="title">My works...</h1>
-        {!!works ? (
-          <div className="slide">
-            <SlideController
-              slideLength={works.length - 1}
-              moveToItem={moveToItem}
-              pos={pos}
-            />
-            <div
-              ref={ref}
-              onMouseDown={(e) => mouseDown(e)}
-              onMouseLeave={mouseLeave}
-              onMouseUp={mouseUp}
-              onMouseMove={(e) => mouseMove(e)}
-              onTouchStart={(e) => mouseDown(e)}
-              onTouchEnd={mouseUp}
-              onTouchMove={(e) => mouseMove(e)}
-              onTouchCancel={mouseLeave}
-              
-              className="carousel"
-            >
-              {works.map((work) => (
-                <div className="work-item" key={work.id}>
-                  <span className="work-item__order">{work.id}</span>
-                  <h1 className="work-item__title">{work.name}</h1>
-                  <h2 className="work-item__description">{work.description}</h2>
-                  <a
-                    href={work.link}
-                    target="_blank"
-                    className="work-item__link"
-                  >
-                    go to the site
-                    <Icon id="hyperlink" className="work-item__link-icon" />
-                  </a>
-                </div>
-              ))}
-            </div>
+    <section id="works" className="container">
+      <h1 className="title">My works...</h1>
+      {!!works ? (
+        <div className="slide">
+          <SlideController
+            slideLength={works.length - 1}
+            moveToItem={moveToItem}
+            pos={pos}
+          />
+          <div
+            ref={ref}
+            onMouseDown={(e) => mouseDown(e)}
+            onMouseLeave={mouseLeave}
+            onMouseUp={mouseUp}
+            onMouseMove={(e) => mouseMove(e)}
+            onTouchStart={(e) => mouseDown(e)}
+            onTouchEnd={mouseUp}
+            onTouchMove={(e) => mouseMove(e)}
+            onTouchCancel={mouseLeave}
+            className="carousel"
+          >
+            {works.map((work) => (
+              <div className="work-item" key={work.id}>
+                <span className="work-item__order">{work.id}</span>
+                <h1 className="work-item__title">{work.name}</h1>
+                <h2 className="work-item__description">{work.description}</h2>
+                <a href={work.link} target="_blank" className="work-item__link">
+                  go to the site
+                  <Icon id="hyperlink" className="work-item__link-icon" />
+                </a>
+              </div>
+            ))}
           </div>
-        ) : (
-          <h2>No work is found.</h2>
-        )}
-      </div>
-    </>
+        </div>
+      ) : (
+        <h2>No work is found.</h2>
+      )}
+    </section>
   );
 }
 

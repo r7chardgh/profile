@@ -3,14 +3,18 @@ import { NavLink } from "react-router-dom";
 import theme from "../helpers/theme";
 import btn from "../helpers/btn";
 import useScrollToFix from "../hooks/useScrollToFix";
-function Header() {
-  const { isFixed, isShown } = useScrollToFix();
 
+function Header({currentPos}) {
+  const {  isShown } = useScrollToFix();
+  React.useEffect(() => {
+    console.log("current pos: ", currentPos);
+  }, [currentPos])
+  
   return (
     <header
       className={
         "container--flex-header" +
-        (isFixed ? " fixed-bar" : "") +
+        // (isFixed ? " fixed-bar" : "") +
         (isShown ? " show" : " no-show")
       }
     >
@@ -51,7 +55,7 @@ function Header() {
         <a href="/" className="navbar__link">
           Home
         </a>
-        <a to="/about" className="navbar__link">
+        <a href="/#about" className="navbar__link">
           About
         </a>
         <a href="/#skills" className="navbar__link">
