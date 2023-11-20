@@ -147,13 +147,15 @@ header {
             .menu-icon {
                 & path {
                     stroke: red;
-                    width: 50%; 
+                    width: 50%;
                 }
             }
         }
     }
     .navbar {
         display: none;
+        position: relative;
+        width: 12rem;
         &.reveal {
             display: flex;
             flex-direction: column;
@@ -166,33 +168,51 @@ header {
             position: relative;
             width: 100%;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             text-decoration: none;
             padding: 1.5rem;
             font-size: 1.5rem;
             color: $unactived-color;
-            &::after {
+            &::before {
                 position: absolute;
-                width: 100%;
+                width: .18rem;
                 height: 100%;
                 top: 0;
-                left: 0;
+                right: 0.8rem;
                 content: "";
-                border-right: 0.1rem solid black;
+                background-color: black;
             }
 
-            &::before {
+            &::after {
+                
                 position: absolute;
                 width: 0.6rem;
                 height: 0.6rem;
-                right: -0.3rem;
+                right: 0.6rem;
                 border-radius: 1rem;
                 top: 50%;
                 content: "";
                 background-color: black;
                 transform: translateY(-50%);
             }
+            &.highlighted {
+                font-weight: 700;
+                &::after{
+                   outline: solid black .18rem;
+                   outline-offset: .5rem
+                }
+            }
         }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: 6.25rem;
+        //     right: -.85rem;
+        //     width: 1.5rem;
+        //     height: 1.5rem;
+        //     border: 0.1rem solid black;
+        //     border-radius: 50%;
+        // }
     }
 }
 

@@ -3,19 +3,22 @@ import { NavLink } from "react-router-dom";
 import theme from "../helpers/theme";
 import btn from "../helpers/btn";
 import useScrollToFix from "../hooks/useScrollToFix";
-
-function Header({currentPos}) {
-  const {  isShown } = useScrollToFix();
+function Header({ currentPos }) {
+  const { isShown } = useScrollToFix();
+  const navRef = React.useRef(null);
   React.useEffect(() => {
     console.log("current pos: ", currentPos);
-  }, [currentPos])
-  
+     navRef.current.children[currentPos]?.classList.add("highlighted");
+     navRef.current.children[currentPos-1]?.classList.remove("highlighted");
+     navRef.current.children[currentPos+1]?.classList.remove("highlighted");
+  }, [currentPos]);
+
   return (
     <header
       className={
-        "container--flex-header" +
+        "container--flex-header"
         // (isFixed ? " fixed-bar" : "") +
-        (isShown ? " show" : " no-show")
+        //+(isShown ? " show" : " no-show")
       }
     >
       <div className="sticky-bar"></div>
@@ -51,7 +54,7 @@ function Header({currentPos}) {
           />
         </svg>
       </button>
-      <nav className="navbar">
+      <nav className="navbar" ref={navRef}>
         <a href="/" className="navbar__link">
           Home
         </a>
