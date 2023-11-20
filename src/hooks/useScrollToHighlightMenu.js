@@ -3,6 +3,7 @@ import React from "react";
 export const useScrollToHighlightMenu = () => {
   const [sections, setSections] = React.useState(null);
   const [currentPos, setCurrentPos] = React.useState(null);
+
   React.useEffect(() => {
     if (!!sections) {
       var secList = [].slice.call(sections);
