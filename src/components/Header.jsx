@@ -8,9 +8,9 @@ function Header({ currentPos }) {
   const navRef = React.useRef(null);
   React.useEffect(() => {
     console.log("current pos: ", currentPos);
-     navRef.current.children[currentPos]?.classList.add("highlighted");
-     navRef.current.children[currentPos-1]?.classList.remove("highlighted");
-     navRef.current.children[currentPos+1]?.classList.remove("highlighted");
+    navRef.current.children[currentPos]?.classList.add("highlighted");
+    navRef.current.children[currentPos - 1]?.classList.remove("highlighted");
+    navRef.current.children[currentPos + 1]?.classList.remove("highlighted");
   }, [currentPos]);
 
   return (
@@ -26,10 +26,16 @@ function Header({ currentPos }) {
         toggle
       </button>
       <button
-        className="btn menu"
-        onClick={() => btn.toggleHiddenContainer(".navbar")}
+        className="btn menu menu1-icon"
+        onClick={() => {
+          btn.toggleHiddenContainer(".navbar");
+          btn.toggleHiddenContainer(".menu");
+        }}
       >
-        <svg
+        <span></span>
+        <span></span>
+        <span></span>
+        {/* <svg
           className="menu-icon"
           width="40"
           height="28"
@@ -37,11 +43,18 @@ function Header({ currentPos }) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M11.9282 2L38.1953 2"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
+          <path d="M11.9282 2L38.1953 2" strokeWidth="3" strokeLinecap="round">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              from="0 20 3"
+              to="360 20 3"
+              dur="10s"
+              repeatCount="indefinite"
+              
+            />
+          </path>
           <path
             d="M2 14.0393L38.1954 14.0393"
             strokeWidth="3"
@@ -52,10 +65,10 @@ function Header({ currentPos }) {
             strokeWidth="3"
             strokeLinecap="round"
           />
-        </svg>
+        </svg> */}
       </button>
       <nav className="navbar" ref={navRef}>
-        <a href="/" className="navbar__link">
+        <a href="/#intro" className="navbar__link">
           Home
         </a>
         <a href="/#about" className="navbar__link">

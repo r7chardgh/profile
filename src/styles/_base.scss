@@ -146,7 +146,6 @@ header {
         &:focus {
             .menu-icon {
                 & path {
-                    stroke: red;
                     width: 50%;
                 }
             }
@@ -156,13 +155,25 @@ header {
         display: none;
         position: relative;
         width: 12rem;
+
         &.reveal {
             display: flex;
             flex-direction: column;
             position: absolute;
             top: 4.5rem;
             align-items: flex-end;
-            background-color: $dark-theme-bg-color--header;
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                width: 100vw;
+                height: 100vh;
+                right: 0;
+                top: 0;
+                @include themed() {
+                    background-color: t($bg-header);
+                }
+            }
         }
         &__link {
             position: relative;
@@ -173,33 +184,41 @@ header {
             padding: 1.5rem;
             font-size: 1.5rem;
             color: $unactived-color;
+            font-weight: 700;
             &::before {
                 position: absolute;
-                width: .18rem;
+                width: 0.18rem;
                 height: 100%;
                 top: 0;
-                right: 0.8rem;
+                right: 1.2rem;
                 content: "";
-                background-color: black;
+                @include themed() {
+                    background-color: t($text);
+                }
             }
 
             &::after {
-                
                 position: absolute;
                 width: 0.6rem;
                 height: 0.6rem;
-                right: 0.6rem;
+                right: 1rem;
                 border-radius: 1rem;
                 top: 50%;
                 content: "";
-                background-color: black;
                 transform: translateY(-50%);
+                @include themed() {
+                    background-color: t($text);
+                }
             }
             &.highlighted {
-                font-weight: 700;
-                &::after{
-                   outline: solid black .18rem;
-                   outline-offset: .5rem
+                @include themed() {
+                    color: t(text);
+                }
+                &::after {
+                    outline-offset: 0.5rem;
+                    @include themed() {
+                        outline: solid t(text) 0.18rem;
+                    }
                 }
             }
         }
@@ -213,6 +232,97 @@ header {
         //     border: 0.1rem solid black;
         //     border-radius: 50%;
         // }
+    }
+    .menu1-icon {
+        width: 2.5rem;
+        height: 1.75rem;
+        position: relative;
+
+        & > span {
+            transition:
+                width 300ms,
+                transform 500ms;
+            position: absolute;
+            width: 100%;
+            height: 0.2rem;
+            border-radius: 1rem;
+            @include themed() {
+                background-color: t($text);
+            }
+            &:nth-child(1) {
+                top: 0;
+                right: 0;
+                width: 75%;
+            }
+            &:nth-child(2) {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 1rem;
+                    transition: transform 500ms;
+                    @include themed() {
+                        background-color: t($text);
+                    }
+                }
+            }
+            &:nth-child(3) {
+                bottom: 0;
+                right: 0;
+                width: 50%;
+            }
+        }
+        &:not(.reveal) {
+            &:hover {
+                & > span {
+                    &:nth-child(1) {
+                        animation: hoverMenu1 500ms ease-in-out alternate infinite;
+                    }
+                    &:nth-child(2) {
+                        animation: hoverMenu2 500ms alternate infinite;
+                    }
+                    &:nth-child(3) {
+                        animation: hoverMenu3 500ms alternate infinite;
+                    }
+                }
+                @keyframes hoverMenu1 {
+                    to {
+                        width: 45%;
+                    }
+                }
+                @keyframes hoverMenu2 {
+                    to {
+                        width: 80%;
+                    }
+                }
+                @keyframes hoverMenu3 {
+                    to {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+        &.reveal {
+            & > span {
+                &:nth-child(1),
+                &:nth-child(3) {
+                    width: 0;
+                }
+                &:nth-child(2) {
+                    transform: rotateZ(-45deg);
+                    &::after {
+                        transform: rotateZ(90deg);
+                    }
+                }
+            }
+        }
     }
 }
 
