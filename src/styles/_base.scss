@@ -72,6 +72,7 @@ a {
         &-header {
             display: flex;
             justify-content: flex-end;
+            gap: 1rem;
         }
     }
     &--section {
@@ -370,5 +371,40 @@ footer {
         width: 100%;
         font-size: 1.5rem;
         border: 0.1rem solid;
+    }
+}
+
+.theme-icon {
+    width: 40px;
+    height: 100%;
+    @include themed {
+        stroke: t($text);
+    }
+    &:hover > .rotable,
+    &:focus > .rotable {
+        animation: flashing 600ms linear infinite alternate;
+    }
+    @keyframes flashing {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.3;
+        }
+    }
+    .rotable {
+        transition: transform 600ms;
+    }
+    .lights {
+        transform-origin: center bottom;
+        @include themed {
+            transform: rotateZ((t(themeIconLightsRotate)));
+        }
+    }
+    .stars {
+        transform-origin: center bottom;
+        @include themed {
+            transform: rotateZ((t(themeIconStarsRotate)));
+        }
     }
 }

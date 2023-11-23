@@ -18,17 +18,17 @@ $title-md: 3em;
 $title-sm: 2em;
 
 //font-weight
-$font-xh:600;
-$font-h:400;
-$font-l:200;
+$font-xh: 600;
+$font-h: 400;
+$font-l: 200;
 
 //scrollbar thumb
-$light-theme-scroll-thumb:#202e3b;
-$dark-theme-scroll-thumb:#eaeaea;
+$light-theme-scroll-thumb: #202e3b;
+$dark-theme-scroll-thumb: #eaeaea;
 
 //activation
-$unactived-color:#979CA1;
-$activated-color:#202E3B;
+$unactived-color: #979ca1;
+$activated-color: #202e3b;
 
 //media breakpoint
 $breakpoints: (
@@ -53,6 +53,9 @@ $breakpoints: (
         max: 1399.98px
     )
 );
+
+$one-eighty-rotate-deg: 180deg;
+$zero-rotate-deg: 0deg;
 
 @mixin breakpoint($breakpoint, $direction: min) {
     //check if the supplied breakpoint exists in our breakpoits map

@@ -14,6 +14,8 @@ $border: "border";
 $stroke: "stroke";
 $fill: "fill";
 $scroll-thumb: "scrollThumb";
+$themeIconStarsRotate: "themeIconStarsRotate";
+$themeIconLightsRotate: "themeIconLightsRotate";
 
 $themes: (
   default: (
@@ -23,7 +25,9 @@ $themes: (
     stroke: $light-theme-text-color,
     fill: $light-theme-text-color,
     bgHeader: $light-theme-bg-color--header,
-    scrollThumb: $light-theme-scroll-thumb
+    scrollThumb: $light-theme-scroll-thumb,
+    themeIconStarsRotate: $one-eighty-rotate-deg,
+    themeIconLightsRotate: $zero-rotate-deg
   ),
   dark: (
     bg: $dark-theme-bg-color,
@@ -32,7 +36,9 @@ $themes: (
     stroke: $dark-theme-text-color,
     fill: $dark-theme-text-color,
     bgHeader: $dark-theme-bg-color--header,
-    scrollThumb: $dark-theme-scroll-thumb
+    scrollThumb: $dark-theme-scroll-thumb,
+    themeIconStarsRotate: $zero-rotate-deg,
+    themeIconLightsRotate: $one-eighty-rotate-deg
   )
 );
 
