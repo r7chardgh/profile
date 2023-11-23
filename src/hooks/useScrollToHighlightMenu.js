@@ -9,6 +9,13 @@ export const useScrollToHighlightMenu = () => {
       var secList = [].slice.call(sections);
       const handleScroll = () => {
         secList.map((sec, i, arr) => {
+          if (
+            window.innerHeight + Math.round(window.scrollY) >=
+            document.body.offsetHeight
+          ) {
+            setCurrentPos(arr.length - 1);
+            return;
+          }
           if (currentPos === i) {
             return;
           }
