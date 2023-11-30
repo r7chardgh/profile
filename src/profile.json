@@ -89,57 +89,21 @@
     "works": [
       {
         "id": 1,
-        "name": "scroll-animation-module",
+        "name": "Scroll Animation Module",
         "link": "https://r7chardgh.github.io/scroll-animation-module/",
         "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
       },
       {
         "id": 2,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
+        "name": "React State Converter",
+        "link": "https://r7chardgh.github.io/react-state-hook/",
+        "description": "It can convert your react state to object, json and useState format"
       },
       {
         "id": 3,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 4,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 5,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 6,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 7,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 8,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
-      },
-      {
-        "id": 9,
-        "name": "scroll-animation-module",
-        "link": "https://r7chardgh.github.io/scroll-animation-module/",
-        "description": "This is my first js module. it's designed to help web page elements quickly create scrolling animations."
+        "name": "HK Sunset/Sunrise Page",
+        "link": "https://r7chardgh.github.io/hkweather",
+        "description": "A Single Page for showing the current sunrise and sunset time in Hong Kong."
       }
     ]
   }

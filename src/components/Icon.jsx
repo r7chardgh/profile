@@ -4,6 +4,7 @@ import { ReactComponent as Icon2 } from "../assets/images/skills-icons/skill-ico
 import { ReactComponent as Icon3 } from "../assets/images/skills-icons/skill-icon-3.svg";
 import { ReactComponent as Icon4 } from "../assets/images/skills-icons/skill-icon-4.svg";
 import { ReactComponent as Icon5 } from "../assets/images/skills-icons/skill-icon-5.svg";
+import { ReactComponent as Icon6 } from "../assets/images/skills-icons/skill-icon-6.svg";
 import { ReactComponent as IconDefault } from "../assets/images/skills-icons/skill-icon-outline.svg";
 import { ReactComponent as IconEmail } from "../assets/images/social-media/email-icon.svg";
 import { ReactComponent as IconGitHub } from "../assets/images/social-media/github-icon.svg";
@@ -25,6 +26,8 @@ function Icon({ id, ...props }) {
       return <Icon4 {...props} />;
     case 5:
       return <Icon5 {...props} />;
+    case 6:
+      return <Icon6 {...props} />;
     case "email":
       return <IconEmail {...props} />;
     case "github":
@@ -41,7 +44,6 @@ function Icon({ id, ...props }) {
       return <IconNext {...props} />;
     case "previous":
       return <IconPrevious {...props} />;
-
 
     default:
       return <IconDefault {...props} />;

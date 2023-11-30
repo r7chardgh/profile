@@ -1,0 +1,10 @@
+<svg class="svg-skill" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.4668 0V64" stroke="#DADADA"/>
+<path d="M56.5332 0V64" stroke="#DADADA"/>
+<path d="M64 7.46667L-3.33786e-06 7.46667" stroke="#DADADA"/>
+<path d="M64 56.5333L-1.60933e-06 56.5333" stroke="#DADADA"/>
+<rect class="svg-path-stroke" x="48.5" y="28.5" width="23" height="5" transform="rotate(90 48.5 28.5)" stroke="black"/>
+<path class="svg-path-stroke" d="M35.5 46.2857L35.5 40.5L40.5 40.5L40.5 51.5L29.5 51.5L29.5 46.7857L35 46.7857L35.5 46.7857L35.5 46.2857Z" stroke="black"/>
+<path class="svg-path-stroke" d="M31.9297 21.3338L36.0208 17.2427L32.4853 13.7072L24.7071 21.4854L32.4853 29.2635L35.8188 25.93L31.9297 22.0409L31.5761 21.6874L31.9297 21.3338Z" stroke="black"/>
+<path class="svg-path-stroke" d="M22 46L21.5 46L21.5 46.5L21.5 51.5L16.5 51.5L16.5 34.5L21.5 34.5L21.5 39.5L21.5 40L22 40L26.5 40L26.5 46L22 46Z" stroke="black"/>
+</svg>
