@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Icon from "../components/Icon";
 import SlideController from "../components/SlideController";
+import Popup from "../components/Popup";
 function Works({ works }) {
   let isDown = false;
   let startX;
@@ -25,6 +26,8 @@ function Works({ works }) {
   //   ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
   //   ref.current.style.scrollBehavior = "auto";
   // }, [pos]);
+
+
   //function
   const mouseDown = (e) => {
     isDown = true;
@@ -115,12 +118,15 @@ function Works({ works }) {
             {works.map((work) => (
               <div className="work-item" key={work.id}>
                 <span className="work-item__order">{work.id}</span>
-                <h1 className="work-item__title">{work.name}</h1>
-                <h2 className="work-item__description">{work.description}</h2>
-                <a href={work.link} target="_blank" className="work-item__link">
+                <h1 className="work-item__title">{work.name.length>34?work.name.slice(0,33)+" ...":work.name}</h1>
+                <div className="qwork-item__bottom">
+                  <h2 className="work-item__description">{work.description.length>86?work.description.slice(0,85)+" ...":work.description}</h2>
+                <a href={work.link} target="_blank" className="work-item__link" onClick={()=>{alert('areyou')}}>
                   go to the site
                   <Icon id="hyperlink" className="work-item__link-icon" />
                 </a>
+                </div>
+                
               </div>
             ))}
           </div>
