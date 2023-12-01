@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Icon from "../components/Icon";
 import SlideController from "../components/SlideController";
-import Popup from "../components/Popup";
+
 function Works({ works }) {
   let isDown = false;
   let startX;
