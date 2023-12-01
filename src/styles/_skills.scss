@@ -5,7 +5,6 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-auto-rows: 1fr;
-    transition: all 0.3s;
     @include breakpoint(lg, max) {
         grid-template-columns: 100%;
     }

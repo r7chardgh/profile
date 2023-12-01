@@ -19,9 +19,10 @@ body {
     font-weight: 200;
 }
 #root {
+    transition: background-color 300ms;
     @include themed() {
         color: t($text);
-        background: t($bg);
+        background-color: t($bg);
     }
 }
 
@@ -33,7 +34,6 @@ main {
     max-width: 1920px;
     margin: auto;
     padding-top: 4.5rem;
-    transition: all 0.3s;
 }
 
 a {
@@ -83,12 +83,10 @@ a {
             padding-bottom: 0;
         }
     }
-    &#skills {
-        &.reveal {
-            & .skills-grid {
-                & .skill:nth-of-type(1n + 4) {
-                    display: initial;
-                }
+    &.reveal {
+        & .skills-grid {
+            & .skill:nth-of-type(1n + 4) {
+                display: initial;
             }
         }
     }
@@ -107,6 +105,7 @@ header {
     margin: auto;
     padding: 1.5rem 10rem;
     z-index: 2;
+    transition: background-color 300ms;
     @include themed() {
         background-color: t($bg-header);
     }
@@ -171,6 +170,7 @@ header {
                 height: 100vh;
                 right: 0;
                 top: 0;
+                transition: background-color 300ms;
                 @include themed() {
                     background-color: t($bg-header);
                 }
@@ -353,7 +353,6 @@ footer {
                 border: 0.1rem dashed t($bg);
             }
         }
-        transition: all 0.3s;
     }
 }
 
@@ -371,6 +370,17 @@ footer {
         width: 100%;
         font-size: 1.5rem;
         border: 0.1rem solid;
+        transition: background-color 300ms;
+        @include themed() {
+            border: 0.1rem solid t($text);
+        }
+        &:hover,
+        &:focus {
+            @include themed() {
+                background-color: t($text);
+                color: t($bg);
+            }
+        }
     }
 }
 
