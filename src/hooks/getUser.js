@@ -2,7 +2,7 @@ import React from 'react'
 const getUser = (userState) => {
     const [user, setUser] = React.useState(userState);
     React.useEffect(() => {
-        fetch("src/profile.json")
+        fetch("/profile.json")
           .then((res) => res.json())
           .then((data) => setUser(data.user));
       }, []);
