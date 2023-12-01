@@ -4,11 +4,11 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { useScrollToHighlightMenu } from "../hooks/useScrollToHighlightMenu";
 function PageLayout() {
-  const { currentPos, setSections } = useScrollToHighlightMenu();
+  const { currentPos, setSectionItems } = useScrollToHighlightMenu();
   return (
     <main>
       <Header currentPos={currentPos} />
-      <Outlet context={setSections} />
+      <Outlet context={setSectionItems} />
       <Footer />
     </main>
   );

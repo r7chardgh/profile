@@ -1,35 +1,21 @@
 import React, { useRef } from "react";
-import Intro from "./Intro";
-import About from "./About";
-import Skills from "./Skills";
-import Works from "./Works";
-import { user } from "../profile.json";
-import Contact from "./Contact";
 import { useOutletContext } from "react-router-dom";
-
+import { sections } from "../section.json";
+import Section from "../components/Section";
 function Home() {
-
   const ref = React.useRef();
-  const setSections = useOutletContext();
+  const setSectionItems = useOutletContext();
 
   React.useEffect(() => {
-    setSections(ref.current.children);
-  }, []);
+    setSectionItems(ref.current?.children);
+  }, [ref.current]);
 
-  return !!user ? (
+  return (
     <div className="pages" ref={ref}>
-      <Intro
-        firstname={user.firstname}
-        lastname={user.lastname}
-        role={user.role}
-      />
-      <About />
-      <Skills skills={user.skills} />
-      <Works works={user.works} />
-      <Contact contact={user.contact} />
+      {sections.map((sec) => (
+        <Section key={sec.index} index={sec.index} id={sec.name} />
+      ))}
     </div>
-  ) : (
-    <h1>loading...</h1>
   );
 }
 

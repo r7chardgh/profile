@@ -1,16 +1,14 @@
 import React from "react";
 import propic from "../assets/images/propic-sc.png";
+import d from "../helpers/d";
 function Intro({ firstname, lastname, role }) {
   return (
-    <section
-      id="intro"
-      className="container container--flex-sb container--section"
-    >
+    <div className="container container--flex-sb container--div">
       <article className="intro-text">
         <span className="greeting">Hello, it's me.</span>
-        <h1 className="name">{`${firstname} ${lastname}`}</h1>
+        <h1 className="name">{`${d(firstname)} ${d(lastname)}`}</h1>
         <p className="message">
-          I'm a {role},<br />
+          I'm a {d(role)},<br />
           currently playing with reactJS.
         </p>
       </article>
@@ -36,7 +34,7 @@ function Intro({ firstname, lastname, role }) {
           />
         </svg>
       </div>
-    </section>
+    </div>
   );
 }
 

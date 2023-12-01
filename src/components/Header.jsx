@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import theme from "../helpers/theme";
 import btn from "../helpers/btn";
 import useScrollToFix from "../hooks/useScrollToFix";
+import { sections } from "../section.json";
 function Header({ currentPos }) {
   const { isShown } = useScrollToFix();
   const navRef = React.useRef(null);
@@ -50,35 +51,35 @@ function Header({ currentPos }) {
             y1="9.34665"
             x2="25.2965"
             y2="10.9828"
-           className="rotable lights"
+            className="rotable lights"
           />
           <line
             x1="1.22361"
             y1="8.23565"
             x2="4.15044"
             y2="9.69906"
-           className="rotable lights"
+            className="rotable lights"
           />
           <line
             x1="5.79634"
             y1="2.53781"
             x2="10.9428"
             y2="9.70846"
-           className="rotable lights"
+            className="rotable lights"
           />
           <line
             x1="14.0366"
             y1="2.18557e-08"
             x2="14.0366"
             y2="3"
-           className="rotable lights"
+            className="rotable lights"
           />
           <line
             x1="23.5319"
             y1="2.9891"
             x2="17.9108"
             y2="9.33163"
-           className="rotable lights"
+            className="rotable lights"
           />
         </svg>
       </button>
@@ -125,21 +126,11 @@ function Header({ currentPos }) {
         </svg> */}
       </button>
       <nav className="navbar" ref={navRef}>
-        <a href="/#intro" className="navbar__link">
-          Home
-        </a>
-        <a href="/#about" className="navbar__link">
-          About
-        </a>
-        <a href="/#skills" className="navbar__link">
-          Skills
-        </a>
-        <a href="/#works" className="navbar__link">
-          Works
-        </a>
-        <a href="/#contact" className="navbar__link">
-          Contact
-        </a>
+        {sections.map((sec) => (
+          <a key={sec.index} href={`/#${sec.name}`} className="navbar__link">
+            {sec.navName}
+          </a>
+        ))}
       </nav>
     </header>
   );

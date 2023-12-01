@@ -3,11 +3,11 @@ import Icon from "../components/Icon";
 import copy from "../helpers/copy";
 function Contact({ contact }) {
   return (
-    <section id="contact" className="container">
+    <div className="container">
       <h1 className="title">Get in touch</h1>
       <p className="contact-message">You can find my footprints at...</p>
       <ul className="contact-list">
-        {contact.length > 0 ? (
+        {contact?.length > 0 ? (
           contact.map((item) => (
             <li className="contact-item" key={item.id}>
               <Icon id={item.icon} className="contact-item__icon" />
@@ -60,7 +60,7 @@ function Contact({ contact }) {
           <h1>No Contact</h1>
         )}
       </ul>
-    </section>
+    </div>
   );
 }
 

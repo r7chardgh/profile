@@ -17,7 +17,7 @@ function Works({ works }) {
         .querySelector(".slide__controller-wrap")
         .classList.remove("hidden");
     }
-  }, []);
+  }, [ref.current]);
   //when pos change,
   // React.useEffect(() => {
   //   console.log("what is pos ", pos);
@@ -26,7 +26,6 @@ function Works({ works }) {
   //   ref.current.scrollLeft = ref.current?.children[pos].offsetLeft;
   //   ref.current.style.scrollBehavior = "auto";
   // }, [pos]);
-
 
   //function
   const mouseDown = (e) => {
@@ -77,24 +76,24 @@ function Works({ works }) {
     }
   };
 
-  //touch
+  // //touch
 
-  const touchStart = (evt) => {
-    touchStartX = evt.nativeEvent.touches[0].pageX;
-    ref.current.style.background = "green";
-  };
-  const touchEnd = () => {
-    ref.current.style.background = "red";
-  };
-  const touchMove = (evt) => {
-    touchMoveX = evt.nativeEvent.touches[0].pageX;
-    ref.current.style.background = "yellow";
-  };
-  const touchCancel = (evt) => {
-    ref.current.style.background = "blue";
-  };
+  // const touchStart = (evt) => {
+  //   touchStartX = evt.nativeEvent.touches[0].pageX;
+  //   ref.current.style.background = "green";
+  // };
+  // const touchEnd = () => {
+  //   ref.current.style.background = "red";
+  // };
+  // const touchMove = (evt) => {
+  //   touchMoveX = evt.nativeEvent.touches[0].pageX;
+  //   ref.current.style.background = "yellow";
+  // };
+  // const touchCancel = (evt) => {
+  //   ref.current.style.background = "blue";
+  // };
   return (
-    <section id="works" className="container">
+    <div className="container">
       <h1 className="title">My works...</h1>
       {!!works ? (
         <div className="slide">
@@ -118,15 +117,29 @@ function Works({ works }) {
             {works.map((work) => (
               <div className="work-item" key={work.id}>
                 <span className="work-item__order">{work.id}</span>
-                <h1 className="work-item__title">{work.name.length>34?work.name.slice(0,33)+" ...":work.name}</h1>
+                <h1 className="work-item__title">
+                  {work.name.length > 34
+                    ? work.name.slice(0, 33) + " ..."
+                    : work.name}
+                </h1>
                 <div className="qwork-item__bottom">
-                  <h2 className="work-item__description">{work.description.length>86?work.description.slice(0,85)+" ...":work.description}</h2>
-                <a href={work.link} target="_blank" className="work-item__link" onClick={()=>{alert('areyou')}}>
-                  go to the site
-                  <Icon id="hyperlink" className="work-item__link-icon" />
-                </a>
+                  <h2 className="work-item__description">
+                    {work.description.length > 86
+                      ? work.description.slice(0, 85) + " ..."
+                      : work.description}
+                  </h2>
+                  <a
+                    href={work.link}
+                    target="_blank"
+                    className="work-item__link"
+                    onClick={() => {
+                      alert("areyou");
+                    }}
+                  >
+                    go to the site
+                    <Icon id="hyperlink" className="work-item__link-icon" />
+                  </a>
                 </div>
-                
               </div>
             ))}
           </div>
@@ -134,7 +147,7 @@ function Works({ works }) {
       ) : (
         <h2>No work is found.</h2>
       )}
-    </section>
+    </div>
   );
 }
 

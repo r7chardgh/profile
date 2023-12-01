@@ -1,12 +1,11 @@
 import React from "react";
-
 export const useScrollToHighlightMenu = () => {
-  const [sections, setSections] = React.useState(null);
-  const [currentPos, setCurrentPos] = React.useState(null);
+  const [sectionItems, setSectionItems] = React.useState(null); //store all sectionItems for getting all y pos
+  const [currentPos, setCurrentPos] = React.useState(0); //store the index of current viewing section
 
   React.useEffect(() => {
-    if (!!sections) {
-      var secList = [].slice.call(sections);
+    if (!!sectionItems) {
+      var secList = [].slice.call(sectionItems); //convert htmlcollections into array
       const handleScroll = () => {
         secList.map((sec, i, arr) => {
           if (
@@ -15,10 +14,7 @@ export const useScrollToHighlightMenu = () => {
           ) {
             setCurrentPos(arr.length - 1);
             return;
-          }
-          if (currentPos === i) {
-            return;
-          }
+          } //if the scrollY reaches the bottom, set current index to the last one of the section
 
           if (
             window.scrollY < arr[i + 1]?.offsetTop - 200 &&
@@ -26,11 +22,13 @@ export const useScrollToHighlightMenu = () => {
           ) {
             setCurrentPos(i);
             return;
-          }
-          if (i + 1 === arr.length && window.scrollY > sec.offsetTop - 200) {
-            setCurrentPos(i);
-            return;
-          }
+          } //if it almost (-200px) reach the next section, goes to the next one
+
+          // if (i + 1 === arr.length && window.scrollY > sec.offsetTop - 200) {
+          //   console.log("it is the end?");
+          //   setCurrentPos(i);
+          //   return;
+          // } //if
         });
       };
 
@@ -39,9 +37,10 @@ export const useScrollToHighlightMenu = () => {
         document.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [sections]);
+  }, [sectionItems]);
+
   return {
-    setSections,
+    setSectionItems,
     currentPos,
   };
 };
