@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "../components/Icon";
 import copy from "../helpers/copy";
+import UrlLink from "../components/UrlLink";
 function Contact({ contact }) {
   return (
     <div className="container">
@@ -40,10 +41,9 @@ function Contact({ contact }) {
                 </>
               ) : (
                 <>
-                  <a
+                  <UrlLink
                     className="contact-item__link"
-                    href={item.value}
-                    target="_blank"
+                    url={item.value}
                     aria-label={`${item.name} link`}
                   >
                     <h2 className="contact-item__title">
@@ -51,7 +51,7 @@ function Contact({ contact }) {
                       <Icon id="hyperlink" className="svg-hyperlink" />
                     </h2>
                     <span className="link-tag">{item.value}</span>
-                  </a>
+                  </UrlLink>
                 </>
               )}
             </li>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Icon from "../components/Icon";
 import SlideController from "../components/SlideController";
+import UrlLink from "../components/UrlLink";
 
 function Works({ works }) {
   let isDown = false;
@@ -128,17 +129,10 @@ function Works({ works }) {
                       ? work.description.slice(0, 85) + " ..."
                       : work.description}
                   </h2>
-                  <a
-                    href={work.link}
-                    target="_blank"
-                    className="work-item__link"
-                    onClick={() => {
-                      alert("areyou");
-                    }}
-                  >
+                  <UrlLink url={work.link} className="work-item__link">
                     go to the site
                     <Icon id="hyperlink" className="work-item__link-icon" />
-                  </a>
+                  </UrlLink>
                 </div>
               </div>
             ))}
