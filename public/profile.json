@@ -84,6 +84,27 @@
         "icon": "myblog",
         "value": "https://richard.3bro.info/",
         "isCopy": false
+      },
+      {
+        "id": 5,
+        "name": "3Bro Blog - IT blog established with my frds",
+        "icon": "myblog",
+        "value": "https://blog.3bro.info/",
+        "isCopy": false
+      },
+      {
+        "id": 6,
+        "name": "Uiverse.io - css button library",
+        "icon": "css",
+        "value": "https://uiverse.io/profile/r7chardgh",
+        "isCopy": false
+      },
+      {
+        "id": 7,
+        "name": "Chess.com",
+        "icon": "chess",
+        "value": "https://www.chess.com/member/rtsang",
+        "isCopy": false
       }
     ],
     "works": [
@@ -101,6 +122,12 @@
       },
       {
         "id": 3,
+        "name": "FPS Meter",
+        "link": "https://r7chardgh.github.io/fps-meter",
+        "description": "A simple meter displaying the frame rate of browser"
+      },
+      {
+        "id": 4,
         "name": "HK Sunset Sunrise Time",
         "link": "https://r7chardgh.github.io/hkweather",
         "description": "A Single Page for showing the current sunrise and sunset time in Hong Kong."
