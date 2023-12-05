@@ -1,10 +1,10 @@
-#My Personal Web
+#   My Personal Web
 
-##directory
+##  directory
 -homepage
---profile
+--intro
+--about me
 --skills
---experience
 --works
 --contact
 
@@ -16,9 +16,11 @@
 - 📫 Contact me via email: richardtcfung@gmail.com
 
 ===
-#Meta
+##   Meta
 Materials for this project
 1. vite
 2. sass(scss)
 3. react
 4. react-router-dom
+
+#Feat
