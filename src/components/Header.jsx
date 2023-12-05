@@ -8,7 +8,7 @@ function Header({ currentPos }) {
   const { isShown } = useScrollToFix();
   const navRef = React.useRef(null);
   React.useEffect(() => {
-    console.log("current pos: ", currentPos);
+    //console.log("current pos: ", currentPos);
     navRef.current.children[currentPos]?.classList.add("highlighted");
     navRef.current.children[currentPos - 1]?.classList.remove("highlighted");
     navRef.current.children[currentPos + 1]?.classList.remove("highlighted");

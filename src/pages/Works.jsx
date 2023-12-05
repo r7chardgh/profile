@@ -18,7 +18,8 @@ function Works({ works }) {
         .querySelector(".slide__controller-wrap")
         .classList.remove("hidden");
     }
-  }, [ref.current]);
+  }, [ref.current, works]);
+
   //when pos change,
   // React.useEffect(() => {
   //   console.log("what is pos ", pos);

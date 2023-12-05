@@ -1,7 +1,6 @@
 import React from "react";
 
 const UrlLink = ({ url, ...props }) => {
-  console.log(props);
   return (
     <button
       {...props}
