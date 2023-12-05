@@ -6,6 +6,7 @@ export const useScrollToHighlightMenu = () => {
   React.useEffect(() => {
     if (!!sectionItems) {
       var secList = [].slice.call(sectionItems); //convert htmlcollections into array
+      
       const handleScroll = () => {
         secList.map((sec, i, arr) => {
           if (
@@ -17,12 +18,11 @@ export const useScrollToHighlightMenu = () => {
           } //if the scrollY reaches the bottom, set current index to the last one of the section
 
           if (
-            window.scrollY < arr[i + 1]?.offsetTop - 200 &&
-            window.scrollY > sec.offsetTop - 200
+            window.scrollY > sec.offsetTop - (window.innerHeight*.3)
           ) {
             setCurrentPos(i);
             return;
-          } //if it almost (-200px) reach the next section, goes to the next one
+          } //if it almost (30% of window innerHeight) reach the next section, goes to the next one
 
           // if (i + 1 === arr.length && window.scrollY > sec.offsetTop - 200) {
           //   console.log("it is the end?");
