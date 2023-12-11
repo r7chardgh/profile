@@ -6,8 +6,7 @@ function Footer() {
   return (
     <footer>
       <p className="end-line">
-        This website is made with ❤. © Copyright {time.getYear()}.|
-        <span className="social-badge"></span>
+        This website is made with ❤. © Copyright {time.getYear()}.
       </p>
       {/* {isRevealed ? ( 
         <button
