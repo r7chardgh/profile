@@ -131,6 +131,12 @@
         "name": "HK Sunset Sunrise Time",
         "link": "https://r7chardgh.github.io/hkweather",
         "description": "A Single Page for showing the current sunrise and sunset time in Hong Kong."
+      },
+      {
+        "id": 5,
+        "name": "Scroll Change Color",
+        "link": "https://r7chardgh.github.io/scroll-change-color/",
+        "description": "This is a js function to show the background color change, when the scroll reaches the next section, the color will be completly changed. The color will be changed according to the distance between sections during the scrolling process."
       }
     ]
   }
