@@ -1,5 +1,8 @@
 #   My Personal Web
 
+## live site
+https://richardtsang.pages.dev/
+
 ##  directory
 -homepage
 --intro
@@ -22,5 +25,3 @@ Materials for this project
 2. sass(scss)
 3. react
 4. react-router-dom
-
-#Feat
